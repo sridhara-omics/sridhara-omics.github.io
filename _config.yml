@@ -22,9 +22,9 @@ repository               : "sridhara-omics/sridhara-omics.github.io"
 author:
   # Biographic information
   avatar           : "profile.png"
-  name             : "Your Sidebar Name"
+  name             : "Vish"
   pronouns         : "he/him"  
-  bio              : "Short biography for the left-hand sidebar"
+  bio              : "Science and Spirituality"
   location         : "United States"
   employer         : "Old Dominion University"
   uri              : # URL
@@ -34,14 +34,14 @@ author:
   arxiv            : # URL - Update with the correct link to your profile
   googlescholar    : "https://scholar.google.com/citations?user=6rYid2YAAAAJ&hl=en"
   impactstory      : # URL
-  orcid            : "https://orcid.org/0000-0003-0688-6140"
+  orcid            : # "https://orcid.org/0000-0003-0688-6140"
   semantic         : # URL
-  pubmed           : "https://pubmed.ncbi.nlm.nih.gov/?term=Viswanadham+Sridhara"
+  pubmed           : # "https://pubmed.ncbi.nlm.nih.gov/?term=Viswanadham+Sridhara"
   researchgate     : # URL
   scopus           : # URL
 
   # Repositories and software development
-  bitbucket        : "viswam78"
+  bitbucket        : # "viswam78"
   codepen          : # Username
   dribbble         : # Username
   github           : "sridhara-omics"

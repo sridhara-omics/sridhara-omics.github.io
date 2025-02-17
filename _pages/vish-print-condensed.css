@@ -1,0 +1,103 @@
+/* Vish Sridhara Resume Styles */
+
+/* General Styles */
+body {
+    font-family: 'Georgia', serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #333;
+    background: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+}
+
+#main {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #2980b9;
+    border-bottom: 1px solid #2980b9;
+    padding-bottom: 3px;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+p {
+    margin-bottom: 8px;
+}
+
+strong {
+    color: #34495e;
+}
+
+a {
+    color: #2980b9;
+    text-decoration: none;
+    font-weight: normal;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Contact Section */
+#contact p {
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
+/* List Styling */
+ol, ul {
+    padding-left: 18px;
+}
+
+li {
+    margin-bottom: 3px;
+}
+
+/* Skills Section */
+#technical-skills p {
+    margin-bottom: 0;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: none;
+        color: black;
+    }
+    
+    #main {
+        box-shadow: none;
+        padding: 0;
+    }
+    
+    a {
+        color: black;
+        text-decoration: none;
+    }
+    
+    h1, h2, h3 {
+        color: black;
+    }
+}

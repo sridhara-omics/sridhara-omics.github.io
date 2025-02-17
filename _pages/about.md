@@ -7,5 +7,8 @@ redirect_from:
   - /about.html
 ---
 
-I am a bioinformatics scientist with expertise in computational immunology, oncology, and data engineering. My background includes molecular dynamics, NGS analysis, and mass-spec data processing. I have over a decade of experience in research and bioinformatics, working on diverse projects and mentoring graduate students. Passionate about building robust pipelines, I specialize in tools like Igblast, immcantation, and Seurat. I enjoy developing scalable solutions for complex biological data. Currently exploring new opportunities in bioinformatics leadership roles.
+I am a bioinformatics scientist with lot of experience in building bioinformatics pipelines for both Next Generation Sequencing based transcriptomics/genomics data and mass-spectrometry based proteomics data. My recent focus was in computational immunology especially analyzing NGS and mass-spec data of antibodies.
 
+My PHD in Electrical and Computer Engineering, with bioinformatics dissertation and my interest in high-performance computing (right from graduate studies) drove me to pursue this career. 
+
+I published more than 20 articles, including Nature Biomedical Engineering, PLoS Computational Biology, with h-index 15, and 1000+ citations. My favorite programming languages are Python and R, and in my free time, I like to play chess, and know a bit more about spirituality!

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Flux Balance Analyses with COBRApy | Sivome</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Flux Balance Analyses with COBRApy" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Understanding biology by looking at large-scale data sets is a general trend these days. This large-scale data can be from Next-Generation Sequencing (NGS) technologies or mass-spectrometry based technologies (mass-spec) or a different measuring technique. In case of NGS, generally the measured molecules are DNA/RNA. In case of mass-spec, the measured molecules are proteins, metabolites or lipids." />
+<meta property="og:description" content="Understanding biology by looking at large-scale data sets is a general trend these days. This large-scale data can be from Next-Generation Sequencing (NGS) technologies or mass-spectrometry based technologies (mass-spec) or a different measuring technique. In case of NGS, generally the measured molecules are DNA/RNA. In case of mass-spec, the measured molecules are proteins, metabolites or lipids." />
+<link rel="canonical" href="http://localhost:4000/systems/biology/2019/02/23/Flux-Balance-Analyses-with-COBRApy.html" />
+<meta property="og:url" content="http://localhost:4000/systems/biology/2019/02/23/Flux-Balance-Analyses-with-COBRApy.html" />
+<meta property="og:site_name" content="Sivome" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-02-23T00:00:00-05:00" />
+<script type="application/ld+json">
+{"headline":"Flux Balance Analyses with COBRApy","dateModified":"2019-02-23T00:00:00-05:00","datePublished":"2019-02-23T00:00:00-05:00","url":"http://localhost:4000/systems/biology/2019/02/23/Flux-Balance-Analyses-with-COBRApy.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/systems/biology/2019/02/23/Flux-Balance-Analyses-with-COBRApy.html"},"description":"Understanding biology by looking at large-scale data sets is a general trend these days. This large-scale data can be from Next-Generation Sequencing (NGS) technologies or mass-spectrometry based technologies (mass-spec) or a different measuring technique. In case of NGS, generally the measured molecules are DNA/RNA. In case of mass-spec, the measured molecules are proteins, metabolites or lipids.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Sivome" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Sivome</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Hello!</a><a class="page-link" href="/cv/">CV</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Flux Balance Analyses with COBRApy</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-02-23T00:00:00-05:00" itemprop="datePublished">Feb 23, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Understanding biology by looking at large-scale data sets is a general trend these days. This large-scale data can be from Next-Generation Sequencing (NGS) technologies or mass-spectrometry based technologies (mass-spec) or a different measuring technique. In case of NGS, generally the measured molecules are DNA/RNA. In case of mass-spec, the measured molecules are proteins, metabolites or lipids.</p>
+
+<p>Gathering such data for different biomolecules e.g., RNA, protein, metabolite is increasing at an exponential pace, given a rise in both instrumentation technologies to generate the data and bioinformatics methods to analyze such data.</p>
+
+<p>One of the interests to researchers is to find ways to integrate such datasets systematically. Metabolic network provides an interesting way to overlay this information at different levels a.k.a transcript abundances, protein abundances, and metabolite information (or metabolic flux information).</p>
+
+<p>Before going into integrating these datasets (possibly in future posts), it is essential to understand metrics at a higher level about the metabolic network models built using the genome sequence. Here I focus on analyzing one such E. coli metabolic network model using a mathematical technique called Flux Balance Analysis (FBA). FBA is a mathematical approach to analyze the flow of metabolites in a metabolic network (more info in this excellent primer here: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3108565/)</p>
+
+<p>We use a method called COBRA that uses the genome-scale metabolic network model to analyze the flow of metabolites. Previously, in a different project, we used matlab version of COBRA. However, in this post, I use COBRApy, a python version of COBRA. More info on COBRA modules: https://opencobra.github.io/ This website also provides a great information on the need of COBRA.</p>
+
+<p>Most of the information provided here is already available at: https://cobrapy.readthedocs.io/en/stable/</p>
+
+<p>I used few modules from the above document to show how to 1. read the model, 2. generate optimal fluxes, 3. knock reactions, 4. change growth media, 5. print out required fluxes using the jupyter notebook.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">cobra</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">sbml_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s">"Data"</span><span class="p">,</span><span class="s">"iAF1260.xml.gz"</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">sbml_path</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Data\iAF1260.xml.gz
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span> <span class="o">=</span> <span class="n">cobra</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_sbml_model</span><span class="p">(</span><span class="n">sbml_path</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Here the objective function is biomass and optimize function calculates the fluxes to get the max biomass (this can be changed)</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong><em>Optimal</em> solution with objective value 0.737</strong><br />&lt;div&gt;</p>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fluxes</th>
+      <th>reduced_costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12DGR120tipp</th>
+      <td>0.000000</td>
+      <td>-0.010031</td>
+    </tr>
+    <tr>
+      <th>12DGR140tipp</th>
+      <td>0.000000</td>
+      <td>-0.010031</td>
+    </tr>
+    <tr>
+      <th>12DGR141tipp</th>
+      <td>0.000000</td>
+      <td>-0.016049</td>
+    </tr>
+    <tr>
+      <th>12DGR160tipp</th>
+      <td>0.000000</td>
+      <td>-0.010031</td>
+    </tr>
+    <tr>
+      <th>12DGR161tipp</th>
+      <td>0.000000</td>
+      <td>-0.018055</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ZN2abcpp</th>
+      <td>0.000000</td>
+      <td>-0.008025</td>
+    </tr>
+    <tr>
+      <th>ZN2t3pp</th>
+      <td>0.000000</td>
+      <td>-0.002006</td>
+    </tr>
+    <tr>
+      <th>ZN2tpp</th>
+      <td>0.002327</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ZNabcpp</th>
+      <td>0.000000</td>
+      <td>-0.008025</td>
+    </tr>
+    <tr>
+      <th>Zn2tex</th>
+      <td>0.002327</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>2382 rows × 2 columns</p>
+<p>&lt;/div&gt;</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IN FLUXES            OUT FLUXES    OBJECTIVES
+-------------------  ------------  ----------------------
+o2_e       16.3      h2o_e  37.2   BIOMASS_Ec_i...  0.737
+glc__D_e    8        co2_e  17.8
+nh4_e       7.94     h_e     6.77
+pi_e        0.708
+so4_e       0.184
+k_e         0.131
+mg2_e       0.00582
+fe2_e       0.00556
+fe3_e       0.00523
+ca2_e       0.00349
+cl_e        0.00349
+cobalt2_e   0.00233
+cu2_e       0.00233
+mn2_e       0.00233
+mobd_e      0.00233
+zn2_e       0.00233
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># remove nitrogen source and look at Biomass objective function</span>
+<span class="c"># here the only nitrogen source seems to be nh4_e.</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">NH4tex</span><span class="o">.</span><span class="n">knock_out</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong><em>Optimal</em> solution with objective value 0.000</strong><br />&lt;div&gt;</p>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fluxes</th>
+      <th>reduced_costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12DGR120tipp</th>
+      <td>0.000000e+00</td>
+      <td>3.330669e-16</td>
+    </tr>
+    <tr>
+      <th>12DGR140tipp</th>
+      <td>0.000000e+00</td>
+      <td>3.330669e-16</td>
+    </tr>
+    <tr>
+      <th>12DGR141tipp</th>
+      <td>0.000000e+00</td>
+      <td>6.106227e-16</td>
+    </tr>
+    <tr>
+      <th>12DGR160tipp</th>
+      <td>0.000000e+00</td>
+      <td>3.330669e-16</td>
+    </tr>
+    <tr>
+      <th>12DGR161tipp</th>
+      <td>0.000000e+00</td>
+      <td>6.106227e-16</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ZN2abcpp</th>
+      <td>0.000000e+00</td>
+      <td>2.220446e-16</td>
+    </tr>
+    <tr>
+      <th>ZN2t3pp</th>
+      <td>0.000000e+00</td>
+      <td>5.551115e-17</td>
+    </tr>
+    <tr>
+      <th>ZN2tpp</th>
+      <td>7.906134e-18</td>
+      <td>0.000000e+00</td>
+    </tr>
+    <tr>
+      <th>ZNabcpp</th>
+      <td>0.000000e+00</td>
+      <td>2.220446e-16</td>
+    </tr>
+    <tr>
+      <th>Zn2tex</th>
+      <td>7.906134e-18</td>
+      <td>0.000000e+00</td>
+    </tr>
+  </tbody>
+</table>
+<p>2382 rows × 2 columns</p>
+<p>&lt;/div&gt;</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># get the original model </span>
+<span class="n">iAF1260_ecoli_model</span> <span class="o">=</span> <span class="n">cobra</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_sbml_model</span><span class="p">(</span><span class="n">sbml_path</span><span class="p">)</span>
+
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># change glucose source fluxes to different values and see how it affects the objective function</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">medium</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{'EX_ca2_e': 999999.0,
+ 'EX_cbl1_e': 0.01,
+ 'EX_cl_e': 999999.0,
+ 'EX_co2_e': 999999.0,
+ 'EX_cobalt2_e': 999999.0,
+ 'EX_cu2_e': 999999.0,
+ 'EX_fe2_e': 999999.0,
+ 'EX_fe3_e': 999999.0,
+ 'EX_glc__D_e': 8.0,
+ 'EX_h2o_e': 999999.0,
+ 'EX_h_e': 999999.0,
+ 'EX_k_e': 999999.0,
+ 'EX_mg2_e': 999999.0,
+ 'EX_mn2_e': 999999.0,
+ 'EX_mobd_e': 999999.0,
+ 'EX_na1_e': 999999.0,
+ 'EX_nh4_e': 999999.0,
+ 'EX_o2_e': 18.5,
+ 'EX_pi_e': 999999.0,
+ 'EX_so4_e': 999999.0,
+ 'EX_tungs_e': 999999.0,
+ 'EX_zn2_e': 999999.0}
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># currently EX_glc__D_e is at 8, change it to 20 (Instead of knocking out NH4tex, this is another way of changing the source)</span>
+<span class="c"># copy the mediums, change the values and put the medium back in the model (there might be simpler way)</span>
+<span class="n">medium</span> <span class="o">=</span> <span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">medium</span>
+<span class="n">medium</span><span class="p">[</span><span class="s">"EX_glc__D_e"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">medium</span> <span class="o">=</span> <span class="n">medium</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong><em>Optimal</em> solution with objective value 1.218</strong><br />&lt;div&gt;</p>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fluxes</th>
+      <th>reduced_costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12DGR120tipp</th>
+      <td>0.000000</td>
+      <td>-0.024236</td>
+    </tr>
+    <tr>
+      <th>12DGR140tipp</th>
+      <td>0.000000</td>
+      <td>-0.024236</td>
+    </tr>
+    <tr>
+      <th>12DGR141tipp</th>
+      <td>0.000000</td>
+      <td>-0.043625</td>
+    </tr>
+    <tr>
+      <th>12DGR160tipp</th>
+      <td>0.000000</td>
+      <td>-0.024236</td>
+    </tr>
+    <tr>
+      <th>12DGR161tipp</th>
+      <td>0.000000</td>
+      <td>-0.043625</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ZN2abcpp</th>
+      <td>0.000000</td>
+      <td>-0.019389</td>
+    </tr>
+    <tr>
+      <th>ZN2t3pp</th>
+      <td>0.000000</td>
+      <td>-0.004847</td>
+    </tr>
+    <tr>
+      <th>ZN2tpp</th>
+      <td>0.003846</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ZNabcpp</th>
+      <td>0.000000</td>
+      <td>-0.019389</td>
+    </tr>
+    <tr>
+      <th>Zn2tex</th>
+      <td>0.003846</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>2382 rows × 2 columns</p>
+<p>&lt;/div&gt;</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>IN FLUXES            OUT FLUXES           OBJECTIVES
+-------------------  -------------------  ---------------------
+glc__D_e   20        h_e       53         BIOMASS_Ec_i...  1.22
+o2_e       18.5      h2o_e     41.6
+nh4_e      13.1      for_e     23.1
+pi_e        1.17     ac_e      18.7
+so4_e       0.305    co2_e      9.53
+k_e         0.216    glyclt_e   0.000815
+mg2_e       0.00961
+fe2_e       0.0092
+fe3_e       0.00865
+ca2_e       0.00577
+cl_e        0.00577
+cobalt2_e   0.00385
+cu2_e       0.00385
+mn2_e       0.00385
+mobd_e      0.00385
+zn2_e       0.00385
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Repeat the above by changing it to -20 (see the negative sign)</span>
+<span class="n">medium</span><span class="p">[</span><span class="s">"EX_glc__D_e"</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">20</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">medium</span> <span class="o">=</span> <span class="n">medium</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cobra\util\solver.py:416 UserWarning: solver status is 'infeasible'
+</code></pre></div></div>
+
+<p><strong><em>infeasible</em> solution</strong></p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Back to original value of 8</span>
+<span class="n">medium</span><span class="p">[</span><span class="s">"EX_glc__D_e"</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">medium</span> <span class="o">=</span> <span class="n">medium</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong><em>Optimal</em> solution with objective value 0.737</strong><br />&lt;div&gt;</p>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fluxes</th>
+      <th>reduced_costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12DGR120tipp</th>
+      <td>0.000000</td>
+      <td>-0.010031</td>
+    </tr>
+    <tr>
+      <th>12DGR140tipp</th>
+      <td>0.000000</td>
+      <td>-0.010031</td>
+    </tr>
+    <tr>
+      <th>12DGR141tipp</th>
+      <td>0.000000</td>
+      <td>-0.018055</td>
+    </tr>
+    <tr>
+      <th>12DGR160tipp</th>
+      <td>0.000000</td>
+      <td>-0.010031</td>
+    </tr>
+    <tr>
+      <th>12DGR161tipp</th>
+      <td>0.000000</td>
+      <td>-0.018055</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ZN2abcpp</th>
+      <td>0.000000</td>
+      <td>-0.008025</td>
+    </tr>
+    <tr>
+      <th>ZN2t3pp</th>
+      <td>0.000000</td>
+      <td>-0.002006</td>
+    </tr>
+    <tr>
+      <th>ZN2tpp</th>
+      <td>0.002327</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>ZNabcpp</th>
+      <td>0.000000</td>
+      <td>-0.008025</td>
+    </tr>
+    <tr>
+      <th>Zn2tex</th>
+      <td>0.002327</td>
+      <td>0.000000</td>
+    </tr>
+  </tbody>
+</table>
+<p>2382 rows × 2 columns</p>
+<p>&lt;/div&gt;</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Get a sense of energy production and related features</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">metabolites</span><span class="o">.</span><span class="n">atp_c</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRODUCING REACTIONS -- ATP C10H12N5O13P3 (atp_c)
+------------------------------------------------
+%      FLUX  RXN ID      REACTION
+---  ------  ----------  --------------------------------------------------
+72%  52      ATPS4rpp    adp_c + 4.0 h_p + pi_c &lt;=&gt; atp_c + h2o_c + 3.0 h_c
+18%  13.1    PGK         3pg_c + atp_c &lt;=&gt; 13dpg_c + adp_c
+5%    3.34   SUCOAS      atp_c + coa_c + succ_c &lt;=&gt; adp_c + pi_c + succoa_c
+4%    2.72   PPK         atp_c + pi_c &lt;=&gt; adp_c + ppi_c
+1%    1.03   PYK         adp_c + h_c + pep_c --&gt; atp_c + pyr_c
+
+CONSUMING REACTIONS -- ATP C10H12N5O13P3 (atp_c)
+------------------------------------------------
+%      FLUX  RXN ID      REACTION
+---  ------  ----------  --------------------------------------------------
+61%  44.2    BIOMASS...  0.000223 10fthf_c + 0.000223 2ohph_c + 0.5137 a...
+12%   8.39   ATPM        atp_c + h2o_c --&gt; adp_c + h_c + pi_c
+9%    6.19   PFK         atp_c + f6p_c --&gt; adp_c + fdp_c + h_c
+3%    1.99   NDPK1       atp_c + gdp_c &lt;=&gt; adp_c + gtp_c
+2%    1.78   ACCOAC      accoa_c + atp_c + hco3_c --&gt; adp_c + h_c + malc...
+2%    1.33   GLNS        atp_c + glu__L_c + nh4_c --&gt; adp_c + gln__L_c +...
+1%    0.788  ASPK        asp__L_c + atp_c &lt;=&gt; 4pasp_c + adp_c
+1%    0.687  R15BPK      atp_c + r15bp_c --&gt; adp_c + prpp_c
+1%    0.687  R1PK        atp_c + r1p_c --&gt; adp_c + h_c + r15bp_c
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Instead of maximizing biomass, we can change the objective function to maximize ATPM</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">objective</span> <span class="o">=</span> <span class="s">"ATPM"</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"ATPM"</span><span class="p">)</span><span class="o">.</span><span class="n">upper_bound</span>
+
+
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8.39
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"ATPM"</span><span class="p">)</span><span class="o">.</span><span class="n">lower_bound</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>8.39
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Looks like the ATPM upper bound and lower bound is fixed at 8.39.</span>
+<span class="c"># If we run the model now, the optimum calculated will be same.</span>
+<span class="c"># INSTEAD, change the upper and lower bounds to different values and see the optimum with objective function of ATPM</span>
+
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"ATPM"</span><span class="p">)</span><span class="o">.</span><span class="n">upper_bound</span> <span class="o">=</span> <span class="mi">1000</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"ATPM"</span><span class="p">)</span><span class="o">.</span><span class="n">lower_bound</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1000</span>
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"ATPM"</span><span class="p">)</span><span class="o">.</span><span class="n">upper_bound</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1000
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="o">.</span><span class="n">get_by_id</span><span class="p">(</span><span class="s">"ATPM"</span><span class="p">)</span><span class="o">.</span><span class="n">lower_bound</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-1000
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">optimize</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><strong><em>Optimal</em> solution with objective value 95.813</strong><br />&lt;div&gt;</p>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>fluxes</th>
+      <th>reduced_costs</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>12DGR120tipp</th>
+      <td>0.0</td>
+      <td>-2.5</td>
+    </tr>
+    <tr>
+      <th>12DGR140tipp</th>
+      <td>0.0</td>
+      <td>-2.5</td>
+    </tr>
+    <tr>
+      <th>12DGR141tipp</th>
+      <td>0.0</td>
+      <td>-4.5</td>
+    </tr>
+    <tr>
+      <th>12DGR160tipp</th>
+      <td>0.0</td>
+      <td>-2.5</td>
+    </tr>
+    <tr>
+      <th>12DGR161tipp</th>
+      <td>0.0</td>
+      <td>-4.5</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>ZN2abcpp</th>
+      <td>0.0</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>ZN2t3pp</th>
+      <td>0.0</td>
+      <td>-0.5</td>
+    </tr>
+    <tr>
+      <th>ZN2tpp</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+    <tr>
+      <th>ZNabcpp</th>
+      <td>0.0</td>
+      <td>-2.0</td>
+    </tr>
+    <tr>
+      <th>Zn2tex</th>
+      <td>0.0</td>
+      <td>0.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>2382 rows × 2 columns</p>
+<p>&lt;/div&gt;</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Looks like the ATPM value went from 9 all the way to 95 (based on constraints on other reactions)</span>
+<span class="c"># Summary of atp reactions with this new objective function is</span>
+<span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">metabolites</span><span class="o">.</span><span class="n">atp_c</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>PRODUCING REACTIONS -- ATP C10H12N5O13P3 (atp_c)
+------------------------------------------------
+%      FLUX  RXN ID    REACTION
+---  ------  --------  --------------------------------------------------
+61%   63.8   ATPS4rpp  adp_c + 4.0 h_p + pi_c &lt;=&gt; atp_c + h2o_c + 3.0 h_c
+15%   16     PGK       3pg_c + atp_c &lt;=&gt; 13dpg_c + adp_c
+14%   14.8   ACKr      ac_c + atp_c &lt;=&gt; actp_c + adp_c
+8%     8     PYK       adp_c + h_c + pep_c --&gt; atp_c + pyr_c
+1%     1.25  SUCOAS    atp_c + coa_c + succ_c &lt;=&gt; adp_c + pi_c + succoa_c
+
+CONSUMING REACTIONS -- ATP C10H12N5O13P3 (atp_c)
+------------------------------------------------
+%      FLUX  RXN ID    REACTION
+---  ------  --------  --------------------------------------------------
+92%   95.8   ATPM      atp_c + h2o_c &lt;=&gt; adp_c + h_c + pi_c
+8%     8     PFK       atp_c + f6p_c --&gt; adp_c + fdp_c + h_c
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+</code></pre></div></div>
+
+  </div><a class="u-url" href="/systems/biology/2019/02/23/Flux-Balance-Analyses-with-COBRApy.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Sivome</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Sivome</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Viswam78"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Viswam78</span></a></li><li><a href="https://www.twitter.com/VishSridhara"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">VishSridhara</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>All -OMICS is eventually Sivomics!!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

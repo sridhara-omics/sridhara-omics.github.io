@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Logistic Regression with regularization | Sivome</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Logistic Regression with regularization" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="In one of my previous blogs, I talked about a well-established technique (Flux Balance Analysis) to simulate metabolic fluxes using a genome-scale metabolic network model. Flux Balance Analysis (FBA) has multiple advantages, including quickly and efficiently simulating organism’s phenotype for different growth media. Other interesting applications include simulating phenotypes for in-silico knockouts OR in-silico addition of a new reaction in a pathway. For additional documentation or applications, refer to the original FBA paper." />
+<meta property="og:description" content="In one of my previous blogs, I talked about a well-established technique (Flux Balance Analysis) to simulate metabolic fluxes using a genome-scale metabolic network model. Flux Balance Analysis (FBA) has multiple advantages, including quickly and efficiently simulating organism’s phenotype for different growth media. Other interesting applications include simulating phenotypes for in-silico knockouts OR in-silico addition of a new reaction in a pathway. For additional documentation or applications, refer to the original FBA paper." />
+<link rel="canonical" href="http://localhost:4000/statistics/2019/03/05/Metabolic-Fluxes-and-Regression-with-Regularization.html" />
+<meta property="og:url" content="http://localhost:4000/statistics/2019/03/05/Metabolic-Fluxes-and-Regression-with-Regularization.html" />
+<meta property="og:site_name" content="Sivome" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-03-05T00:00:00-05:00" />
+<script type="application/ld+json">
+{"headline":"Logistic Regression with regularization","dateModified":"2019-03-05T00:00:00-05:00","datePublished":"2019-03-05T00:00:00-05:00","url":"http://localhost:4000/statistics/2019/03/05/Metabolic-Fluxes-and-Regression-with-Regularization.html","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/statistics/2019/03/05/Metabolic-Fluxes-and-Regression-with-Regularization.html"},"description":"In one of my previous blogs, I talked about a well-established technique (Flux Balance Analysis) to simulate metabolic fluxes using a genome-scale metabolic network model. Flux Balance Analysis (FBA) has multiple advantages, including quickly and efficiently simulating organism’s phenotype for different growth media. Other interesting applications include simulating phenotypes for in-silico knockouts OR in-silico addition of a new reaction in a pathway. For additional documentation or applications, refer to the original FBA paper.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/assets/main.css"><link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="Sivome" /></head>
+<body><header class="site-header" role="banner">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/">Sivome</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/about/">Hello!</a><a class="page-link" href="/cv/">CV</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Logistic Regression with regularization</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2019-03-05T00:00:00-05:00" itemprop="datePublished">Mar 5, 2019
+      </time></p>
+  </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>In one of my previous blogs, I talked about a well-established technique (Flux Balance Analysis) to simulate metabolic fluxes using a genome-scale metabolic network model. Flux Balance Analysis (FBA) has multiple advantages, including quickly and efficiently simulating organism’s phenotype for different growth media. Other interesting applications include simulating phenotypes for in-silico knockouts  OR in-silico addition of a new reaction in a pathway. For additional documentation or applications, refer to the original <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3108565/">FBA paper</a>.</p>
+
+<p>All aspects of this post were already published by <a href="https://wilkelab.org/">Wilke lab</a> (I was also involved in that project at that time). More info on the original work can be found <a href="https://www.ncbi.nlm.nih.gov/pubmed/25502413">here</a>. To summarize the original findings of the paper, I quote from the <a href="https://www.ncbi.nlm.nih.gov/pubmed/25502413">abstract</a>:
+<em>“Our analysis provides several important physiological and statistical insights. First, we show that by analyzing metabolic end products we can consistently predict growth conditions. Second, prediction is reliable even in the presence of small amounts of impurities. Third, flux through a relatively small number of reactions per growth source (∼10) is sufficient for accurate prediction. Fourth, combining the predictions from two separate models, one trained only on carbon sources and one only on nitrogen sources, performs better than models trained to perform joint prediction. Finally, that separate predictions perform better than a more sophisticated joint prediction scheme suggests that carbon and nitrogen utilization pathways, despite jointly affecting cellular growth, may be fairly decoupled in terms of their dependence on specific assortments of molecular precursors.”</em></p>
+
+<p>In this post, I will focus on re-analyzing inverse problem of predicting the growth conditions, given the in-silico fluxes (e.g., from FBA). Even this aspect is well covered in the paper as seen from the abstract above, however here I used python (scikit-learn module) instead of R GLMNET package. This also helps confirm the findings with a different tool, and with newer tools.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">print_function</span>
+<span class="kn">import</span> <span class="nn">cobra</span>
+<span class="c"># import deep learning and other modules</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="n">pd</span>
+<span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">join</span>
+
+</code></pre></div></div>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># fix random seed for reproducibility</span>
+<span class="n">seed</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
+</code></pre></div></div>
+<p>The dataset used in this post can be found <a href="https://github.com/viswam78/Ecoli_FBA_input_prediction/tree/master/Analysis/RawData">here</a>. You will see many datasets used in the original publication and you can pick any of those. I picked FluxData49ReplicatesNoiseLevel1.csv and renamed to syntheticFluxData.csv. You can also see additional information in the bitbucket repo <a href="https://bitbucket.org/viswam78/fba_keras/src/master/">here</a> that is used to create this blog.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Flux dataset from predicting bacterial growth conditions study -- for current purposes, THIS IS MOSTLY CONSIDERED RANDOM SYNTHETIC DATA</span>
+<span class="n">dataset1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s">"../Data/syntheticFluxData.csv"</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s">','</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>This dataset is approx. 5K by 2K i.e., 5000 rows and 2000 columns (a good high-dimensional dataset for testing regression techniques). Additonally, it is very sparse. Only few reactions i.e., columns will result in in-silico fluxes because of the inherent behavior of a metabolic network for simple growth conditions and it is to be noted that the fluxes generated are using a mathematical approach e.g., FBA ( as earlier mentioned ).</p>
+
+<p>Here is how the truncated data looks like. The <em>last 3 columns</em> are the growth conditions. We added these to the FBA output to have a format of [Input]-[Output] in the same dataframe for data-analyses purposes.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">dataset1</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>7</th>
+      <th>8</th>
+      <th>9</th>
+      <th>...</th>
+      <th>2375</th>
+      <th>2376</th>
+      <th>2377</th>
+      <th>2378</th>
+      <th>2379</th>
+      <th>2380</th>
+      <th>2381</th>
+      <th>2382</th>
+      <th>2383</th>
+      <th>2384</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.004649</td>
+      <td>0</td>
+      <td>0.004649</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.000000e+00</td>
+      <td>4.692800e-34</td>
+      <td>1.025800e-27</td>
+      <td>6.151300e-29</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.004571</td>
+      <td>0</td>
+      <td>0.004571</td>
+      <td>1</td>
+      <td>2</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.348900e-29</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>7.639300e-28</td>
+      <td>1.029200e-27</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.006978</td>
+      <td>0</td>
+      <td>0.006978</td>
+      <td>1</td>
+      <td>3</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.004584</td>
+      <td>0</td>
+      <td>0.004584</td>
+      <td>1</td>
+      <td>4</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.695900e-29</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>0.0</td>
+      <td>-0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0.004760</td>
+      <td>0</td>
+      <td>0.004760</td>
+      <td>1</td>
+      <td>5</td>
+      <td>5</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 2385 columns</p>
+</div>
+
+<p>First 2381 columns are the in-silico fluxes generated from the flux balance analyses (FBA) for the input growth conditions</p>
+
+<p>Information on the growth conditions is in columns 2382 and 2383. Column 2384 is just the pair-wise combination of 2382 and 2383.</p>
+
+<p>Additonally, in the first 2381 columns, there are transport and exchange reactions that are not real, but are incorporated in the model that carry the metabolites in and out of the network. So, we removed them here (such reactions end with tpp and tex in the model used).</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Assuming iAF1260 model used in this repo has exchange/transport reactions that match to the synthetic data.</span>
+<span class="n">sbml_path</span> <span class="o">=</span> <span class="n">join</span><span class="p">(</span><span class="s">"../Data"</span><span class="p">,</span><span class="s">"iAF1260.xml.gz"</span><span class="p">)</span>
+<span class="n">iAF1260_ecoli_model</span> <span class="o">=</span> <span class="n">cobra</span><span class="o">.</span><span class="n">io</span><span class="o">.</span><span class="n">read_sbml_model</span><span class="p">(</span><span class="n">sbml_path</span><span class="p">)</span>
+<span class="n">iAF1260_reaction_IDs</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="nb">id</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iAF1260_ecoli_model</span><span class="o">.</span><span class="n">reactions</span><span class="p">]</span>
+<span class="c"># There might be a better way to do this, but this explicitly conveys information</span>
+<span class="n">list_tpp_tex</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">iAF1260_reaction_IDs</span><span class="p">:</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'tpp'</span><span class="p">)):</span>
+        <span class="n">list_tpp_tex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="k">if</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s">'tex'</span><span class="p">)):</span>
+        <span class="n">list_tpp_tex</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c"># columns to remove from above dataset</span>
+<span class="n">IDs_of_cols_to_remove</span> <span class="o">=</span> <span class="p">[</span><span class="n">iAF1260_reaction_IDs</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">list_tpp_tex</span><span class="p">]</span>
+<span class="c"># append output columns as well that are to be removed from Input</span>
+<span class="n">IDs_of_cols_to_remove</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">2382</span><span class="p">,</span><span class="mi">2385</span><span class="p">))</span> <span class="c"># Note range covers 2382 to 2384</span>
+
+</code></pre></div></div>
+<p>Data clean-up is done.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># retain columns that are NOT IDs_of_cols_to_remove, fit in regression methods automatically scales these</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">dataset1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="n">dataset1</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">difference</span><span class="p">(</span><span class="n">IDs_of_cols_to_remove</span><span class="p">)]</span>
+<span class="c"># Use carbon source as y (i.e., col 2382) --- Nitrogen source is 2383, while pair-wise C/N is 2384</span>
+<span class="n">fba_y</span> <span class="o">=</span> <span class="n">dataset1</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span><span class="mi">2382</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This is how the Input  looks now (i.e., without the output and the transport/exchange reactions)
+For this post, instead of focussing on all the 3 columns of the output i.e., C-source, N-source, and pairwise C/N, I used only C-source as output. So, given the in-silico fluxes, we are predicting what carbon source is it coming from? You might think that the information in Nitrogen source is also key to predict what carbon source, but at least one of the things we noticed in our earlier study is that separate prediction works better than joint prediction (i.e., predicting carbon and nitrogen sources separately works better than predicting C-N pairwise). Please refer to the original <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3108565/">paper</a> for more details.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">X</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</code></pre></div></div>
+
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>0</th>
+      <th>1</th>
+      <th>2</th>
+      <th>3</th>
+      <th>4</th>
+      <th>5</th>
+      <th>6</th>
+      <th>11</th>
+      <th>12</th>
+      <th>17</th>
+      <th>...</th>
+      <th>2368</th>
+      <th>2369</th>
+      <th>2370</th>
+      <th>2371</th>
+      <th>2372</th>
+      <th>2374</th>
+      <th>2375</th>
+      <th>2377</th>
+      <th>2378</th>
+      <th>2380</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>0.6</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.000000e+00</td>
+      <td>4.692800e-34</td>
+      <td>1.025800e-27</td>
+      <td>6.151300e-29</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>0.8</td>
+      <td>-0.0</td>
+      <td>0.2</td>
+      <td>0.2</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.348900e-29</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>7.639300e-28</td>
+      <td>1.029200e-27</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.2</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>0.6</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>0.6</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.695900e-29</td>
+      <td>0.000000e+00</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>0.0</td>
+      <td>...</td>
+      <td>-0.0</td>
+      <td>0.6</td>
+      <td>-0.0</td>
+      <td>-0.0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 2068 columns</p>
+</div>
+
+<p>Now, the usual method of dividing the data into training and testing. We use training dataset to build the model and predict using test data. Another method i.e., Cross-validation by different fold can also be used.</p>
+
+<p>test_size = 0.25 tells that the test data is 25%, and the rest is training data.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Split data into training and test (note the encoded_y is a single column)</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">fba_y_train</span><span class="p">,</span> <span class="n">fba_y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">fba_y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.25</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>The following couple of lines are key to building a logistic regression model with regularization. We used a solver called ‘sag’ that supports ‘l2’ penalty. Instead of the usual multinomial classification, I used ‘ovr’ i.e., one-vs-rest. You can try multinomial as multi_class as well. Another thing to note is a large max_iter value. I used the same value that was used previously in the paper. A low number (like 100 or 1000) might not result in convergence of the coefficients. Note that this problem has more than 1000 features!</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+<span class="n">log_lasso_fba</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s">'l2'</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s">'sag'</span><span class="p">,</span> <span class="n">multi_class</span><span class="o">=</span><span class="s">'ovr'</span><span class="p">,</span> <span class="n">max_iter</span><span class="o">=</span><span class="mi">9000000</span><span class="p">)</span>
+</code></pre></div></div>
+<p>Build the lasso model on the training data</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">log_lasso_fba</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">fba_y_train</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LogisticRegression(C=1.0, class_weight=None, dual=False, fit_intercept=True,
+          intercept_scaling=1, max_iter=9000000, multi_class='ovr',
+          n_jobs=None, penalty='l2', random_state=None, solver='sag',
+          tol=0.0001, verbose=0, warm_start=False)
+</code></pre></div></div>
+
+<p>Predict with test data</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">fba_y_test_log</span> <span class="o">=</span> <span class="n">log_lasso_fba</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+</code></pre></div></div>
+
+<p>Create a confusion matrix to see how many of the predicted values match with the original response variable.</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># confusion matrix</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+<span class="n">confusion_matrix</span><span class="p">(</span><span class="n">fba_y_test</span><span class="p">,</span> <span class="n">fba_y_test_log</span><span class="p">)</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>array([[143,   0,   0,  25,   0,   1,   0],
+       [  0, 151,   0,  22,   0,   2,   0],
+       [  0,   0, 157,  18,   0,   0,   0],
+       [  0,   0,   0, 177,   1,   0,   0],
+       [  0,   0,   0,  32, 138,   1,   0],
+       [  0,   0,   0,  29,   0, 146,   0],
+       [  0,   0,   2,  29,   0,   0, 151]], dtype=int64)
+</code></pre></div></div>
+
+<p>For the data I picked, there is a heatmap in the original paper that shows the result of the similar analyses I did above. The 4th column seems to be acetate.
+https://github.com/clauswilke/Ecoli_FBA_input_prediction/blob/master/Manuscript/Figures/Fig3.pdf
+You can read the paper to see why acetate is predicted more often than other carbon sources!</p>
+
+<p>Similar heatmap can be drawn using something like this:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">data_4_heatmap</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">fba_y_test</span><span class="p">,</span> <span class="n">fba_y_test_log</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="n">sns</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">data_4_heatmap</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s">'y-predict'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s">'y-test'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</code></pre></div></div>
+
+<p><img src="figure\heatmap.png" alt="png" /></p>
+
+<p>If you’re also interested in the previous work and the R script, here it is:
+https://github.com/clauswilke/Ecoli_FBA_input_prediction/blob/master/Analysis/Scripts/GLMNET.R</p>
+
+<p>So, it does seem that even after few years, the findings from the original work still hold with Python Scikit-learn module!</p>
+
+  </div><a class="u-url" href="/statistics/2019/03/05/Metabolic-Fluxes-and-Regression-with-Regularization.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Sivome</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">Sivome</li></ul>
+      </div>
+
+      <div class="footer-col footer-col-2"><ul class="social-media-list"><li><a href="https://github.com/Viswam78"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#github"></use></svg> <span class="username">Viswam78</span></a></li><li><a href="https://www.twitter.com/VishSridhara"><svg class="svg-icon"><use xlink:href="/assets/minima-social-icons.svg#twitter"></use></svg> <span class="username">VishSridhara</span></a></li></ul>
+</div>
+
+      <div class="footer-col footer-col-3">
+        <p>All -OMICS is eventually Sivomics!!</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>

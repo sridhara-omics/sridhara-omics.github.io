@@ -1,0 +1,19 @@
+What is R: R is a programming language and software environment for statistical computing and graphics. To write R functions, you need to use the function keyword, followed by a name for your function, a set of parentheses containing the arguments, and a block of code that defines what your function does.
+
+How to use dplyr package for Data Wrangling in R: The dplyr package provides a set of functions for data wrangling and manipulation in R, such as filter() for filtering rows, select() for selecting columns, group_by() for grouping data, and summarize() for aggregating data. The tidyr package provides functions for reshaping and cleaning data, such as gather() and spread() for converting between wide and long formats, and separate() and unite() for splitting and combining columns. The purrr package provides functions for functional programming in R, such as map() for applying a function to each element of a vector.
+
+How to use readr package for Data Reading and Wrangling in R: The readr package provides functions for reading and writing tabular data, such as read_csv() and write_csv() for reading and writing CSV files. The tibble package provides a tibble data structure, which is a modern alternative to the traditional data frame in R, with improved print behavior and better handling of missing values.
+
+How to use ggplot2 package for Data Visualization in R: The ggplot2 package provides a flexible and powerful framework for data visualization in R, allowing you to create a wide range of plots such as histograms, bar plots, violin plots, and many others.
+
+How to use stringr package for String Manipulation in R: The stringr package provides a set of functions for working with strings in R, such as str_replace() for replacing strings, str_split() for splitting strings into pieces, and str_detect() for detecting the presence of a pattern in a string.
+
+How to use forcats package for Data Visualization in Python: The forcats package provides tools for working with categorical variables in Python, including functions for reordering factors and plotting bar plots and violin plots.
+
+What is Python: Python is a high-level, interpreted programming language that was first released in 1991. It is named after the Monty Python comedy group and is known for its simple and readable syntax, as well as its wide range of applications, including web development, scientific computing, data analysis, artificial intelligence, and many others. Python has a large and active community of users, which contributes to its continued development and growth. It is also open source software, which means that the source code is freely available to the public and can be modified and distributed by anyone.
+
+How to use Numpy module in Python: Numpy is a powerful library for numerical computing in Python, providing support for arrays, matrices, and other mathematical operations. Some of the important functions in Numpy include array() for creating arrays, shape() for finding the shape of arrays, zeros() and ones() for creating arrays of zeros and ones, and transpose() for transposing arrays.
+
+How to use Pandas module in Python: Pandas is a library for data analysis and manipulation in Python, providing data structures and functions for working with tabular data. Some of the important functions in Pandas include read_csv() and to_csv() for reading and writing CSV files, head() and tail() for viewing the first and last few rows of a DataFrame, describe() for generating summary statistics, and groupby() for grouping data.
+
+Name some Machine Learning and Deep Learning modules in Python: Python has several powerful libraries for machine learning and deep learning, including scikit-learn for general machine learning, TensorFlow for deep learning, Keras for high-level neural network API, PyTorch for machine learning and deep learning, XGBoost for gradient boosting, LightGBM for gradient

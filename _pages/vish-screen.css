@@ -53,7 +53,7 @@ table {
 
 body {
 	font: normal normal 400;
-	font-size: 12pt;
+	font-size: 80%;
 	line-height: 1.35em;
 	/*also written as...  font: normal normal 400 100%/1.5em;*/
 	font-family: Verdana,sans-serif;
@@ -184,9 +184,8 @@ strong {
 	font-weight: bold;
 }
 
-#ghbutton {
+#address {
 	display: none;
-	visibility: hidden;
 }
 
 

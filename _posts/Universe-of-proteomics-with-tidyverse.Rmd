@@ -1,0 +1,125 @@
+---
+title: "Universe of P[r]oteomics with Tidyverse"
+date: '2019-03-15'
+layout: post
+categories: Proteomics
+---
+
+# Except for writing scripts in R compared to Python in previous blog [Reporting protoemics results with Jupyter notebook], most of the information is duplicated. Tidyverse is the R package that has combination of packages that are typically used with data-analysis and visualization. Some of the packages built in tidyverse are dplyr, purr, ggplot, tidyr etc.
+
+```{r, message = FALSE}
+# loading all the required packages
+
+rm(list=ls())
+# we tidyverse that is universe of all data analysis/visualization related packages
+library(tidyverse)
+library(cowplot)
+```
+# Let's look the OMSSA output file.
+
+```{r}
+OMSSA_output <- read.csv("S288c_run.csv", sep=",", header=TRUE)
+head(OMSSA_output)
+```
+# E-value tells us how significant the hit is i.e., the lower the better. This is similar to BLAST output, if you're familiar with it.
+```{r}
+names(OMSSA_output) = gsub("\\.", "", names(OMSSA_output))
+Evalplot <- ggplot(OMSSA_output, aes(log10(Evalue))) +
+  geom_histogram(color ="red", bins = 100) +
+  stat_count() +
+  labs(x = "Score in E-value", y = "counts")
+Evalplot
+```
+# Add 3 new columns (similar to previous blog on reporting proteomics results with jupyter notebook)
+1. LengthPep = gets the length of peptide using the peptide string
+2. IsReverse = looks for a string match "###REV###" in Defline and gives a value "1" if true, "0" otherwise
+3. IsMod = looks for a oxidized MET i.e., lower case M (m) in Peptide and gives a value "1" if true, "0" otherwise
+
+Also, if you notice, the 3 new columns are all related to string parsing i.e., counting letters in peptide, or matching Defline with "###REV###" or matching Mods with "oxidation"!
+
+```{r}
+OMSSA_output = mutate(OMSSA_output, LengthPep = str_count(Peptide))
+
+OMSSA_output = mutate(OMSSA_output, IsReverse = ifelse(grepl("###REV###", Defline), 1, 0))
+
+OMSSA_output = mutate(OMSSA_output, IsMod = ifelse(grepl("oxidation", Mods), 1, 0))
+```
+
+# Updated OMSSA output after addition of "LengthPep", "IsReverse" and "IsMod" columns.
+# Scroll to the right of the table to find these new columns! Note the use of "mutate" in adding columns in R.
+```{r}
+head(OMSSA_output)
+```
+
+
+# Let's take a look at the OMSSA hits with and without Reverse matches
+```{r}
+EvalplotRev <- ggplot(OMSSA_output, aes(log10(Evalue))) +
+  facet_wrap(.~IsReverse) +
+  geom_histogram(color ="red", bins = 100) +
+  stat_count() +
+  labs(x = "Score in E-value", y = "counts")
+EvalplotRev
+```
+The right subplot (titled 1, which means IsReverse=True) seems to have scores between greater than 1e-2.
+Please note that we used log10 in E-value scores and mentioned that lower E-value the better. (1e-20 is better than 1e-5, for example)
+
+As noted in the previous article, there are better methods to estimate the false discovery rates, and here my goal is to use simple techniques, and at the same time produce efficient results. Since we know the reverse hits fall between 0 and 1e-2, we can use the same logic that some of the forward matches to the databases (i.e., first subplot) might have hits that are not genuine in the bin of [0,1e-2]. We can safely remove this bin for further analyses. Since the end goal of the blog is to introduce OMSSA search results with R tidyverse, an underestimate of true hits (by strict criteria of removing the entire bin) is fine.
+
+```{r}
+filtered_OMSSA_output = filter(OMSSA_output, Evalue < 1e-2)
+head(filtered_OMSSA_output)
+```
+
+Of the filtered results, we can further filter out the oxidation cases:
+
+```{r}
+oxidations_only = filter(filtered_OMSSA_output, IsMod>0)
+head(oxidations_only)
+```
+If you look at the first peptide "SKQEASQmAAmAEK", you can see 2 lowercase M (i.e., -mAAm-) and if you scroll the table to the right and look at the "Mods" column, you can notice "oxidation of M:8 ,oxidation of M:11".
+
+# Similar to the previous Jupyter Notebook, we can plot the distributions of Length and Charge.
+```{r}
+LengthPepplot <- ggplot(filtered_OMSSA_output, aes(LengthPep)) +
+  geom_histogram(color = "red", bins = 100) +
+  stat_count() +
+  labs(x = "Length", y = "counts")
+LengthPepplot
+```
+```{r}
+Chargeplot <- ggplot(filtered_OMSSA_output, aes(Charge)) +
+  geom_histogram(color = "red", bins = 5) +
+  stat_count() +
+  labs(x = "Charge", y = "counts")
+Chargeplot
+```
+# Additionally we can use facet_wrap to look at length distributions for 2+ / 3+ charges separately
+```{r}
+LengthPepChargeplot <- ggplot(filtered_OMSSA_output, aes(LengthPep)) +
+  facet_wrap(.~Charge) +
+  geom_histogram(color = "red", bins = 100) +
+  stat_count() +
+  labs(x = "Length", y = "counts")
+LengthPepChargeplot
+```
+
+Couple of conclusions can be made from the above subplots:
+1. 2+ have more peptide spectral matches, compared to 3+, which is true for most of the datasets.
+2. If not significant using one dataset, it can be seen that 3+ might have few longer peptides than 2+.
+
+The OMSSA results used in this blog are the peptide spectral matches for the scans that OMSSA has a hit. However the end goal of any proteomics experiment is to identify the protein present in the sample. For a detailed understanding of how the protein is inferred, given the peptide spectral matches, you can find many publications.
+
+In the earlier blog, with jupyter notebook, I did the following steps:
+1. grouping the above results by protein (Accession or Defline)
+2. count unique peptides and sort
+3. report the top few abundant protein hits.
+
+Here, I take a more conservative approach of "total peptide spectral matches"" per Defline in OMSSA search
+
+```{r}
+protein_list = filtered_OMSSA_output %>% group_by(Defline) %>% summarise(count = n())
+protein_list_sorted = protein_list[with(protein_list, order(-count)), ]
+head(protein_list_sorted)
+```
+From above, it PMG1_YEAST seem to have a total of 17 peptide spectral matches. In the previous blog, I did report the same protein i.e., PMG1 as abundant, based on count on the unique peptides.

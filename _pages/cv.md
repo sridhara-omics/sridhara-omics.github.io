@@ -1,6 +1,6 @@
 ---
 layout: archive
-title: "CV"
+title: "Viswanadham (Vish) Sridhara"
 permalink: /cv/
 author_profile: true
 redirect_from:
@@ -11,7 +11,6 @@ redirect_from:
 
   
 
-Viswanadham (Vish) Sridhara
 ===========================
 
 CONTACT

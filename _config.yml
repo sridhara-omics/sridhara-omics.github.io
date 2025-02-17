@@ -23,7 +23,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Vish"
-  pronouns         : "he/him"  
+  pronouns         : # "he/him"  
   bio              : "Science and Spirituality"
   location         : "United States"
   employer         : "Old Dominion University"

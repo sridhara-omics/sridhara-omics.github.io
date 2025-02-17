@@ -17,7 +17,7 @@ Viswanadham (Vish) Sridhara
 CONTACT
 -------
 
-firstname.lastname@gmail.com   (301) 857 2931   US Citizen  
+firstname.lastname@gmail.com   US Citizen  
 **Links:** [ORCID](https://orcid.org/0000-0003-0688-6140) | [LinkedIn](https://www.linkedin.com/in/viswanadham-sridhara-308263174) | [BitBucket](https://bitbucket.org/viswam78/) | [Blog](https://sridhara-omics.github.io/) | [Github](https://github.com/sridhara-omics)
 
 PROFILE

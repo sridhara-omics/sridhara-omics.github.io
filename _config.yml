@@ -153,6 +153,7 @@ analytics:
 
 # Reading Files
 include:
+  - figure
   - .htaccess
   - _pages
   - files

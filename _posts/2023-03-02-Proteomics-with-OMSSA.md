@@ -76,7 +76,7 @@ peptide_peaks = peptide_peaks[-1,]
 ggplot(data = peptide_peaks, aes(x=V1, y=V2)) + geom_bar(stat="identity") + labs(x="m/z", y = "Intensity")
 ```
 
-![png](https://github.com/sridhara-omics/sridhara-omics.github.io/blob/master/_posts/figure/peaks.png)
+![png](peaks.png)
 
 Mass-spectrometer generates tons of such .dta files and the goal of the program is to identify all the proteins it sees in the raw data. Since proteins are huge (on average 400 amino acids), these are cut into small pieces called peptides, which are then sent into the mass-spec. Small pieces would allow for better ionization and hence better identification.
 

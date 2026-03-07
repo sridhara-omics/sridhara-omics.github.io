@@ -14,5 +14,6 @@ Links:
 
 About me:  
 • Bioinformatics Data Scientist with 10+ years' experience in designing and building scalable and reproducible 
-bioinformatics pipelines (NGS, mass-spec data) across biotech, consulting and federal organizations (NIH, FDA).   • AI / ML Engineer skilled in training, fine-tuning, and running large language models (LLMs).   
+bioinformatics pipelines (NGS, mass-spec data) across biotech, consulting and federal organizations (NIH, FDA).   
+• AI / ML Engineer skilled in training, fine-tuning, and running large language models (LLMs).   
 • Skilled at working with stakeholders and converting complex scientific requirements into well-defined user stories and acceptance criteria to drive agile delivery.  

@@ -10,12 +10,14 @@ output:
 categories: Genomics
 ---
 
+Here, we take a ESM model with approx 8M parameters, and show how python modules can be used to understand a bit more about the architecture and related stuff of the model.  
 
+Install libraries  
 ```python
 !pip install -q transformers datasets accelerate
 ```
 
-
+Imports  
 ```python
 import torch
 from transformers import AutoTokenizer, AutoModelForMaskedLM
@@ -24,7 +26,7 @@ from transformers import Trainer, TrainingArguments
 from datasets import Dataset
 ```
 
-
+Detect GPU  
 ```python
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print("Using device:", device)
@@ -33,7 +35,7 @@ print("Using device:", device)
     Using device: cpu
 
 
-
+Load ESM2 model, picking a smaller 8M model  
 ```python
 model_name = "facebook/esm2_t6_8M_UR50D"
 
@@ -43,43 +45,7 @@ model = AutoModelForMaskedLM.from_pretrained(model_name)
 model = model.to(device)
 ```
 
-
-    config.json:   0%|          | 0.00/775 [00:00<?, ?B/s]
-
-
-
-    tokenizer_config.json:   0%|          | 0.00/95.0 [00:00<?, ?B/s]
-
-
-
-    vocab.txt:   0%|          | 0.00/93.0 [00:00<?, ?B/s]
-
-
-    Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-
-
-
-    special_tokens_map.json:   0%|          | 0.00/125 [00:00<?, ?B/s]
-
-
-
-    model.safetensors:   0%|          | 0.00/31.4M [00:00<?, ?B/s]
-
-
-
-    Loading weights:   0%|          | 0/112 [00:00<?, ?it/s]
-
-
-    [1mEsmForMaskedLM LOAD REPORT[0m from: facebook/esm2_t6_8M_UR50D
-    Key                         | Status     |  | 
-    ----------------------------+------------+--+-
-    esm.embeddings.position_ids | UNEXPECTED |  | 
-    
-    [3mNotes:
-    - UNEXPECTED[3m	:can be ignored when loading from different task/architecture; not ok if you expect identical arch.[0m
-
-
-
+Printing the model's architecture  
 ```python
 #This prints the full transformer architecture.
 print(model)
@@ -140,7 +106,7 @@ LM head: The final layer predicts the probability of each amino acid at every po
 
 Contact head: An auxiliary module predicts residue–residue contacts, useful for protein structure insights.
 
-
+Printing the key model parameters  
 ```python
 # This shows key architecture parameters
 print(model.config)
@@ -221,7 +187,7 @@ print("Total parameters:", num_params)
     Total parameters: 7512474
 
 
-
+Understanding transformer layers  
 ```python
 # Inspect transformer layers
 for name, module in model.named_modules():
@@ -229,7 +195,7 @@ for name, module in model.named_modules():
         print(name)
 ```
 
-
+Understanding in depth of one of the layers  
 ```python
 print(model.esm.encoder.layer[0])
 ```
@@ -259,7 +225,7 @@ print(model.esm.encoder.layer[0])
     )
 
 
-
+Running inference on a sample sequence  
 ```python
 seq = "MKTAYIAKQRQISFVKSHFSRQLEERLGLIEVQLR"
 

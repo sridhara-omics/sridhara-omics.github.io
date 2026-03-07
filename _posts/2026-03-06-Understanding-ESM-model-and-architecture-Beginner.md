@@ -1,3 +1,16 @@
+---
+title: "Understanding ESM model and architecture"
+date: '2026-03-2026'
+layout: post
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+categories: Genomics
+---
+
+
 ```python
 !pip install -q transformers datasets accelerate
 ```

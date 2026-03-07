@@ -6,9 +6,14 @@ redirect_from:
   - /about/
   - /about.html
 ---
+Links:  
+- [GitHub](https://github.com/sridhara-omics?tab=repositories)  
+- [Website](https://sridhara-omics.github.io/)  
+- [LinkedIn](https://www.linkedin.com/in/viswanadham-sridhara-308263174/)  
+- [Google Scholar](https://scholar.google.com/citations?user=6rYid2YAAAAJ&hl=en)  
 
-I am a bioinformatics scientist with lot of experience in building bioinformatics pipelines for both Next Generation Sequencing based transcriptomics/genomics data and mass-spectrometry based proteomics data. My recent focus was in computational immunology especially analyzing NGS and mass-spec data of antibodies.
-
-My PHD in Electrical and Computer Engineering, with bioinformatics dissertation and my interest in high-performance computing (right from graduate studies) drove me to pursue this career. 
-
-I published more than 20 articles, including Nature Biomedical Engineering, PLoS Computational Biology, with h-index 15, and 1000+ citations. My favorite programming languages are Python and R, and in my free time, I like to play chess, and know a bit more about spirituality!
+About me:
+• Bioinformatics Data Scientist with 10+ years' experience in designing and building scalable and reproducible 
+bioinformatics pipelines (NGS, mass-spec data) across biotech, consulting and federal organizations (NIH, FDA). 
+• AI / ML Engineer skilled in training, fine-tuning, and running large language models (LLMs).
+• Skilled at working with stakeholders and converting complex scientific requirements into well-defined user stories and acceptance criteria to drive agile delivery.

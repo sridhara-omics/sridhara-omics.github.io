@@ -7,8 +7,6 @@ redirect_from:
   - /about.html
 ---
 
-About me:  
-
 • Solutions Architect and Data Professional with 10+ years of experience delivering scalable data, analytics, and AI solutions across biotech, consulting, and federal organizations including NIH and FDA.  
 
 • Experienced in data architecture, data engineering, cloud platforms, and AI/ML applications, with hands-on expertise in Azure, Databricks, AWS, Python, PyTorch, and TensorFlow.  

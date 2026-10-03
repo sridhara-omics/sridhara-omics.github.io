@@ -7,8 +7,9 @@ categories: Cloud
 
 Most of my career has been on the science side of data: pipelines, reproducibility and getting the biology right. Increasingly, the questions I am asked are architectural: where does the data live, who can access it, and what happens when something fails? To work through those questions in the open, I built a small platform on Azure using real antibody repertoire data from the Observed Antibody Space (OAS).
 
-This post covers the build up to the SQL layer: the Azure resources, the dataset, and how a raw `.csv.gz` file becomes curated SQL tables through Azure Data Factory (ADF). Monitoring, the dashboard and infrastructure-as-code will follow in later posts. This is a portfolio project on public research data, not a production or regulated system  
+This post covers the build up to the SQL layer: the Azure resources, the dataset, and how a raw `.csv.gz` file becomes curated SQL tables through Azure Data Factory (ADF). Monitoring, the dashboard and infrastructure-as-code will follow in later posts. This is a portfolio project on public research data, not a production or regulated system.  
 
+  
 
 ```
 OAS data unit (.csv.gz)
@@ -23,12 +24,15 @@ Azure SQL   staging table   <- all text
 Azure SQL   curated table   <- typed, traceable to the pipeline run
 ```
 
+Figure 1:  From raw OAS csv.gz to SQL tables
 ## 1. Resources used
 
-Everything lives in one resource group, which keeps access, cost and cleanup easy to reason about.
+Everything lives in one resource group, which keeps access, cost and cleanup easy to reason about.  
+  
 
-![Resource group with the services used](updated_resources.png)
-*The resource group `rg-oas-data-platform` and its five resources (identifiers masked).*
+![Resource group with the services used](updated_resources.png)  
+  
+Figure 2: *The resource group `rg-oas-data-platform` and its five resources (identifiers masked).*
 
 | Resource | Name | Role in the design |
 |---|---|---|
@@ -71,19 +75,23 @@ A small quality-summary table and a load-audit table (rows staged versus rows in
 
 Three linked services: **Key Vault** and **ADLS Gen2** (both via the managed identity) and **Azure SQL** (password pulled from the Key Vault secret at runtime).
 
-Two datasets describe the movement. The source, `ds_adls_oas_gz_csv`, reads the gzip file directly from the lake with `folder` and `fileName` exposed as dataset parameters. The sink, `ds_sql_stg_oas`, is the staging table.
+Two datasets describe the movement. The source, `ds_adls_oas_gz_csv`, reads the gzip file directly from the lake with `folder` and `fileName` exposed as dataset parameters. The sink, `ds_sql_stg_oas`, is the staging table.  
+  
 
-![Copy activity with the source dataset preview](ADF_studio_copy_data_preview_data_image.png)
-*ADF Studio: the factory resources (one pipeline, two datasets) and the source preview, showing OAS annotation columns such as `cdr1_aa_heavy` and `fwr2_heavy`.*
+![Copy activity with the source dataset preview](ADF_studio_copy_data_preview_data_image.png)  
+  
+Figure 3: *ADF Studio: the factory resources (one pipeline, two datasets) and the source preview, showing OAS annotation columns such as `cdr1_aa_heavy` and `fwr2_heavy`.*
 
 The Preview data pane doubles as the cheapest integration test: before running anything, it confirms the dataset settings parse the file into the real column set.
 
 ### One parameterized pipeline
 
-`pl_oas_load_sql` has two activities in sequence and four parameters (`dataUnit`, `sourceRun`, `rawFolder`, `rawFileName`). Nothing is hard-coded, so loading another OAS data unit is a parameter change, not a new pipeline.
+`pl_oas_load_sql` has two activities in sequence and four parameters (`dataUnit`, `sourceRun`, `rawFolder`, `rawFileName`). Nothing is hard-coded, so loading another OAS data unit is a parameter change, not a new pipeline.  
+  
 
-![Pipeline with Copy data and Stored procedure activities](activities_params_copy.png)
-*`pl_oas_load_sql`: `copy_raw_to_stg` followed by `sp_load_curated`, with the dataset's folder and file name bound to pipeline parameters.*
+![Pipeline with Copy data and Stored procedure activities](activities_params_copy.png)  
+  
+Figure 4: *`pl_oas_load_sql`: `copy_raw_to_stg` followed by `sp_load_curated`, with the dataset's folder and file name bound to pipeline parameters.*
 
 **`copy_raw_to_stg` (Copy data)**
 
@@ -95,10 +103,12 @@ The Preview data pane doubles as the cheapest integration test: before running a
 
 ### Explicit mapping: narrowing a wide file
 
-Rather than mapping every column in the source, the Copy activity maps only 19 fields: sequence IDs, locus, productivity, V/D/J calls, CDR3 and annotation status for both chains.
+Rather than mapping every column in the source, the Copy activity maps only 19 fields: sequence IDs, locus, productivity, V/D/J calls, CDR3 and annotation status for both chains.  
+  
 
-![Copy activity mapping tab](mapping_sample.png)
-*Mapping tab: source columns (string) mapped by name to staging columns (varchar).*
+![Copy activity mapping tab](mapping_sample.png)  
+  
+Figure 5: *Mapping tab: source columns (string) mapped by name to staging columns (varchar).*
 
 This is a deliberate trade-off. Schema inference is faster to set up, but explicit mapping keeps the model small and explainable, and it makes schema drift visible. If the provider renames a column, the copy fails loudly instead of silently loading the wrong data, and because the raw file is immutable, the source is preserved while the mapping is fixed.
 

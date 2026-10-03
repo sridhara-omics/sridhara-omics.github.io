@@ -7,12 +7,13 @@ redirect_from:
   - /about.html
 ---
 
-**Solutions Architect | Data and AI Platforms | Life Sciences | Cloud**
+## Solutions Architect | Data and AI Platforms | Life Sciences | Cloud
 
 I design data and AI solutions that help science-driven and regulated-health organizations turn complex data into dependable,
 decision-ready outcomes. With 10+ years across biotech, consulting and federal organizations, including NIH and FDA, I cover the full
-data lifecycle, from ingestion and quality control to analytics and delivery. My roots in computational sciences let me work with both the
-scientists asking the questions and the engineers building the platforms that answer them.
+data lifecycle, from ingestion and quality control to analytics and delivery.  
+
+My roots in engineering and computational sciences let me work with both the scientists asking the questions and the engineers building the platforms that answer them.  
 
 ## What I do
 

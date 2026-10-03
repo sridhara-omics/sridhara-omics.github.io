@@ -30,7 +30,7 @@ Figure 1:  From raw OAS csv.gz to SQL tables
 Everything lives in one resource group, which keeps access, cost and cleanup easy to reason about.  
   
 
-![Resource group with the services used](updated_resources.png)  
+![Resource group with the services used](/images/updated_resources.png)  
   
 Figure 2: *The resource group `rg-oas-data-platform` and its five resources (identifiers masked).*
 
@@ -78,7 +78,7 @@ Three linked services: **Key Vault** and **ADLS Gen2** (both via the managed ide
 Two datasets describe the movement. The source, `ds_adls_oas_gz_csv`, reads the gzip file directly from the lake with `folder` and `fileName` exposed as dataset parameters. The sink, `ds_sql_stg_oas`, is the staging table.  
   
 
-![Copy activity with the source dataset preview](ADF_studio_copy_data_preview_data_image.png)  
+![Copy activity with the source dataset preview](/images/ADF_studio_copy_data_preview_data_image.png)  
   
 Figure 3: *ADF Studio: the factory resources (one pipeline, two datasets) and the source preview, showing OAS annotation columns such as `cdr1_aa_heavy` and `fwr2_heavy`.*
 
@@ -89,7 +89,7 @@ The Preview data pane doubles as the cheapest integration test: before running a
 `pl_oas_load_sql` has two activities in sequence and four parameters (`dataUnit`, `sourceRun`, `rawFolder`, `rawFileName`). Nothing is hard-coded, so loading another OAS data unit is a parameter change, not a new pipeline.  
   
 
-![Pipeline with Copy data and Stored procedure activities](activities_params_copy.png)  
+![Pipeline with Copy data and Stored procedure activities](/images/activities_params_copy.png)  
   
 Figure 4: *`pl_oas_load_sql`: `copy_raw_to_stg` followed by `sp_load_curated`, with the dataset's folder and file name bound to pipeline parameters.*
 
@@ -106,7 +106,7 @@ Figure 4: *`pl_oas_load_sql`: `copy_raw_to_stg` followed by `sp_load_curated`, w
 Rather than mapping every column in the source, the Copy activity maps only 19 fields: sequence IDs, locus, productivity, V/D/J calls, CDR3 and annotation status for both chains.  
   
 
-![Copy activity mapping tab](mapping_sample.png)  
+![Copy activity mapping tab](/images/mapping_sample.png)  
   
 Figure 5: *Mapping tab: source columns (string) mapped by name to staging columns (varchar).*
 

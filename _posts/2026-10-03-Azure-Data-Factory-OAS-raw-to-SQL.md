@@ -44,7 +44,7 @@ Figure 2: *The resource group `rg-oas-data-platform` and its five resources (ide
 
 Three design choices matter more than the services themselves:
 
-- **Identity over secrets.** The factory's system-assigned managed identity holds *Storage Blob Data Contributor* on the lake and *Key Vault Secrets User* on the vault. Data access does not rely on storage account keys, and the SQL linked service holds only a reference to a Key Vault secret. Managed identity to SQL is the natural next hardening step.
+- **Identity over secrets.** The factory's system-assigned managed identity is granted Storage Blob Data Contributor on the lake through Azure RBAC. For Azure SQL, the linked service uses Microsoft Entra authentication, allowing the factory to connect using its managed identity rather than a SQL username and password. Data access therefore does not rely on storage account keys or stored SQL credentials.
 - **Zones as contracts.** `raw` is immutable and exactly as received, so any downstream logic can be changed and replayed without re-acquiring the data. Curated and analytics layers can be rebuilt from it.
 - **Demo vs. production.** I used public endpoints with a client-IP rule on SQL, which is acceptable for a short-lived demo. In production I would use private endpoints, VNet integration, per-environment identities and co-located resources to limit latency and egress cost.
 

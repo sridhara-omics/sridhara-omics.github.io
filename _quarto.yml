@@ -2,7 +2,7 @@ project:
   type: website
 website:
   title: "Vish Sridhara, PhD"
-  site-url: https://sridhara-omics.github.io/quarto-site
+  site-url: https://sridhara-omics.github.io
   repo-url: https://github.com/sridhara-omics/quarto-site
   favicon: images/favicon.ico        # copy from old-site/images if present
   navbar:

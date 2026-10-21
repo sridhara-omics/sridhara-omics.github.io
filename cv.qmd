@@ -1,0 +1,106 @@
+---
+title: "Curriculum Vitae"
+toc: true
+---
+
+[Download CV (PDF)](Vish_Sridhara_Bioinformatics.pdf){.btn .btn-primary}
+
+Bioinformatics Solutions Architect with 10+ years designing scalable NGS pipelines across **biotech, consulting, and federal organizations**, including NIH and FDA.
+
+- Experienced in **bulk / single-cell RNA-seq, cloud workflows**, and data delivery across **AWS** and **Azure**.
+- Customized nf-core/airrflow for a **3 TB, 2B+ sequence antibody dataset**, generating ESM-2-ready inputs; enhanced AWS/Snakemake analytics across **12,500+ datasets**.
+- Applied AI/ML to life-sciences data using **PyTorch, TensorFlow, and MLflow**.
+- Author of **20+ peer-reviewed publications**, with 1,000+ citations and an h-index of 15.
+
+## Architecture and Technical Capabilities
+
+- **Bioinformatics & Computing**: Nextflow, Snakemake, NGS pipelines, bulk/scRNA-seq, proteomics, HPC
+- **Programming & ML**: Python (pandas, NumPy), R, SQL, Bash, PyTorch, TensorFlow, PySpark, MLflow
+- **Cloud & Data**: AWS EC2/S3, Azure Databricks, Azure Data Factory, Git, CI/CD, regulated data environments
+- **Data Architecture & Engineering**: Data platforms, Scalable pipelines, ETL/ELT, Workflow orchestration
+- **Solution Delivery**: Rally, Requirements translation, Stakeholder collaboration, Technical documentation
+
+## Education
+
+**Postdoctoral fellow, Bioinformatics**, National Institutes of Health
+
+**PhD, Electrical and Computer Engineering**, Old Dominion University  
+*Dissertation*: Molecular dynamics simulations of biomolecules
+
+**MS, Electrical and Computer Engineering**, Old Dominion University  
+*Thesis*: Monte-carlo analysis of GaN based semiconductors
+
+## Work Experience
+
+### Independent Bioinformatics Consultant, Self-employed
+*Jan 2026 – Present*
+
+- Streamline NGS data processing through reproducible workflows using **Python, R, and Nextflow**.
+- Develop cloud **data platform** projects covering data ingestion, transformation, security, and monitoring.
+
+### Senior Bioinformatics Scientist (part-time), Argentys Informatics — *Remote*
+*Jul 2022 – Feb 2025 | Aug 2025 – Dec 2025*
+
+- Designed and deployed a **scalable and reproducible bioinformatics pipeline** (variant of nf-core airrflow) for antibody repertoire analysis using Observed Antibody Space Database (2B+ sequences, 3TB scale).
+- Partnered with domain experts to translate ambiguous research questions into **well-scoped data science deliverables**.
+- Generated **model-ready antibody repertoires** (lineage trees) for ingestion into downstream protein language model based AI workflows (ESM2 and related models).
+
+### Bioinformatics Scientist (contract), Twist Bioscience, SFO, CA
+*Mar 2025 – Jul 2025*
+
+- Improved an **end-to-end zero-shot inference pipeline** to predict antibody fitness and developability, defining evaluation metrics and validation strategies for robust, repeatable variant ranking.
+- Worked extensively with **PyTorch** and **TensorFlow** models for training, evaluation, benchmarking, and deployment-ready inference (MLflow, AWS, Databricks).
+
+### Software Engineer (full-time), Protein Metrics LLC (Dotmatics/Siemens) — Remote
+*Apr 2021 – Jul 2023*
+
+- Developed command-line tools and **automated test suites** to support Byos applications.
+- Supported analytics-driven software releases by executing **QA testing and creating customer-facing release notes** and product documentation in collaboration with engineering and product teams.
+
+### Senior Bioinformatics Scientist (contract), FDA, Silver Spring, MD
+*Jan 2019 – Apr 2021*
+
+- Built an **RNA-seq pipeline for bulk processing** of large-scale genomics datasets using fastp, HISAT2, featureCounts, and DESeq2.
+- Developed a **single-cell RNA-seq pipeline** prototype for analyzing 10X datasets using CellRanger, SAVER, Seurat/Monocle, fastMNN, and R packages.
+- Characterized **immune-driven drug hypersensitivity** using single-cell RNA sequencing technologies.
+
+### Bioinformatics Software Developer (full-time), Booz Allen Hamilton, Rockville, MD
+*Mar 2018 – Nov 2018*
+
+- Developed PAT's **cloud-based genomics pipeline** using AWS S3, EC2, Snakemake, R, and Python to preprocess NCBI GEO data, including RNA-seq alignment, for on-demand analytics.
+- Improved analytics for differential expression, gene ontology and pathway analysis for the PAT tool (**>12,500 datasets** including ~20 RNA-seq projects and ~300 microarray projects).
+
+### Bioinformatics Consultant (part-time) — Remote
+*Apr 2016 – Apr 2018*
+
+- Protein Metrics Inc (Dec 2017 – Mar 2019): Testing Protein Metrics suite of tools.
+- Mass General Hospital (Apr 2016 – Jul 2017): Improved primer design for a proof-of-principle **assay to capture long genomic regions**. Resulted in Nature Biomedical Engineering and other publications.
+
+### Research Eng/Sci. Associate IV (full-time), The University of Texas at Austin
+*Jan 2012 – Apr 2016*
+
+- Worked on **Army Research Office MURI grant** (multi-university incl. BU, Harvard) to build mathematical models to **infer associations in multi-omics data (ML work)**. Resulted in multiple high-impact publications.
+- Taught computational mass-spectrometry course in Big Data Summer School organized by CCBB (Center for Computational Biology and Bioinformatics) every summer – 4 day course.
+
+## Selected Publications
+
+**Data Science, Machine Learning & Life Sciences Data** (3 of 23 publications)
+
+- Tosi, L., Sridhara, V., et al., *Nature Biomedical Engineering*. [Link](#)
+- Brown, C. W., Sridhara, V., et al., *BMC Genomics*. [Link](#)
+- Sridhara, V., et al., *Proteome Science*. [Link](#)
+
+## Honors & Awards
+
+- NIH Postdoctoral Fellowship
+- Outstanding Graduate Researcher Award, Old Dominion University
+- BCET Scholarship, Old Dominion University
+
+## Certifications
+
+| Certification | Date |
+|---|---|
+| AZ-104, AZ-305 (Microsoft), SAA-C03, DEA-C01 (AWS) | In Progress |
+| PyTorch for Deep Learning Professional Certificate (Deeplearning.ai) | Jan '26 |
+| Deep Learning Specialization (Deeplearning.ai) | Dec '24 |
+| Microsoft Azure Databricks for Data Engineering (Coursera) | May '24 |

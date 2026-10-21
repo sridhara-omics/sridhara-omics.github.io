@@ -1,0 +1,168 @@
+---
+title: "Consulting"
+description: "Bioinformatics pipelines, cloud data platforms, and scientific AI for life sciences."
+toc: false
+page-layout: full
+---
+
+<style>
+.consulting-lead {
+  max-width: 900px;
+  font-size: 1.12rem;
+  line-height: 1.7;
+  margin: 0.25rem 0 1.5rem;
+}
+.consulting-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  font-size: 0.78rem;
+  font-weight: 700;
+  opacity: 0.72;
+  margin-bottom: 0.4rem;
+}
+.consulting-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 2rem;
+}
+.consulting-card {
+  border: 1px solid var(--bs-border-color, #d8dee4);
+  border-radius: 0.85rem;
+  padding: 1.35rem 1.4rem 1.2rem;
+  background: var(--bs-body-bg, transparent);
+  min-width: 0;
+}
+.consulting-card h3 {
+  margin-top: 0.25rem;
+  margin-bottom: 0.65rem;
+  font-size: 1.22rem;
+}
+.consulting-card p {
+  line-height: 1.6;
+}
+.consulting-card ul {
+  padding-left: 1.15rem;
+}
+.consulting-card li {
+  margin-bottom: 0.35rem;
+}
+.consulting-number {
+  color: var(--bs-primary, #356b8c);
+  font-weight: 750;
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+}
+.consulting-tags {
+  font-size: 0.88rem;
+  line-height: 1.6;
+  opacity: 0.88;
+  border-top: 1px solid var(--bs-border-color, #d8dee4);
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+}
+.consulting-bg {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-top: 0.9rem;
+}
+.consulting-note {
+  max-width: 900px;
+  line-height: 1.7;
+}
+@media (max-width: 760px) {
+  .consulting-grid { grid-template-columns: 1fr; }
+  .consulting-card { padding: 1.1rem; }
+}
+</style>
+
+<div class="consulting-lead">
+I help biotech and research teams turn sequencing and scientific data into **reproducible pipelines, dependable cloud workflows, and usable data products**. 10+ years across biotech, consulting, NIH, and FDA.
+</div>
+
+<div class="consulting-kicker">Four focused offerings</div>
+
+::: {.consulting-grid}
+
+::: {.consulting-card}
+<div class="consulting-number">01 / WORKFLOWS</div>
+
+### Reproducible bioinformatics pipelines
+
+From a folder of scripts to a workflow your team can rerun, inspect, and hand over.
+
+- **Bulk and single-cell RNA-seq** processing and analysis
+- **Antibody repertoire NGS**, including customized nf-core/airrflow
+- **Nextflow** with containers and Python/R notebooks
+
+**Deliverable:** a documented, runnable pipeline with handover.
+
+<div class="consulting-bg"><strong>Background:</strong> bulk and single-cell RNA-seq pipelines at FDA; an antibody pipeline for 2B+ sequences.</div>
+
+<div class="consulting-tags">Nextflow · Snakemake · Python · R · Containers</div>
+:::
+
+::: {.consulting-card}
+<div class="consulting-number">02 / CLOUD COMPUTE</div>
+
+### Cloud foundations for scientific workloads
+
+Storage and compute sized to your data and budget, on AWS or Azure in your own account.
+
+- **Raw, processed, and results** data organized in cloud object storage
+- Pipeline stages matched to **measured** compute needs, with scaling options
+- Permissions, logging, and cost visibility
+
+**Deliverable:** a pilot deployment or blueprint, with cost/performance trade-offs.
+
+<div class="consulting-bg"><strong>Background:</strong> AWS S3, EC2, and Snakemake genomics pipeline with analytics across 12,500+ datasets.</div>
+
+<div class="consulting-tags">AWS S3 · EC2 · Azure Data Lake Storage · Nextflow</div>
+:::
+
+::: {.consulting-card}
+<div class="consulting-number">03 / DATA PLATFORMS</div>
+
+### Life-sciences data engineering
+
+Scattered files and extracts turned into data your teams can trust.
+
+- Ingestion and transformation into **raw, curated, and analytics-ready** layers, with schema checks
+- **Databricks**, SQL, and Python/R notebooks where they add value
+- **Azure Data Factory** or AWS services for orchestration
+
+**Deliverable:** data-flow design, reusable code, and quality checks.
+
+<div class="consulting-bg"><strong>Background:</strong> model-ready antibody repertoires at scale; cloud data platforms covering ingestion, security, and monitoring.</div>
+
+<div class="consulting-tags">Azure · AWS · Databricks · SQL · Python · R</div>
+:::
+
+::: {.consulting-card}
+<div class="consulting-number">04 / SCIENTIFIC AI</div>
+
+### Antibody and protein AI prototypes
+
+Test whether protein language models can support a research decision.
+
+- **Embeddings** (such as ESM-2) compared with transparent baselines
+- **Fitness and developability** scoring with held-out data and stated limitations
+- Reproducible notebooks or batch workflow
+
+**Deliverable:** a proof of concept, evaluation, and go/no-go recommendation. Outputs support research decisions; they do not replace experimental validation.
+
+<div class="consulting-bg"><strong>Background:</strong> zero-shot antibody fitness and developability pipeline, with evaluation and validation design.</div>
+
+<div class="consulting-tags">Python · PyTorch · MLflow · Protein language models</div>
+:::
+
+:::
+
+<div class="consulting-note">
+
+## How we start
+
+**Discovery call**, then a **focused pilot** on your data, then **build and handover**.
+
+Bring the question and your current workflow, and I will identify the smallest useful solution. [Get in touch](index.qmd#lets-connect).
+</div>

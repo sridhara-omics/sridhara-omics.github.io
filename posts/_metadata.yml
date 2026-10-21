@@ -1,0 +1,4 @@
+# posts/_metadata.yml
+toc: true
+execute:
+  freeze: auto

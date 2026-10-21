@@ -1,0 +1,38 @@
+project:
+  type: website
+website:
+  title: "Vish Sridhara, PhD"
+  site-url: https://sridhara-omics.github.io/quarto-site
+  repo-url: https://github.com/sridhara-omics/quarto-site
+  favicon: images/favicon.ico        # copy from old-site/images if present
+  navbar:
+    title: false          # no name in the top bar; the name sits under your photo
+    left:
+      - href: index.qmd
+        text: About
+      - href: consulting.qmd
+        text: Consulting
+      - href: posts.qmd
+        text: Blog
+      - href: cv.qmd
+        text: CV
+      - href: index.qmd#lets-connect
+        text: Contact
+    right:
+      - icon: github
+        href: https://github.com/sridhara-omics
+      - icon: linkedin
+        href: https://www.linkedin.com/in/viswanadham-sridhara-308263174/
+  page-footer: "(c) 2026 Vish Sridhara. Views on this site are my own and do not
+    represent any employer or agency."
+format:
+  html:
+    theme:
+      light: flatly
+      dark: darkly
+    css: styles.css
+    include-after-body: align-nav.html
+    toc: true
+
+
+

@@ -1,0 +1,20 @@
+<script>
+/* Line the navbar tabs up with the vertical divider between the photo and the text. */
+(function () {
+  function align() {
+    var ul = document.querySelector('#navbarCollapse .navbar-nav.me-auto');
+    if (!ul) return;
+    ul.style.marginLeft = '';
+    var cw = document.documentElement.clientWidth;
+    if (cw < 992) return;                       // collapsed (hamburger) menu: leave alone
+    var W = Math.min(cw - 52, 1134);            // page container width
+    var left = Math.max(26, (cw - 1134) / 2);   // container left edge
+    var divider = left + 0.23 * W + 25;         // x of the divider line
+    var linkPad = -16;                           // measured offset of the link text from the <ul> edge
+    var m = divider - ul.getBoundingClientRect().left - linkPad;
+    if (m > 0) ul.style.marginLeft = m + 'px';
+  }
+  window.addEventListener('load', align);
+  window.addEventListener('resize', align);
+})();
+</script>

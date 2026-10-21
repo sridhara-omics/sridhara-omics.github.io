@@ -1,0 +1,81 @@
+/* css styles */
+
+
+/* Load DM Sans for blog titles */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@500;600;700&display=swap');
+
+/* Quarto blog listing titles */
+.quarto-post .listing-title a,
+.quarto-listing .listing-title a,
+.listing-title a {
+  color: #176b80 !important;
+  font-size: 1.4rem !important;
+  font-weight: 600 !important;
+  line-height: 1.45;
+  text-decoration: none !important;
+}
+
+.quarto-post .listing-title a:hover,
+.quarto-listing .listing-title a:hover,
+.listing-title a:hover {
+  color: #104b5b !important;
+  text-decoration: underline !important;
+  text-underline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+  .quarto-about-trestles {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  /* left column: image + name + links */
+  .quarto-about-trestles .about-entity {
+    flex: 0 0 23%;
+    max-width: 23%;
+    min-width: 0;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  /* keep the image inside its column */
+  .quarto-about-trestles .about-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* right column: the content */
+  .quarto-about-trestles .about-contents {
+    flex: 1 1 77%;
+    min-width: 0;
+  }
+}
+
+
+
+/* ---- Header polish (added) ---- */
+
+/* a little more room between the navbar links */
+.navbar-nav .nav-link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+/* name and role under the profile photo */
+.quarto-about-trestles .about-entity .quarto-title .title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+.quarto-about-trestles .about-entity .quarto-title .subtitle {
+  font-size: 0.88rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #176b80;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}

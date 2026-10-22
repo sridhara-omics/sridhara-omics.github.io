@@ -506,3 +506,5 @@ If you're also interested in the previous work and the R script, here it is:
 https://github.com/clauswilke/Ecoli_FBA_input_prediction/blob/master/Analysis/Scripts/GLMNET.R
 
 So, it does seem that even after few years, the findings from the original work still hold with Python Scikit-learn module!
+
+{{< include /_support.md >}}

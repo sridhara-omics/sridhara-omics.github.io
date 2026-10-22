@@ -2,7 +2,7 @@ project:
   type: website
 website:
   title: "Vish Sridhara, PhD"
-  site-url: https://sridhara-omics.github.io
+  site-url: https://sridhara-omics.github.io/quarto-site
   repo-url: https://github.com/sridhara-omics/quarto-site
   favicon: images/favicon.ico        # copy from old-site/images if present
   navbar:
@@ -23,8 +23,11 @@ website:
         href: https://github.com/sridhara-omics
       - icon: linkedin
         href: https://www.linkedin.com/in/viswanadham-sridhara-308263174/
-  page-footer: "(c) 2026 Vish Sridhara. Views on this site are my own and do not
-    represent any employer or agency."
+  page-footer:
+    left: "© 2026 Vish Sridhara. Views on this site are my own and do not represent any employer or agency."
+    right:
+      - text: "Support my work"
+        href: https://buymeacoffee.com/sridharaomz
 format:
   html:
     theme:

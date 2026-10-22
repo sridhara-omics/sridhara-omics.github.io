@@ -6,14 +6,14 @@
       version="2.0">
 <channel>
 <title>Vish Sridhara, PhD</title>
-<link>https://sridhara-omics.github.io/posts.html</link>
-<atom:link href="https://sridhara-omics.github.io/posts.xml" rel="self" type="application/rss+xml"/>
+<link>https://sridhara-omics.github.io/quarto-site/posts.html</link>
+<atom:link href="https://sridhara-omics.github.io/quarto-site/posts.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.10.19</generator>
 <lastBuildDate>Fri, 02 Oct 2026 18:30:00 GMT</lastBuildDate>
 <item>
   <title>Azure Data Factory for antibody data - from raw OAS csv.gz to SQL tables</title>
-  <link>https://sridhara-omics.github.io/posts/2026-10-03-Azure-Data-Factory-OAS-raw-to-SQL/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2026-10-03-Azure-Data-Factory-OAS-raw-to-SQL/</link>
   <description><![CDATA[ 
 
 
@@ -36,7 +36,7 @@ Azure SQL   curated table   &lt;- typed, traceable to the pipeline run</code></p
 <p>Everything lives in one resource group, which keeps access, cost and cleanup easy to reason about.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/updated_resources.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/updated_resources.png" class="img-fluid figure-img"></p>
 <figcaption>Resource group with the services used</figcaption>
 </figure>
 </div>
@@ -116,7 +116,7 @@ Azure SQL   curated table   &lt;- typed, traceable to the pipeline run</code></p
 <p>Two datasets describe the movement. The source, <code>ds_adls_oas_gz_csv</code>, reads the gzip file directly from the lake with <code>folder</code> and <code>fileName</code> exposed as dataset parameters. The sink, <code>ds_sql_stg_oas</code>, is the staging table.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/ADF_studio_copy_data_preview_data_image.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/ADF_studio_copy_data_preview_data_image.png" class="img-fluid figure-img"></p>
 <figcaption>Copy activity with the source dataset preview</figcaption>
 </figure>
 </div>
@@ -128,7 +128,7 @@ Azure SQL   curated table   &lt;- typed, traceable to the pipeline run</code></p
 <p><code>pl_oas_load_sql</code> has two activities in sequence and four parameters (<code>dataUnit</code>, <code>sourceRun</code>, <code>rawFolder</code>, <code>rawFileName</code>). Nothing is hard-coded, so loading another OAS data unit is a parameter change, not a new pipeline.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/activities_params_copy.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/activities_params_copy.png" class="img-fluid figure-img"></p>
 <figcaption>Pipeline with Copy data and Stored procedure activities</figcaption>
 </figure>
 </div>
@@ -146,7 +146,7 @@ Azure SQL   curated table   &lt;- typed, traceable to the pipeline run</code></p
 <p>Rather than mapping every column in the source, the Copy activity maps only 19 fields: sequence IDs, locus, productivity, V/D/J calls, CDR3 and annotation status for both chains.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/mapping_sample.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/mapping_sample.png" class="img-fluid figure-img"></p>
 <figcaption>Copy activity mapping tab</figcaption>
 </figure>
 </div>
@@ -164,6 +164,16 @@ Azure SQL   curated table   &lt;- typed, traceable to the pipeline run</code></p
 <li><strong>Lifecycle and cost:</strong> publishing a static output and the supporting evidence so the work remains available after the temporary Azure environment is retired.</li>
 </ul>
 <p><em>Data: Observed Antibody Space (Oxford Protein Informatics Group), Mor et al., 2021, CC-BY 4.0. See the OAS website for the full citation. This is a personal project and is unrelated to any employer or agency system.</em></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 </section>
@@ -171,12 +181,12 @@ Azure SQL   curated table   &lt;- typed, traceable to the pipeline run</code></p
  ]]></description>
   <category>Data</category>
   <category>Azure</category>
-  <guid>https://sridhara-omics.github.io/posts/2026-10-03-Azure-Data-Factory-OAS-raw-to-SQL/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2026-10-03-Azure-Data-Factory-OAS-raw-to-SQL/</guid>
   <pubDate>Fri, 02 Oct 2026 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Understanding ESM model and architecture</title>
-  <link>https://sridhara-omics.github.io/posts/2026-03-06-Understanding-ESM-model-and-architecture-Beginner/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2026-03-06-Understanding-ESM-model-and-architecture-Beginner/</link>
   <description><![CDATA[ 
 
 
@@ -468,6 +478,16 @@ background-color: null;
 font-style: inherit;">print</span>(outputs.logits.shape)</span></code></pre></div></div>
 <pre><code>torch.Size([1, 37, 33])</code></pre>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code></pre></div></div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
@@ -475,12 +495,12 @@ font-style: inherit;">print</span>(outputs.logits.shape)</span></code></pre></di
   <category>Genomics</category>
   <category>AI</category>
   <category>LLMs</category>
-  <guid>https://sridhara-omics.github.io/posts/2026-03-06-Understanding-ESM-model-and-architecture-Beginner/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2026-03-06-Understanding-ESM-model-and-architecture-Beginner/</guid>
   <pubDate>Thu, 05 Mar 2026 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Infectious Disease Related Drugs - Exploratory analyses</title>
-  <link>https://sridhara-omics.github.io/posts/2025-12-11-Infectious-Disease-Related-Drugs-Exploratory-Analyses/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2025-12-11-Infectious-Disease-Related-Drugs-Exploratory-Analyses/</link>
   <description><![CDATA[ 
 
 
@@ -919,18 +939,28 @@ font-style: inherit;">6</span>)]</span></code></pre></div></div>
 ## 4828                                                                                                                        genital warts
 ## 5028                                                                                                                              malaria
 ## 5130                                                                                                                          hepatitis C</code></pre>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Genomics</category>
   <category>Clinical trials</category>
-  <guid>https://sridhara-omics.github.io/posts/2025-12-11-Infectious-Disease-Related-Drugs-Exploratory-Analyses/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2025-12-11-Infectious-Disease-Related-Drugs-Exploratory-Analyses/</guid>
   <pubDate>Wed, 10 Dec 2025 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>HOW-TO setup Google Colab to run Monocle3 (single cell RNA-seq)</title>
-  <link>https://sridhara-omics.github.io/posts/2025-09-08-HOW-TO-setup-google-colab-to-run-monocle3/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2025-09-08-HOW-TO-setup-google-colab-to-run-monocle3/</link>
   <description><![CDATA[ 
 
 
@@ -1103,18 +1133,28 @@ background-color: null;
 font-style: inherit;">load</span>(<span class="st" style="color: #20794D;
 background-color: null;
 font-style: inherit;">"your_file.RData"</span>)</span></code></pre></div></div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Genomics</category>
   <category>Single Cell</category>
-  <guid>https://sridhara-omics.github.io/posts/2025-09-08-HOW-TO-setup-google-colab-to-run-monocle3/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2025-09-08-HOW-TO-setup-google-colab-to-run-monocle3/</guid>
   <pubDate>Sun, 07 Sep 2025 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Denoising Single Cell Data With Autoencoders (Neural Networks)</title>
-  <link>https://sridhara-omics.github.io/posts/2025-06-17-Denoising-Single-Cell-Data-With-Autoencoders/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2025-06-17-Denoising-Single-Cell-Data-With-Autoencoders/</link>
   <description><![CDATA[ 
 
 
@@ -6296,7 +6336,7 @@ background-color: null;
 font-style: inherit;">DarkTheme</span>()</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/UMAP_combined.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/UMAP_combined.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -6457,18 +6497,28 @@ Mpo        0 -3.662044 0.004 0.624         0
 Elane      0 -7.014000 0.000 0.660         0
 Retnlg     0 -7.658398 0.000 0.891         0</code></pre>
 <p>From this blog, it certainly seems with proper denoising algorithm, the quality of the downprocessing of the single cell data can be significantly improved!</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Genomics</category>
   <category>Deep Learning</category>
-  <guid>https://sridhara-omics.github.io/posts/2025-06-17-Denoising-Single-Cell-Data-With-Autoencoders/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2025-06-17-Denoising-Single-Cell-Data-With-Autoencoders/</guid>
   <pubDate>Mon, 16 Jun 2025 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Single cell genomics - Seurat marker analyses</title>
-  <link>https://sridhara-omics.github.io/posts/2025-03-05-Single-cell-genomics/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2025-03-05-Single-cell-genomics/</link>
   <description><![CDATA[ 
 
 
@@ -6821,7 +6871,7 @@ background-color: null;
 font-style: inherit;">NoLegend</span>()</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/PCA.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/PCA.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -6840,7 +6890,7 @@ background-color: null;
 font-style: inherit;">NoLegend</span>()</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/TSNE.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/TSNE.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -6859,7 +6909,7 @@ background-color: null;
 font-style: inherit;">NoLegend</span>()</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/UMAP.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/UMAP.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -6879,7 +6929,7 @@ background-color: null;
 font-style: inherit;">DarkTheme</span>()</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/Dimplot.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/Dimplot.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -6937,7 +6987,7 @@ background-color: null;
 font-style: inherit;">25</span>)</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/Hist.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/Hist.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -7028,18 +7078,28 @@ font-style: inherit;">2</span>, ]</span>
 ## Igha      8.891865e-46 -2.339435 0.004 0.305  3.543853e-41</code></pre>
 <p>When you compare 2 batches, it seems that the Igha is up-regulated in 2nd sample i.e., BoneMarrow_4 batch. Likewise you can make other comparisons to identify the differentially expressed genes (i.e., markers) between different clusters! This is a brief analyses on how to use Seurat R packages to find the markers between 2 samples/clusters/cells of interest.</p>
 <p>In my next blog, I will use SingleR, an R package to subtype different cells / clusters.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Single Cell</category>
   <category>Visualization</category>
-  <guid>https://sridhara-omics.github.io/posts/2025-03-05-Single-cell-genomics/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2025-03-05-Single-cell-genomics/</guid>
   <pubDate>Tue, 04 Mar 2025 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>DOCKERize OMSSA with UBUNTU Cosmic</title>
-  <link>https://sridhara-omics.github.io/posts/2024-12-25-Dockerize-OMSSA-with-Ubuntu-Cosmic/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2024-12-25-Dockerize-OMSSA-with-Ubuntu-Cosmic/</link>
   <description><![CDATA[ 
 
 
@@ -7091,7 +7151,7 @@ docker build .</code></pre>
 <p>This is how the successful build looks like:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/docker_output_snippet.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/docker_output_snippet.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -7113,18 +7173,28 @@ docker run -it name_of_your_choice_for_build</code></pre>
 <p>This will result in output csv file (output_run.csv) with peptide spectral matches. You can go through my previous blogs to know more about how to analyze the OMSSA search results i.e., peptide spectral matches. That’s it for now!</p>
 <p>For installing docker, refer to: https://hub.docker.com/</p>
 <p>Additional resources: <a href="https://github.com/galaxyproteomics/docker-galaxyp">Galaxy Proteomics</a></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Proteomics</category>
   <category>Docker</category>
-  <guid>https://sridhara-omics.github.io/posts/2024-12-25-Dockerize-OMSSA-with-Ubuntu-Cosmic/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2024-12-25-Dockerize-OMSSA-with-Ubuntu-Cosmic/</guid>
   <pubDate>Tue, 24 Dec 2024 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>import pdb; pdb.set_trace() </title>
-  <link>https://sridhara-omics.github.io/posts/2024-09-18-import-pdb-pdb-dot-set-trace-EOB/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2024-09-18-import-pdb-pdb-dot-set-trace-EOB/</link>
   <description><![CDATA[ 
 
 
@@ -7145,17 +7215,27 @@ font-style: inherit;">import</span> pdb<span class="op" style="color: #5E5E5E;
 background-color: null;
 font-style: inherit;">;</span> pdb.set_trace()</span></code></pre></div></div>
 <p>More info here: <a href="https://docs.python.org/2/library/pdb.html">https://docs.python.org/2/library/pdb.html</a></p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Proteomics</category>
-  <guid>https://sridhara-omics.github.io/posts/2024-09-18-import-pdb-pdb-dot-set-trace-EOB/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2024-09-18-import-pdb-pdb-dot-set-trace-EOB/</guid>
   <pubDate>Tue, 17 Sep 2024 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Universe of P[r]oteomics with Tidyverse</title>
-  <link>https://sridhara-omics.github.io/posts/2024-06-15-universe-of-proteomics-with-tidyverse/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2024-06-15-universe-of-proteomics-with-tidyverse/</link>
   <description><![CDATA[ 
 
 
@@ -7295,7 +7375,7 @@ font-style: inherit;">"counts"</span>)</span>
 <span id="cb4-6">Evalplot</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/unnamed-chunk-3-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/unnamed-chunk-3-1.png" class="img-fluid figure-img"></p>
 <figcaption>plot of chunk unnamed-chunk-3</figcaption>
 </figure>
 </div>
@@ -7432,7 +7512,7 @@ font-style: inherit;">"counts"</span>)</span>
 <span id="cb8-6">EvalplotRev</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/unnamed-chunk-6-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/unnamed-chunk-6-1.png" class="img-fluid figure-img"></p>
 <figcaption>plot of chunk unnamed-chunk-6</figcaption>
 </figure>
 </div>
@@ -7570,7 +7650,7 @@ font-style: inherit;">"counts"</span>)</span>
 <span id="cb13-5">LengthPepplot</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/unnamed-chunk-9-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/unnamed-chunk-9-1.png" class="img-fluid figure-img"></p>
 <figcaption>plot of chunk unnamed-chunk-9</figcaption>
 </figure>
 </div>
@@ -7616,7 +7696,7 @@ font-style: inherit;">"counts"</span>)</span>
 <span id="cb14-5">Chargeplot</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/unnamed-chunk-10-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/unnamed-chunk-10-1.png" class="img-fluid figure-img"></p>
 <figcaption>plot of chunk unnamed-chunk-10</figcaption>
 </figure>
 </div>
@@ -7669,7 +7749,7 @@ font-style: inherit;">"counts"</span>)</span>
 <span id="cb15-6">LengthPepChargeplot</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/unnamed-chunk-11-1.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/unnamed-chunk-11-1.png" class="img-fluid figure-img"></p>
 <figcaption>plot of chunk unnamed-chunk-11</figcaption>
 </figure>
 </div>
@@ -7715,17 +7795,27 @@ font-style: inherit;">head</span>(protein_list_sorted)</span></code></pre></div>
 ## 6 sp|P17076|RL8A_YEAST 60S ribosomal protein L8-A OS=Saccharomyces c~     5</code></pre>
 <p>From above, it PMG1_YEAST seem to have a total of 17 peptide spectral matches. In the previous blog, I did report the same protein i.e., PMG1 as abundant, based on count on the unique peptides.</p>
 <p><a href="https://github.com/Sivome/Sivome.github.io/tree/master/_posts/Universe-of-proteomics-with-tidyverse.Rmd">Here is the direct access to the R Markdown used for this blog</a>.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Proteomics</category>
-  <guid>https://sridhara-omics.github.io/posts/2024-06-15-universe-of-proteomics-with-tidyverse/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2024-06-15-universe-of-proteomics-with-tidyverse/</guid>
   <pubDate>Fri, 14 Jun 2024 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Reporting Proteomics Results with Jupyter Notebook</title>
-  <link>https://sridhara-omics.github.io/posts/2024-03-11-Reporting_Proteomics_Results/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2024-03-11-Reporting_Proteomics_Results/</link>
   <description><![CDATA[ 
 
 
@@ -8185,7 +8275,7 @@ font-style: inherit;">'Score distribution'</span>)</span>
 <span id="cb9-9">fig.tight_layout</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/all_hits_score.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/all_hits_score.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -8984,7 +9074,7 @@ font-style: inherit;">'Reverse hits distribution'</span>)</span>
 <span id="cb16-10">fig.tight_layout</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/reverse_hits_score.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/reverse_hits_score.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -9058,7 +9148,7 @@ font-style: inherit;">'Target hits distribution'</span>)</span>
 <span id="cb18-10">fig.tight_layout</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/filtered_hits_score.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/filtered_hits_score.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -9472,7 +9562,7 @@ font-style: inherit;">"Difference of observed and expected peptide mass"</span>)
 <span id="cb20-9">fig.tight_layout</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/deltaPPM.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/deltaPPM.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -9511,7 +9601,7 @@ font-style: inherit;">'Counts'</span>)</span>
 <span id="cb21-8">fig.tight_layout</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/Length.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/Length.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -9540,7 +9630,7 @@ font-style: inherit;">'Counts'</span>)</span>
 <span id="cb22-7">fig.tight_layout</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/posts/2024-03-11-Reporting_Proteomics_Results/Charge.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/posts/2024-03-11-Reporting_Proteomics_Results/Charge.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -9569,17 +9659,27 @@ Name:  Peptide, dtype: int64</code></pre>
 <p>I only showed first few abundant protein hits. Basically each line in the table represents a protein, followed by the peptides that are mapped to this protein, along with the peptide counts. For example, for the PMG1_YEAST, The peptides mapped were HGQSEWNEK (8 matches), AGELLKEK (7 matches). So, the abundant proteins in the mgf file are PMG1, and other ribosomal proteins!</p>
 <p>I hope this primer on reporting proteomics results is helpful 1. to understand which sections of proteomics results are useful to visualize, 2. to learn how to use jupyter notebook to make this visualization simpler and finally 3. to identify the abundant proteins present in the sample.</p>
 <p>The Jupyter notebook used to analyze the OMSSA data, publish figures and generate tables is also provided <a href="https://github.com/Sivome/Sivome.github.io/blob/master/jupyter_notebooks/Reporting_Proteomics_Results.ipynb">here</a> for interested users.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Proteomics</category>
-  <guid>https://sridhara-omics.github.io/posts/2024-03-11-Reporting_Proteomics_Results/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2024-03-11-Reporting_Proteomics_Results/</guid>
   <pubDate>Sun, 10 Mar 2024 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>In-silico fluxes and statistical regularization</title>
-  <link>https://sridhara-omics.github.io/posts/2023-11-05-Metabolic-Fluxes-and-Regression-with-Regularization/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2023-11-05-Metabolic-Fluxes-and-Regression-with-Regularization/</link>
   <description><![CDATA[ 
 
 
@@ -10684,23 +10784,33 @@ font-style: inherit;">'y-test'</span>)</span>
 <span id="cb15-7">plt.show()</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/heatmap.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/heatmap.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
 <p>If you’re also interested in the previous work and the R script, here it is: https://github.com/clauswilke/Ecoli_FBA_input_prediction/blob/master/Analysis/Scripts/GLMNET.R</p>
 <p>So, it does seem that even after few years, the findings from the original work still hold with Python Scikit-learn module!</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Statistics</category>
-  <guid>https://sridhara-omics.github.io/posts/2023-11-05-Metabolic-Fluxes-and-Regression-with-Regularization/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2023-11-05-Metabolic-Fluxes-and-Regression-with-Regularization/</guid>
   <pubDate>Sat, 04 Nov 2023 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Proteomics with OMSSA</title>
-  <link>https://sridhara-omics.github.io/posts/2023-08-02-Proteomics-with-OMSSA/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2023-08-02-Proteomics-with-OMSSA/</link>
   <description><![CDATA[ 
 
 
@@ -10828,7 +10938,7 @@ background-color: null;
 font-style: inherit;">"Intensity"</span>)</span></code></pre></div></div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://sridhara-omics.github.io/images/peaks.png" class="img-fluid figure-img"></p>
+<p><img src="https://sridhara-omics.github.io/quarto-site/images/peaks.png" class="img-fluid figure-img"></p>
 <figcaption>png</figcaption>
 </figure>
 </div>
@@ -10843,17 +10953,27 @@ Different variants of the fasta file, such as CA2.fasta.p* are the files created
 <p>Since this is a very simple input, the output if everything goes right looks something like this. Truncated output from above run MSHHWGYGK | 2.61923815969567e-008 | 1101.493 | sp|P00918.2|CAH2_HUMAN RecName:</p>
 <p>This means that the peak list, matched to “MSHHWGYGK” (matches the file name as well, so highly likely it is correct!). Very low E-value of 2.6e-8 also confirms the answer is correct! The peptide has mass of 1101.5 (dalton), which seem to match well to the first column of the .dta file.</p>
 <p>From the fasta file, the program matches the peptide to CAH2_HUMAN RecName. Probably soon, I will dive into some large-scale data and also start looking at other software.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Proteomics</category>
-  <guid>https://sridhara-omics.github.io/posts/2023-08-02-Proteomics-with-OMSSA/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2023-08-02-Proteomics-with-OMSSA/</guid>
   <pubDate>Tue, 01 Aug 2023 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Genomics with Snakemake</title>
-  <link>https://sridhara-omics.github.io/posts/2023-05-26-Genomics-with-Snakemake/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2023-05-26-Genomics-with-Snakemake/</link>
   <description><![CDATA[ 
 
 
@@ -11292,17 +11412,27 @@ font-style: inherit;">input</span>: SRR5468393.bed</span>
 background-color: null;
 font-style: inherit;">0</span></span></code></pre></div></div>
 <p>You can see that the job finished successfully and the output files formed are sam format, bam format, sorted bam and finally a sample bed file that converts BAM format to BED format.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Genomics</category>
-  <guid>https://sridhara-omics.github.io/posts/2023-05-26-Genomics-with-Snakemake/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2023-05-26-Genomics-with-Snakemake/</guid>
   <pubDate>Thu, 25 May 2023 18:30:00 GMT</pubDate>
 </item>
 <item>
   <title>Flux Balance Analyses with COBRApy</title>
-  <link>https://sridhara-omics.github.io/posts/2023-02-23-Flux-Balance-Analyses-with-COBRApy/</link>
+  <link>https://sridhara-omics.github.io/quarto-site/posts/2023-02-23-Flux-Balance-Analyses-with-COBRApy/</link>
   <description><![CDATA[ 
 
 
@@ -12322,12 +12452,22 @@ CONSUMING REACTIONS -- ATP C10H12N5O13P3 (atp_c)
 8%     8     PFK       atp_c + f6p_c --&gt; adp_c + fdp_c + h_c</code></pre>
 <p>Feel free to contact me if you need more information or if you want to set-up such a study! I hope this is helpful.</p>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code></pre></div></div>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
  ]]></description>
   <category>Systems Biology</category>
-  <guid>https://sridhara-omics.github.io/posts/2023-02-23-Flux-Balance-Analyses-with-COBRApy/</guid>
+  <guid>https://sridhara-omics.github.io/quarto-site/posts/2023-02-23-Flux-Balance-Analyses-with-COBRApy/</guid>
   <pubDate>Wed, 22 Feb 2023 18:30:00 GMT</pubDate>
 </item>
 </channel>

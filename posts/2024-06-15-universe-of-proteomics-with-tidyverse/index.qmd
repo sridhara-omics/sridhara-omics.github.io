@@ -308,3 +308,5 @@ head(protein_list_sorted)
 From above, it PMG1_YEAST seem to have a total of 17 peptide spectral matches. In the previous blog, I did report the same protein i.e., PMG1 as abundant, based on count on the unique peptides.
 
 [Here is the direct access to the R Markdown used for this blog](https://github.com/Sivome/Sivome.github.io/tree/master/_posts/Universe-of-proteomics-with-tidyverse.Rmd).
+
+{{< include /_support.md >}}

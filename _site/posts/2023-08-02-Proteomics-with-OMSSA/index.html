@@ -440,6 +440,16 @@ Different variants of the fasta file, such as CA2.fasta.p* are the files created
 <p>Since this is a very simple input, the output if everything goes right looks something like this. Truncated output from above run MSHHWGYGK | 2.61923815969567e-008 | 1101.493 | sp|P00918.2|CAH2_HUMAN RecName:</p>
 <p>This means that the peak list, matched to “MSHHWGYGK” (matches the file name as well, so highly likely it is correct!). Very low E-value of 2.6e-8 also confirms the answer is correct! The peptide has mass of 1101.5 (dalton), which seem to match well to the first column of the .dta file.</p>
 <p>From the fasta file, the program matches the peptide to CAH2_HUMAN RecName. Probably soon, I will dive into some large-scale data and also start looking at other software.</p>
+<div class="callout callout-style-simple callout-note no-icon">
+<div class="callout-body d-flex">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-body-container">
+<p><strong>Found this useful?</strong> If this tutorial helped, you can <a href="https://buymeacoffee.com/sridharaomz">buy me a coffee ↗</a> to support future technical articles. For project work, see <a href="../../consulting.html">Consulting</a>.</p>
+</div>
+</div>
+</div>
 
 
 
@@ -570,7 +580,7 @@ Different variants of the fasta file, such as CA2.fasta.p* are the files created
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sridhara-omics\.github\.io");
+        var filterRegex = new RegExp("https:\/\/sridhara-omics\.github\.io\/quarto-site");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -901,15 +911,19 @@ Different variants of the fasta file, such as CA2.fasta.p* are the files created
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-      &nbsp;
-    </div>   
+<p>© 2026 Vish Sridhara. Views on this site are my own and do not represent any employer or agency.</p>
+</div>   
     <div class="nav-footer-center">
-<ol start="3" type="a">
-<li>2026 Vish Sridhara. Views on this site are my own and do not represent any employer or agency.</li>
-</ol>
-</div>
-    <div class="nav-footer-right">
       &nbsp;
+    </div>
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://buymeacoffee.com/sridharaomz">
+<p>Support my work</p>
+</a>
+  </li>  
+</ul>
     </div>
   </div>
 </footer>

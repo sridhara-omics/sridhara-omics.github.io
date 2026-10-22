@@ -117,3 +117,5 @@ For installing docker, refer to: https://hub.docker.com/
 
 Additional resources:
 [Galaxy Proteomics](https://github.com/galaxyproteomics/docker-galaxyp)
+
+{{< include /_support.md >}}

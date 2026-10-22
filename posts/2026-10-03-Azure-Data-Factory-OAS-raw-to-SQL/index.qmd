@@ -124,3 +124,5 @@ The next posts move from building to operating the platform on Azure:
 - **Lifecycle and cost:** publishing a static output and the supporting evidence so the work remains available after the temporary Azure environment is retired.
 
 *Data: Observed Antibody Space (Oxford Protein Informatics Group), Mor et al., 2021, CC-BY 4.0. See the OAS website for the full citation. This is a personal project and is unrelated to any employer or agency system.*
+
+{{< include /_support.md >}}

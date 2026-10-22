@@ -285,3 +285,5 @@ significant_markers_batches
 When you compare 2 batches, it seems that the Igha is up-regulated in 2nd sample i.e., BoneMarrow_4 batch. Likewise you can make other comparisons to identify the differentially expressed genes (i.e., markers) between different clusters!  This is a brief analyses on how to use Seurat R packages to find the markers between 2 samples/clusters/cells of interest.  
 
 In my next blog, I will use SingleR, an R package to subtype different cells / clusters.
+
+{{< include /_support.md >}}

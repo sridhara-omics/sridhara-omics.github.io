@@ -168,3 +168,5 @@ localrule all:
 ```
 
 You can see that the job finished successfully and the output files formed are sam format, bam format, sorted bam and finally a sample bed file that converts BAM format to BED format.
+
+{{< include /_support.md >}}

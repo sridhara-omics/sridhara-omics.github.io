@@ -1,0 +1,21 @@
+[
+  {
+    "listing": "/posts.html",
+    "items": [
+      "/posts/2026-10-03-Azure-Data-Factory-OAS-raw-to-SQL/index.html",
+      "/posts/2026-03-06-Understanding-ESM-model-and-architecture-Beginner/index.html",
+      "/posts/2025-12-11-Infectious-Disease-Related-Drugs-Exploratory-Analyses/index.html",
+      "/posts/2025-09-08-HOW-TO-setup-google-colab-to-run-monocle3/index.html",
+      "/posts/2025-06-17-Denoising-Single-Cell-Data-With-Autoencoders/index.html",
+      "/posts/2025-03-05-Single-cell-genomics/index.html",
+      "/posts/2024-12-25-Dockerize-OMSSA-with-Ubuntu-Cosmic/index.html",
+      "/posts/2024-09-18-import-pdb-pdb-dot-set-trace-EOB/index.html",
+      "/posts/2024-06-15-universe-of-proteomics-with-tidyverse/index.html",
+      "/posts/2024-03-11-Reporting_Proteomics_Results/index.html",
+      "/posts/2023-11-05-Metabolic-Fluxes-and-Regression-with-Regularization/index.html",
+      "/posts/2023-08-02-Proteomics-with-OMSSA/index.html",
+      "/posts/2023-05-26-Genomics-with-Snakemake/index.html",
+      "/posts/2023-02-23-Flux-Balance-Analyses-with-COBRApy/index.html"
+    ]
+  }
+]

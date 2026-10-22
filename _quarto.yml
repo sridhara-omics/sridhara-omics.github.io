@@ -2,8 +2,8 @@ project:
   type: website
 website:
   title: "Vish Sridhara, PhD"
-  site-url: https://sridhara-omics.github.io/quarto-site
-  repo-url: https://github.com/sridhara-omics/quarto-site
+  site-url: https://sridhara-omics.github.io/
+  repo-url: https://github.com/sridhara-omics/
   favicon: images/favicon.ico        # copy from old-site/images if present
   navbar:
     title: false          # no name in the top bar; the name sits under your photo

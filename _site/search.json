@@ -60,35 +60,35 @@
     "href": "cv.html",
     "title": "Curriculum Vitae",
     "section": "",
-    "text": "Download CV (PDF)\nBioinformatics Solutions Architect with 10+ years designing scalable NGS pipelines across biotech, consulting, and federal organizations, including NIH and FDA."
+    "text": "Viswanadham (Vish) Sridhara, PhD\nDownload CV (PDF)"
   },
   {
     "objectID": "cv.html#architecture-and-technical-capabilities",
     "href": "cv.html#architecture-and-technical-capabilities",
     "title": "Curriculum Vitae",
     "section": "Architecture and Technical Capabilities",
-    "text": "Architecture and Technical Capabilities\n\nBioinformatics & Computing: Nextflow, Snakemake, NGS pipelines, bulk/scRNA-seq, proteomics, HPC\nProgramming & ML: Python (pandas, NumPy), R, SQL, Bash, PyTorch, TensorFlow, PySpark, MLflow\nCloud & Data: AWS EC2/S3, Azure Databricks, Azure Data Factory, Git, CI/CD, regulated data environments\nData Architecture & Engineering: Data platforms, Scalable pipelines, ETL/ELT, Workflow orchestration\nSolution Delivery: Rally, Requirements translation, Stakeholder collaboration, Technical documentation"
+    "text": "Architecture and Technical Capabilities\n\n\nBioinformatics & Computing\n\n\nNextflow, Snakemake, NGS pipelines, bulk/scRNA-seq, proteomics, HPC\n\n\nProgramming & ML\n\n\nPython (pandas, NumPy), R, SQL, Bash, PyTorch, TensorFlow, PySpark, MLflow\n\n\nCloud & Data\n\n\nAWS EC2/S3, Azure Databricks, Azure Data Factory, Git, CI/CD, regulated data environments\n\n\nData Architecture & Engineering\n\n\nData platforms, Scalable pipelines, ETL/ELT, Workflow orchestration\n\n\nSolution Delivery\n\n\nRally, Requirements translation, Stakeholder collaboration, Technical documentation"
   },
   {
     "objectID": "cv.html#education",
     "href": "cv.html#education",
     "title": "Curriculum Vitae",
     "section": "Education",
-    "text": "Education\nPostdoctoral fellow, Bioinformatics, National Institutes of Health\nPhD, Electrical and Computer Engineering, Old Dominion University\nDissertation: Molecular dynamics simulations of biomolecules\nMS, Electrical and Computer Engineering, Old Dominion University\nThesis: Monte-carlo analysis of GaN based semiconductors"
+    "text": "Education\n\nPostdoctoral fellow, Bioinformatics\n\nNational Institutes of Health\n\n\n\nPhD, Electrical and Computer Engineering\n\nOld Dominion University\n\nDissertation: Molecular dynamics simulations of biomolecules\n\n\nMS, Electrical and Computer Engineering\n\nOld Dominion University\n\nThesis: Monte-carlo analysis of GaN based semiconductors"
   },
   {
     "objectID": "cv.html#work-experience",
     "href": "cv.html#work-experience",
     "title": "Curriculum Vitae",
     "section": "Work Experience",
-    "text": "Work Experience\n\nIndependent Bioinformatics Consultant, Self-employed\nJan 2026 – Present\n\nStreamline NGS data processing through reproducible workflows using Python, R, and Nextflow.\nDevelop cloud data platform projects covering data ingestion, transformation, security, and monitoring.\n\n\n\nSenior Bioinformatics Scientist (part-time), Argentys Informatics — Remote\nJul 2022 – Feb 2025 | Aug 2025 – Dec 2025\n\nDesigned and deployed a scalable and reproducible bioinformatics pipeline (variant of nf-core airrflow) for antibody repertoire analysis using Observed Antibody Space Database (2B+ sequences, 3TB scale).\nPartnered with domain experts to translate ambiguous research questions into well-scoped data science deliverables.\nGenerated model-ready antibody repertoires (lineage trees) for ingestion into downstream protein language model based AI workflows (ESM2 and related models).\n\n\n\nBioinformatics Scientist (contract), Twist Bioscience, SFO, CA\nMar 2025 – Jul 2025\n\nImproved an end-to-end zero-shot inference pipeline to predict antibody fitness and developability, defining evaluation metrics and validation strategies for robust, repeatable variant ranking.\nWorked extensively with PyTorch and TensorFlow models for training, evaluation, benchmarking, and deployment-ready inference (MLflow, AWS, Databricks).\n\n\n\nSoftware Engineer (full-time), Protein Metrics LLC (Dotmatics/Siemens) — Remote\nApr 2021 – Jul 2023\n\nDeveloped command-line tools and automated test suites to support Byos applications.\nSupported analytics-driven software releases by executing QA testing and creating customer-facing release notes and product documentation in collaboration with engineering and product teams.\n\n\n\nSenior Bioinformatics Scientist (contract), FDA, Silver Spring, MD\nJan 2019 – Apr 2021\n\nBuilt an RNA-seq pipeline for bulk processing of large-scale genomics datasets using fastp, HISAT2, featureCounts, and DESeq2.\nDeveloped a single-cell RNA-seq pipeline prototype for analyzing 10X datasets using CellRanger, SAVER, Seurat/Monocle, fastMNN, and R packages.\nCharacterized immune-driven drug hypersensitivity using single-cell RNA sequencing technologies.\n\n\n\nBioinformatics Software Developer (full-time), Booz Allen Hamilton, Rockville, MD\nMar 2018 – Nov 2018\n\nDeveloped PAT’s cloud-based genomics pipeline using AWS S3, EC2, Snakemake, R, and Python to preprocess NCBI GEO data, including RNA-seq alignment, for on-demand analytics.\nImproved analytics for differential expression, gene ontology and pathway analysis for the PAT tool (&gt;12,500 datasets including ~20 RNA-seq projects and ~300 microarray projects).\n\n\n\nBioinformatics Consultant (part-time) — Remote\nApr 2016 – Apr 2018\n\nProtein Metrics Inc (Dec 2017 – Mar 2019): Testing Protein Metrics suite of tools.\nMass General Hospital (Apr 2016 – Jul 2017): Improved primer design for a proof-of-principle assay to capture long genomic regions. Resulted in Nature Biomedical Engineering and other publications.\n\n\n\nResearch Eng/Sci. Associate IV (full-time), The University of Texas at Austin\nJan 2012 – Apr 2016\n\nWorked on Army Research Office MURI grant (multi-university incl. BU, Harvard) to build mathematical models to infer associations in multi-omics data (ML work). Resulted in multiple high-impact publications.\nTaught computational mass-spectrometry course in Big Data Summer School organized by CCBB (Center for Computational Biology and Bioinformatics) every summer – 4 day course."
+    "text": "Work Experience\n\nIndependent Bioinformatics Consultant\n\nSelf-employedJan 2026 – Present\n\n\nStreamline NGS data processing through reproducible workflows using Python, R, and Nextflow.\nDevelop cloud data platform projects covering data ingestion, transformation, security, and monitoring.\n\n\n\nSenior Bioinformatics Scientist (part-time)\n\nArgentys Informatics · RemoteJul 2022 – Feb 2025 · Aug 2025 – Dec 2025\n\n\nDesigned and deployed a scalable and reproducible bioinformatics pipeline (variant of nf-core airrflow) for antibody repertoire analysis using Observed Antibody Space Database (2B+ sequences, 3TB scale).\nPartnered with domain experts to translate ambiguous research questions into well-scoped data science deliverables.\nGenerated model-ready antibody repertoires (lineage trees) for ingestion into downstream protein language model based AI workflows (ESM2 and related models).\n\n\n\nBioinformatics Scientist (contract)\n\nTwist Bioscience · SFO, CAMar 2025 – Jul 2025\n\n\nImproved an end-to-end zero-shot inference pipeline to predict antibody fitness and developability, defining evaluation metrics and validation strategies for robust, repeatable variant ranking.\nWorked extensively with PyTorch and TensorFlow models for training, evaluation, benchmarking, and deployment-ready inference (MLflow, AWS, Databricks).\n\n\n\nSoftware Engineer (full-time)\n\nProtein Metrics LLC (Dotmatics/Siemens) · RemoteApr 2021 – Jul 2023\n\n\nDeveloped command-line tools and automated test suites to support Byos applications.\nSupported analytics-driven software releases by executing QA testing and creating customer-facing release notes and product documentation in collaboration with engineering and product teams.\n\n\n\nSenior Bioinformatics Scientist (contract)\n\nFDA · Silver Spring, MDJan 2019 – Apr 2021\n\n\nBuilt an RNA-seq pipeline for bulk processing of large-scale genomics datasets using fastp, HISAT2, featureCounts, and DESeq2.\nDeveloped a single-cell RNA-seq pipeline prototype for analyzing 10X datasets using CellRanger, SAVER, Seurat/Monocle, fastMNN, and R packages.\nCharacterized immune-driven drug hypersensitivity using single-cell RNA sequencing technologies.\n\n\n\nBioinformatics Software Developer (full-time)\n\nBooz Allen Hamilton · Rockville, MDMar 2018 – Nov 2018\n\n\nDeveloped PAT’s cloud-based genomics pipeline using AWS S3, EC2, Snakemake, R, and Python to preprocess NCBI GEO data, including RNA-seq alignment, for on-demand analytics.\nImproved analytics for differential expression, gene ontology and pathway analysis for the PAT tool (&gt;12,500 datasets including ~20 RNA-seq projects and ~300 microarray projects).\n\n\n\nBioinformatics Consultant (part-time)\n\nRemoteApr 2016 – Apr 2018\n\n\nProtein Metrics Inc (Dec 2017 – Mar 2019): Testing Protein Metrics suite of tools.\nMass General Hospital (Apr 2016 – Jul 2017): Improved primer design for a proof-of-principle assay to capture long genomic regions. Resulted in Nature Biomedical Engineering and other publications.\n\n\n\nResearch Eng/Sci. Associate IV (full-time)\n\nThe University of Texas at AustinJan 2012 – Apr 2016\n\n\nWorked on Army Research Office MURI grant (multi-university incl. BU, Harvard) to build mathematical models to infer associations in multi-omics data (ML work). Resulted in multiple high-impact publications.\nTaught computational mass-spectrometry course in Big Data Summer School organized by CCBB (Center for Computational Biology and Bioinformatics) every summer – 4 day course."
   },
   {
     "objectID": "cv.html#selected-publications",
     "href": "cv.html#selected-publications",
     "title": "Curriculum Vitae",
     "section": "Selected Publications",
-    "text": "Selected Publications\nData Science, Machine Learning & Life Sciences Data (3 of 23 publications)\n\nTosi, L., Sridhara, V., et al., Nature Biomedical Engineering. Link\nBrown, C. W., Sridhara, V., et al., BMC Genomics. Link\nSridhara, V., et al., Proteome Science. Link"
+    "text": "Selected Publications\nData Science, Machine Learning & Life Sciences Data (3 of 23 publications)\n\nTosi, L., Sridhara, V., et al., Nature Biomedical Engineering.\nBrown, C. W., Sridhara, V., et al., BMC Genomics.\nSridhara, V., et al., Proteome Science.\n\n\nFull list of publications on Google Scholar."
   },
   {
     "objectID": "cv.html#honors-awards",
@@ -123,21 +123,14 @@
     "href": "index.html",
     "title": "Vish Sridhara, PhD",
     "section": "",
-    "text": "Cloud Architecture · AI · Scientific Computing\nMy roots in engineering and computational sciences let me work with both the scientists asking the questions and the engineers building the platforms that answer them."
-  },
-  {
-    "objectID": "index.html#cloud-architecture-ai-scientific-computing",
-    "href": "index.html#cloud-architecture-ai-scientific-computing",
-    "title": "Vish Sridhara, PhD",
-    "section": "",
-    "text": "I design data and AI solutions that help science-driven and regulated-health organizations turn complex data into dependable, decision-ready outcomes. With 10+ years across biotech, consulting and federal organizations, including NIH and FDA, I cover the full data lifecycle, from ingestion and quality control to analytics and delivery.\nMy roots in engineering and computational sciences let me work with both the scientists asking the questions and the engineers building the platforms that answer them."
+    "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
   },
   {
     "objectID": "index.html#what-i-do",
     "href": "index.html#what-i-do",
     "title": "Vish Sridhara, PhD",
     "section": "What I do",
-    "text": "What I do\n\n\n\nSolution architecture\n\nEnd-to-end genomics data platforms and pipelines, from ingestion and QC to analytics and delivery (Nextflow, Snakemake, Databricks, ETL/ELT, orchestration).\n\n\n\nCloud\n\nAWS (S3, EC2) and Azure (Data Factory, Databricks), with Docker and CI/CD for reproducible deployment.\n\n\n\nApplied AI/ML\n\nPyTorch, TensorFlow, and MLflow, including protein language models such as ESM-2 on antibody data.\n\n\n\nLife sciences\n\nBulk and single-cell RNA-seq, antibody repertoires, multi-omics, and regulated NIH/FDA data environments."
+    "text": "What I do\n\n\n\nSolution architecture\n\n\nEnd-to-end genomics data platforms and pipelines\nFrom ingestion and QC to analytics and delivery\nETL/ELT and workflow orchestration\n\n\nNextflowSnakemakeDatabricks\n\n\n\n\nCloud\n\n\nStorage, compute and pipelines on AWS and Azure\nReproducible deployment with containers and CI/CD\n\n\nAWS S3AWS EC2Azure Data FactoryAzure DatabricksDocker\n\n\n\n\nApplied AI/ML\n\n\nModel training, evaluation and tracking\nProtein language models such as ESM-2 on antibody data\n\n\nPyTorchTensorFlowMLflow\n\n\n\n\nLife sciences\n\n\nBulk and single-cell RNA-seq\nAntibody repertoires and multi-omics\nRegulated NIH/FDA data environments\n\n\nDESeq2SeuratCellRangernf-core/airrflow"
   },
   {
     "objectID": "index.html#selected-experience",
@@ -243,5 +236,19 @@
     "title": "Azure Data Factory for antibody data - from raw OAS csv.gz to SQL tables",
     "section": "What comes next",
     "text": "What comes next\nThe next posts move from building to operating the platform on Azure:\n\nObservability: routing Data Factory diagnostics to Log Analytics, querying pipeline and activity runs with KQL, and wiring an Azure Monitor alert.\nReliability: an intentional failure to verify that the alert fires and that a corrected rerun recovers cleanly.\nInfrastructure as code: exporting and cleaning the environment as Bicep.\nLifecycle and cost: publishing a static output and the supporting evidence so the work remains available after the temporary Azure environment is retired.\n\nData: Observed Antibody Space (Oxford Protein Informatics Group), Mor et al., 2021, CC-BY 4.0. See the OAS website for the full citation. This is a personal project and is unrelated to any employer or agency system.\n\n\n\n\n\n\nFound this useful? If this tutorial helped, you can buy me a coffee ↗ to support future technical articles. For project work, see Consulting."
+  },
+  {
+    "objectID": "index.html#cloud-architecture-ai-scientific-computing",
+    "href": "index.html#cloud-architecture-ai-scientific-computing",
+    "title": "Vish Sridhara, PhD",
+    "section": "",
+    "text": "I design data and AI solutions that help science-driven and regulated-health organizations turn complex data into dependable, decision-ready outcomes. With 10+ years across biotech, consulting and federal organizations, including NIH and FDA, I cover the full data lifecycle, from ingestion and quality control to analytics and delivery.\nMy roots in engineering and computational sciences let me work with both the scientists asking the questions and the engineers building the platforms that answer them."
+  },
+  {
+    "objectID": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
+    "href": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
+    "title": "Vish Sridhara, PhD",
+    "section": "",
+    "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
   }
 ]

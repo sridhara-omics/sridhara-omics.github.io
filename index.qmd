@@ -1,7 +1,7 @@
 ---
 title: "Vish Sridhara, PhD"
 subtitle: "Bioinformatics Solutions Architect"
-pagetitle: "Vish Sridhara, PhD | Bioinformatics Solutions Architect"
+pagetitle: "Viswanadham Sridhara, PhD | Bioinformatics Solutions Architect"
 toc: false
 page-layout: full
 about:
@@ -31,14 +31,15 @@ about:
   margin: 0.2rem 0 0.9rem;
 }
 .about-lead {
-  font-size: 1.12rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.65;
   padding-left: 1.1rem;
   border-left: 4px solid var(--bs-primary, #356b8c);
-  margin-bottom: 1.1rem;
+  margin-bottom: 2rem;
 }
-.about-lead p { margin-bottom: 0.6rem; }
-.about-contents h2 { margin-top: 2.5rem; }
+.about-lead p { margin-bottom: 0.7rem; }
+.about-lead p:last-child { margin-bottom: 0; }
+.about-contents h2 { margin-top: 2.25rem; font-size: 1.6rem; font-weight: 700; }
 
 .about-grid {
   display: grid;
@@ -63,6 +64,26 @@ about:
   color: var(--bs-primary, #356b8c);
   margin-bottom: 0.3rem;
 }
+.about-card { display: flex; flex-direction: column; }
+.about-card ul { margin: 0 0 0.8rem; padding-left: 1.1rem; font-size: 0.93rem; }
+.about-card li { margin-bottom: 0.25rem; }
+.about-card li::marker { color: var(--bs-primary, #356b8c); font-size: 0.8em; }
+.about-pills {
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--bs-border-color, #d8dee4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.about-pills span {
+  font-size: 0.76rem;
+  border: 1px solid var(--bs-border-color, #d8dee4);
+  border-radius: 999px;
+  padding: 0.08rem 0.55rem;
+  opacity: 0.9;
+}
+.about-card .about-label { font-size: 1.05rem; }
 .about-tag {
   display: inline-block;
   font-size: 0.72rem;
@@ -107,17 +128,17 @@ about:
 
 @media (max-width: 760px) {
   .about-grid, .about-grid.three, .about-stats { grid-template-columns: 1fr; }
-  .about-lead { font-size: 1.05rem; }
+  .about-lead { font-size: 1rem; }
 }
 </style>
 
-<div class="about-kicker">Cloud Architecture · AI · Scientific Computing</div>
+## Genomics Pipelines   ·   Cloud Data Platforms   ·   Antibody AI
 
 ::: {.about-lead}
-I design data and AI solutions that help science-driven and regulated-health organizations turn complex data into dependable, decision-ready outcomes. With 10+ years across biotech, consulting and federal organizations, including NIH and FDA, I cover the full data lifecycle, from ingestion and quality control to analytics and delivery.
-:::
+I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.
 
-My roots in engineering and computational sciences let me work with both the scientists asking the questions and the engineers building the platforms that answer them.
+With a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them.
+:::
 
 ## What I do
 
@@ -125,22 +146,40 @@ My roots in engineering and computational sciences let me work with both the sci
 
 ::: {.about-card}
 <div class="about-label">Solution architecture</div>
-End-to-end genomics data platforms and pipelines, from ingestion and QC to analytics and delivery (Nextflow, Snakemake, Databricks, ETL/ELT, orchestration).
+
+- End-to-end genomics data platforms and pipelines
+- From ingestion and QC to analytics and delivery
+- ETL/ELT and workflow orchestration
+
+<div class="about-pills"><span>Nextflow</span><span>Snakemake</span><span>Databricks</span></div>
 :::
 
 ::: {.about-card}
 <div class="about-label">Cloud</div>
-AWS (S3, EC2) and Azure (Data Factory, Databricks), with Docker and CI/CD for reproducible deployment.
+
+- Storage, compute and pipelines on AWS and Azure
+- Reproducible deployment with containers and CI/CD
+
+<div class="about-pills"><span>AWS S3</span><span>AWS EC2</span><span>Azure Data Factory</span><span>Azure Databricks</span><span>Docker</span></div>
 :::
 
 ::: {.about-card}
 <div class="about-label">Applied AI/ML</div>
-PyTorch, TensorFlow, and MLflow, including protein language models such as ESM-2 on antibody data.
+
+- Model training, evaluation and tracking
+- Protein language models such as ESM-2 on antibody data
+
+<div class="about-pills"><span>PyTorch</span><span>TensorFlow</span><span>MLflow</span></div>
 :::
 
 ::: {.about-card}
 <div class="about-label">Life sciences</div>
-Bulk and single-cell RNA-seq, antibody repertoires, multi-omics, and regulated NIH/FDA data environments.
+
+- Bulk and single-cell RNA-seq
+- Antibody repertoires and multi-omics
+- Regulated NIH/FDA data environments
+
+<div class="about-pills"><span>DESeq2</span><span>Seurat</span><span>CellRanger</span><span>nf-core/airrflow</span></div>
 :::
 
 :::

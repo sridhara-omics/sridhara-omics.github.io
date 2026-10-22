@@ -6,73 +6,119 @@ page-layout: full
 ---
 
 <style>
+/* page header */
+#title-block-header { margin-bottom: 1.75rem; }
+#title-block-header .quarto-title h1.title { margin-bottom: 0.5rem; }
+#title-block-header .quarto-title { margin-bottom: 0.9rem; }
+#title-block-header .description { font-size: 1.15rem; margin-top: 0; opacity: 0.8; }
+
+/* intro */
 .consulting-lead {
-  max-width: 900px;
-  font-size: 1.12rem;
+  max-width: 800px;
+  font-size: 1.15rem;
   line-height: 1.7;
-  margin: 0.25rem 0 1.5rem;
+  margin: 0 0 2.25rem;
+  padding-left: 1.1rem;
+  border-left: 4px solid var(--bs-primary, #356b8c);
 }
 .consulting-kicker {
   text-transform: uppercase;
-  letter-spacing: 0.09em;
+  letter-spacing: 0.1em;
   font-size: 0.78rem;
   font-weight: 700;
-  opacity: 0.72;
-  margin-bottom: 0.4rem;
+  opacity: 0.7;
+  margin-bottom: 0.75rem;
 }
+
+/* cards */
 .consulting-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 1.25rem 0 2rem;
+  gap: 1.5rem;
+  margin: 0 0 3rem;
 }
 .consulting-card {
+  display: flex;
+  flex-direction: column;
   border: 1px solid var(--bs-border-color, #d8dee4);
-  border-radius: 0.85rem;
-  padding: 1.35rem 1.4rem 1.2rem;
+  border-top: 4px solid var(--bs-primary, #356b8c);
+  border-radius: 0.6rem;
+  padding: 1.5rem 1.6rem 1.4rem;
   background: var(--bs-body-bg, transparent);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
   min-width: 0;
 }
-.consulting-card h3 {
-  margin-top: 0.25rem;
-  margin-bottom: 0.65rem;
-  font-size: 1.22rem;
-}
-.consulting-card p {
-  line-height: 1.6;
-}
-.consulting-card ul {
-  padding-left: 1.15rem;
-}
-.consulting-card li {
-  margin-bottom: 0.35rem;
-}
+.consulting-card > p, .consulting-card > ul { margin-bottom: 0.9rem; }
+.consulting-card h3 { margin: 0.6rem 0 0.5rem; font-size: 1.3rem; line-height: 1.3; }
+.consulting-card p { line-height: 1.6; }
+.consulting-card ul { padding-left: 1.15rem; }
+.consulting-card li { margin-bottom: 0.4rem; }
 .consulting-number {
+  display: inline-block;
+  align-self: flex-start;
   color: var(--bs-primary, #356b8c);
-  font-weight: 750;
-  font-size: 0.82rem;
+  background: rgba(53, 107, 140, 0.12);
+  border-radius: 999px;
+  padding: 0.15rem 0.7rem;
+  font-weight: 700;
+  font-size: 0.74rem;
   letter-spacing: 0.08em;
 }
-.consulting-tags {
-  font-size: 0.88rem;
-  line-height: 1.6;
-  opacity: 0.88;
-  border-top: 1px solid var(--bs-border-color, #d8dee4);
-  margin-top: 1rem;
-  padding-top: 0.75rem;
+.consulting-deliver {
+  background: rgba(53, 107, 140, 0.08);
+  border-radius: 0.4rem;
+  padding: 0.65rem 0.85rem;
+  line-height: 1.55;
+  margin: 0.25rem 0 0.8rem;
 }
 .consulting-bg {
-  font-size: 0.92rem;
-  line-height: 1.6;
-  margin-top: 0.9rem;
+  font-size: 0.9rem;
+  line-height: 1.55;
+  opacity: 0.85;
+  margin-bottom: 1rem;
 }
-.consulting-note {
-  max-width: 900px;
-  line-height: 1.7;
+.consulting-tags {
+  margin-top: auto;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--bs-border-color, #d8dee4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
+.consulting-tags span {
+  font-size: 0.8rem;
+  border: 1px solid var(--bs-border-color, #d8dee4);
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  opacity: 0.9;
+}
+
+/* how we start */
+.consulting-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 1.75rem;
+}
+.consulting-steps div {
+  border-left: 3px solid var(--bs-primary, #356b8c);
+  padding: 0.1rem 0 0.1rem 0.9rem;
+  line-height: 1.5;
+}
+.consulting-steps span {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--bs-primary, #356b8c);
+}
+.consulting-cta { margin-bottom: 2rem; }
+.consulting-cta p { max-width: 700px; line-height: 1.7; }
+
 @media (max-width: 760px) {
-  .consulting-grid { grid-template-columns: 1fr; }
-  .consulting-card { padding: 1.1rem; }
+  .consulting-grid, .consulting-steps { grid-template-columns: 1fr; }
+  .consulting-card { padding: 1.2rem; }
+  .consulting-lead { font-size: 1.05rem; }
 }
 </style>
 
@@ -95,11 +141,11 @@ From a folder of scripts to a workflow your team can rerun, inspect, and hand ov
 - **Antibody repertoire NGS**, including customized nf-core/airrflow
 - **Nextflow** with containers and Python/R notebooks
 
-**Deliverable:** a documented, runnable pipeline with handover.
+<div class="consulting-deliver"><strong>Deliverable:</strong> a documented, runnable pipeline with handover.</div>
 
 <div class="consulting-bg"><strong>Background:</strong> bulk and single-cell RNA-seq pipelines at FDA; an antibody pipeline for 2B+ sequences.</div>
 
-<div class="consulting-tags">Nextflow · Snakemake · Python · R · Containers</div>
+<div class="consulting-tags"><span>Nextflow</span><span>Snakemake</span><span>Python</span><span>R</span><span>Containers</span></div>
 :::
 
 ::: {.consulting-card}
@@ -113,11 +159,11 @@ Storage and compute sized to your data and budget, on AWS or Azure in your own a
 - Pipeline stages matched to **measured** compute needs, with scaling options
 - Permissions, logging, and cost visibility
 
-**Deliverable:** a pilot deployment or blueprint, with cost/performance trade-offs.
+<div class="consulting-deliver"><strong>Deliverable:</strong> a pilot deployment or blueprint, with cost/performance trade-offs.</div>
 
 <div class="consulting-bg"><strong>Background:</strong> AWS S3, EC2, and Snakemake genomics pipeline with analytics across 12,500+ datasets.</div>
 
-<div class="consulting-tags">AWS S3 · EC2 · Azure Data Lake Storage · Nextflow</div>
+<div class="consulting-tags"><span>AWS S3</span><span>EC2</span><span>Azure Data Lake Storage</span><span>Nextflow</span></div>
 :::
 
 ::: {.consulting-card}
@@ -131,11 +177,11 @@ Scattered files and extracts turned into data your teams can trust.
 - **Databricks**, SQL, and Python/R notebooks where they add value
 - **Azure Data Factory** or AWS services for orchestration
 
-**Deliverable:** data-flow design, reusable code, and quality checks.
+<div class="consulting-deliver"><strong>Deliverable:</strong> data-flow design, reusable code, and quality checks.</div>
 
 <div class="consulting-bg"><strong>Background:</strong> model-ready antibody repertoires at scale; cloud data platforms covering ingestion, security, and monitoring.</div>
 
-<div class="consulting-tags">Azure · AWS · Databricks · SQL · Python · R</div>
+<div class="consulting-tags"><span>Azure</span><span>AWS</span><span>Databricks</span><span>SQL</span><span>Python</span><span>R</span></div>
 :::
 
 ::: {.consulting-card}
@@ -149,20 +195,27 @@ Test whether protein language models can support a research decision.
 - **Fitness and developability** scoring with held-out data and stated limitations
 - Reproducible notebooks or batch workflow
 
-**Deliverable:** a proof of concept, evaluation, and go/no-go recommendation. Outputs support research decisions; they do not replace experimental validation.
+<div class="consulting-deliver"><strong>Deliverable:</strong> a proof of concept, evaluation, and go/no-go recommendation. Outputs support research decisions; they do not replace experimental validation.</div>
 
 <div class="consulting-bg"><strong>Background:</strong> zero-shot antibody fitness and developability pipeline, with evaluation and validation design.</div>
 
-<div class="consulting-tags">Python · PyTorch · MLflow · Protein language models</div>
+<div class="consulting-tags"><span>Python</span><span>PyTorch</span><span>MLflow</span><span>Protein language models</span></div>
 :::
 
 :::
-
-<div class="consulting-note">
 
 ## How we start
 
-**Discovery call**, then a **focused pilot** on your data, then **build and handover**.
+<div class="consulting-steps">
+<div><span>STEP 1</span><strong>Discovery call</strong><br>Your question and current workflow</div>
+<div><span>STEP 2</span><strong>Focused pilot</strong><br>Proven on your own data</div>
+<div><span>STEP 3</span><strong>Build and handover</strong><br>Documented, with optional support</div>
+</div>
 
-Bring the question and your current workflow, and I will identify the smallest useful solution. [Get in touch](index.qmd#lets-connect).
+<div class="consulting-cta">
+
+Bring the question, and I will identify the smallest useful solution.
+
+[Get in touch](index.qmd#lets-connect){.btn .btn-primary}
+
 </div>

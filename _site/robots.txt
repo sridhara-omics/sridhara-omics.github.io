@@ -1,1 +1,1 @@
-Sitemap: https://sridhara-omics.github.io/quarto-site/sitemap.xml
+Sitemap: https://sridhara-omics.github.io/sitemap.xml

@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2024-06-15">
 
-<title>Universe of P[r]oteomics with Tidyverse – Vish Sridhara / Omics</title>
+<title>Universe of P[r]oteomics with Tidyverse – Vish Sridhara, PhD</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -287,11 +287,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="../../index.html">
-    <span class="navbar-title">Vish Sridhara / Omics</span>
-    </a>
-  </div>
             <div id="quarto-search" class="" title="Search"></div>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -303,12 +298,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="../../consulting.html"> 
+<span class="menu-text">Consulting</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="../../posts.html"> 
-<span class="menu-text">Blog Posts</span></a>
+<span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">CV</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html#lets-connect"> 
+<span class="menu-text">Contact</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
@@ -606,6 +609,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 </main> <!-- /main -->
+<script>
+
+/* Line the navbar tabs up with the vertical divider between the photo and the text. */
+
+(function () {
+
+  function align() {
+
+    var ul = document.querySelector('#navbarCollapse .navbar-nav.me-auto');
+
+    if (!ul) return;
+
+    ul.style.marginLeft = '';
+
+    var cw = document.documentElement.clientWidth;
+
+    if (cw < 992) return;                       // collapsed (hamburger) menu: leave alone
+
+    var W = Math.min(cw - 52, 1134);            // page container width
+
+    var left = Math.max(26, (cw - 1134) / 2);   // container left edge
+
+    var divider = left + 0.23 * W + 25;         // x of the divider line
+
+    var linkPad = -16;                           // measured offset of the link text from the <ul> edge
+
+    var m = divider - ul.getBoundingClientRect().left - linkPad;
+
+    if (m > 0) ul.style.marginLeft = m + 'px';
+
+  }
+
+  window.addEventListener('load', align);
+
+  window.addEventListener('resize', align);
+
+})();
+
+</script>
+
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     // Ensure there is a toggle, if there isn't float one in the top right
@@ -692,7 +735,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/sridhara-omics\.github\.io\/quarto-site");
+        var filterRegex = new RegExp("https:\/\/sridhara-omics\.github\.io");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

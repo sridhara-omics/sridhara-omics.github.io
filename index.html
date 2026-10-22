@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Vish Sridhara, PhD | Bioinformatics Solutions Architect – Vish Sridhara, PhD</title>
+<title>Viswanadham Sridhara, PhD | Bioinformatics Solutions Architect – Vish Sridhara, PhD</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -342,14 +342,15 @@ ul.task-list li input[type="checkbox"] {
   margin: 0.2rem 0 0.9rem;
 }
 .about-lead {
-  font-size: 1.12rem;
-  line-height: 1.7;
+  font-size: 1.05rem;
+  line-height: 1.65;
   padding-left: 1.1rem;
   border-left: 4px solid var(--bs-primary, #356b8c);
-  margin-bottom: 1.1rem;
+  margin-bottom: 2rem;
 }
-.about-lead p { margin-bottom: 0.6rem; }
-.about-contents h2 { margin-top: 2.5rem; }
+.about-lead p { margin-bottom: 0.7rem; }
+.about-lead p:last-child { margin-bottom: 0; }
+.about-contents h2 { margin-top: 2.25rem; font-size: 1.6rem; font-weight: 700; }
 .about-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -373,6 +374,26 @@ ul.task-list li input[type="checkbox"] {
   color: var(--bs-primary, #356b8c);
   margin-bottom: 0.3rem;
 }
+.about-card { display: flex; flex-direction: column; }
+.about-card ul { margin: 0 0 0.8rem; padding-left: 1.1rem; font-size: 0.93rem; }
+.about-card li { margin-bottom: 0.25rem; }
+.about-card li::marker { color: var(--bs-primary, #356b8c); font-size: 0.8em; }
+.about-pills {
+  margin-top: auto;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--bs-border-color, #d8dee4);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.about-pills span {
+  font-size: 0.76rem;
+  border: 1px solid var(--bs-border-color, #d8dee4);
+  border-radius: 999px;
+  padding: 0.08rem 0.55rem;
+  opacity: 0.9;
+}
+.about-card .about-label { font-size: 1.05rem; }
 .about-tag {
   display: inline-block;
   font-size: 0.72rem;
@@ -413,16 +434,16 @@ ul.task-list li input[type="checkbox"] {
 .about-note { font-size: 0.88rem; opacity: 0.75; }
 @media (max-width: 760px) {
   .about-grid, .about-grid.three, .about-stats { grid-template-columns: 1fr; }
-  .about-lead { font-size: 1.05rem; }
+  .about-lead { font-size: 1rem; }
 }
 </style>
-<div class="about-kicker">
-Cloud Architecture · AI · Scientific Computing
-</div>
+<section id="genomics-pipelines-cloud-data-platforms-antibody-ai" class="level2">
+<h2 data-anchor-id="genomics-pipelines-cloud-data-platforms-antibody-ai">Genomics Pipelines · Cloud Data Platforms · Antibody AI</h2>
 <div class="about-lead">
-<p>I design data and AI solutions that help science-driven and regulated-health organizations turn complex data into dependable, decision-ready outcomes. With 10+ years across biotech, consulting and federal organizations, including NIH and FDA, I cover the full data lifecycle, from ingestion and quality control to analytics and delivery.</p>
+<p>I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.</p>
+<p>With a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them.</p>
 </div>
-<p>My roots in engineering and computational sciences let me work with both the scientists asking the questions and the engineers building the platforms that answer them.</p>
+</section>
 <section id="what-i-do" class="level2">
 <h2 data-anchor-id="what-i-do">What I do</h2>
 <div class="about-grid">
@@ -430,25 +451,51 @@ Cloud Architecture · AI · Scientific Computing
 <div class="about-label">
 Solution architecture
 </div>
-<p>End-to-end genomics data platforms and pipelines, from ingestion and QC to analytics and delivery (Nextflow, Snakemake, Databricks, ETL/ELT, orchestration).</p>
+<ul>
+<li>End-to-end genomics data platforms and pipelines</li>
+<li>From ingestion and QC to analytics and delivery</li>
+<li>ETL/ELT and workflow orchestration</li>
+</ul>
+<div class="about-pills">
+<span>Nextflow</span><span>Snakemake</span><span>Databricks</span>
+</div>
 </div>
 <div class="about-card">
 <div class="about-label">
 Cloud
 </div>
-<p>AWS (S3, EC2) and Azure (Data Factory, Databricks), with Docker and CI/CD for reproducible deployment.</p>
+<ul>
+<li>Storage, compute and pipelines on AWS and Azure</li>
+<li>Reproducible deployment with containers and CI/CD</li>
+</ul>
+<div class="about-pills">
+<span>AWS S3</span><span>AWS EC2</span><span>Azure Data Factory</span><span>Azure Databricks</span><span>Docker</span>
+</div>
 </div>
 <div class="about-card">
 <div class="about-label">
 Applied AI/ML
 </div>
-<p>PyTorch, TensorFlow, and MLflow, including protein language models such as ESM-2 on antibody data.</p>
+<ul>
+<li>Model training, evaluation and tracking</li>
+<li>Protein language models such as ESM-2 on antibody data</li>
+</ul>
+<div class="about-pills">
+<span>PyTorch</span><span>TensorFlow</span><span>MLflow</span>
+</div>
 </div>
 <div class="about-card">
 <div class="about-label">
 Life sciences
 </div>
-<p>Bulk and single-cell RNA-seq, antibody repertoires, multi-omics, and regulated NIH/FDA data environments.</p>
+<ul>
+<li>Bulk and single-cell RNA-seq</li>
+<li>Antibody repertoires and multi-omics</li>
+<li>Regulated NIH/FDA data environments</li>
+</ul>
+<div class="about-pills">
+<span>DESeq2</span><span>Seurat</span><span>CellRanger</span><span>nf-core/airrflow</span>
+</div>
 </div>
 </div>
 </section>
@@ -993,7 +1040,7 @@ NOTEBOOKS · NEXTFLOW
 <footer class="footer">
   <div class="nav-footer">
     <div class="nav-footer-left">
-<p>© 2026 Vish Sridhara. Views on this site are my own and do not represent any employer or agency.</p>
+<p>© 2026 Viswanadham (Vish) Sridhara. Views on this site are my own and do not represent any employer or agency.</p>
 </div>   
     <div class="nav-footer-center">
       &nbsp;

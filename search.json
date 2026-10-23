@@ -116,7 +116,14 @@
     "href": "consulting.html#how-we-start",
     "title": "Consulting",
     "section": "How we start",
-    "text": "How we start\n\n\nSTEP 1Discovery callYour question and current workflow\n\n\nSTEP 2Focused pilotProven on your own data\n\n\nSTEP 3Build and handoverDocumented, with optional support\n\n\n\nBring the question, and I will identify the smallest useful solution.\nGet in touch"
+    "text": "How we start\n\n\nSTEP 1Discovery callYour question and current workflow\n\n\nSTEP 2Focused pilotProven on your own data\n\n\nSTEP 3Build and handoverDocumented, with optional support\n\n\n\nNot sure where to start? Send me a note about your project, and I’ll help you figure out the next step.\nGet in touch"
+  },
+  {
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact & Service Request",
+    "section": "",
+    "text": "Tell me about your life-sciences data challenge. I’ll review the details and follow up by email.\nPlease use this form for consulting inquiries involving genomics, proteomics, RNA-seq, single-cell analysis, antibody data, scientific data platforms, or applied AI. You do not need to have every detail finalized; reasonable estimates are fine.\n\n\n  \n\n  \n\n  \n  \n\n  \n  \n\n  \n    Your name\n    \n  \n\n  \n    Email address\n    \n  \n\n  \n    Primary data type\n\n    \n\n      \n        Select the closest match\n      \n\n      Genome / genomics\n      Proteome / proteomics\n      Bulk RNA-seq\n      Single-cell data\n      \n        Antibody sequencing / repertoire\n      \n      \n        Multiple or mixed data types\n      \n      \n        Other life-sciences data\n      \n    \n\n    \n      If your project involves several data types, mention the others below.\n    \n  \n\n  \n    \n      Datasets and approximate data size\n    \n\n    \n  \n\n  \n    \n      What kind of analysis or support do you need?\n    \n\n    \n\n    \n      Maximum 100 characters. This description will be included in the email subject.\n    \n  \n\n  \n    \n      Detailed description\n    \n\n    \n\n    \n      Required: 100–1,000 characters.\n    \n  \n\n  \n    Please share project metadata only. Do not include patient-identifiable\n    information, credentials, confidential data, or proprietary sequences.\n  \n\n  \n    Send Service Request"
   },
   {
     "objectID": "index.html",

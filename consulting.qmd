@@ -214,8 +214,8 @@ Test whether protein language models can support a research decision.
 
 <div class="consulting-cta">
 
-Bring the question, and I will identify the smallest useful solution.
+Not sure where to start? Send me a note about your project, and I’ll help you figure out the next step.
 
-[Get in touch](index.qmd#lets-connect){.btn .btn-primary}
+[Get in touch](contact.qmd){.btn .btn-primary}
 
 </div>

@@ -70,13 +70,6 @@
     "text": "Architecture and Technical Capabilities\n\n\nBioinformatics & Computing\n\n\nNextflow, Snakemake, NGS pipelines, bulk/scRNA-seq, proteomics, HPC\n\n\nProgramming & ML\n\n\nPython (pandas, NumPy), R, SQL, Bash, PyTorch, TensorFlow, PySpark, MLflow\n\n\nCloud & Data\n\n\nAWS EC2/S3, Azure Databricks, Azure Data Factory, Git, CI/CD, regulated data environments\n\n\nData Architecture & Engineering\n\n\nData platforms, Scalable pipelines, ETL/ELT, Workflow orchestration\n\n\nSolution Delivery\n\n\nRally, Requirements translation, Stakeholder collaboration, Technical documentation"
   },
   {
-    "objectID": "cv.html#education",
-    "href": "cv.html#education",
-    "title": "Curriculum Vitae",
-    "section": "Education",
-    "text": "Education\n\nPostdoctoral fellow, Bioinformatics\n\nNational Institutes of Health\n\n\n\nPhD, Electrical and Computer Engineering\n\nOld Dominion University\n\nDissertation: Molecular dynamics simulations of biomolecules\n\n\nMS, Electrical and Computer Engineering\n\nOld Dominion University\n\nThesis: Monte-carlo analysis of GaN based semiconductors"
-  },
-  {
     "objectID": "cv.html#work-experience",
     "href": "cv.html#work-experience",
     "title": "Curriculum Vitae",
@@ -89,6 +82,13 @@
     "title": "Curriculum Vitae",
     "section": "Selected Publications",
     "text": "Selected Publications\nData Science, Machine Learning & Life Sciences Data (3 of 23 publications)\n\nTosi, L., Sridhara, V., et al., Nature Biomedical Engineering.\nBrown, C. W., Sridhara, V., et al., BMC Genomics.\nSridhara, V., et al., Proteome Science.\n\n\nFull list of publications on Google Scholar."
+  },
+  {
+    "objectID": "cv.html#education",
+    "href": "cv.html#education",
+    "title": "Curriculum Vitae",
+    "section": "Education",
+    "text": "Education\n\nPostdoctoral fellow, Bioinformatics\n\nNational Institutes of Health\n\n\n\nPhD, Electrical and Computer Engineering\n\nOld Dominion University\n\nDissertation: Molecular dynamics simulations of biomolecules\n\n\nMS, Electrical and Computer Engineering\n\nOld Dominion University\n\nThesis: Monte-carlo analysis of GaN based semiconductors"
   },
   {
     "objectID": "cv.html#honors-awards",
@@ -116,11 +116,18 @@
     "href": "consulting.html#how-we-start",
     "title": "Consulting",
     "section": "How we start",
-    "text": "How we start\n\n\nSTEP 1Discovery callYour question and current workflow\n\n\nSTEP 2Focused pilotProven on your own data\n\n\nSTEP 3Build and handoverDocumented, with optional support\n\n\n\nBring the question, and I will identify the smallest useful solution.\nGet in touch"
+    "text": "How we start\n\n\nSTEP 1Discovery callYour question and current workflow\n\n\nSTEP 2Focused pilotProven on your own data\n\n\nSTEP 3Build and handoverDocumented, with optional support\n\n\n\nNot sure where to start? Send me a note about your project, and I’ll help you figure out the next step.\nGet in touch"
   },
   {
     "objectID": "index.html",
     "href": "index.html",
+    "title": "Vish Sridhara, PhD",
+    "section": "",
+    "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
+  },
+  {
+    "objectID": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
+    "href": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
     "title": "Vish Sridhara, PhD",
     "section": "",
     "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
@@ -238,17 +245,10 @@
     "text": "What comes next\nThe next posts move from building to operating the platform on Azure:\n\nObservability: routing Data Factory diagnostics to Log Analytics, querying pipeline and activity runs with KQL, and wiring an Azure Monitor alert.\nReliability: an intentional failure to verify that the alert fires and that a corrected rerun recovers cleanly.\nInfrastructure as code: exporting and cleaning the environment as Bicep.\nLifecycle and cost: publishing a static output and the supporting evidence so the work remains available after the temporary Azure environment is retired.\n\nData: Observed Antibody Space (Oxford Protein Informatics Group), Mor et al., 2021, CC-BY 4.0. See the OAS website for the full citation. This is a personal project and is unrelated to any employer or agency system.\n\n\n\n\n\n\nFound this useful? If this tutorial helped, you can buy me a coffee ↗ to support future technical articles. For project work, see Consulting."
   },
   {
-    "objectID": "index.html#cloud-architecture-ai-scientific-computing",
-    "href": "index.html#cloud-architecture-ai-scientific-computing",
-    "title": "Vish Sridhara, PhD",
+    "objectID": "contact.html",
+    "href": "contact.html",
+    "title": "Contact & Service Request",
     "section": "",
-    "text": "I design data and AI solutions that help science-driven and regulated-health organizations turn complex data into dependable, decision-ready outcomes. With 10+ years across biotech, consulting and federal organizations, including NIH and FDA, I cover the full data lifecycle, from ingestion and quality control to analytics and delivery.\nMy roots in engineering and computational sciences let me work with both the scientists asking the questions and the engineers building the platforms that answer them."
-  },
-  {
-    "objectID": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
-    "href": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
-    "title": "Vish Sridhara, PhD",
-    "section": "",
-    "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
+    "text": "Tell me about your life-sciences data challenge. I’ll review the details and follow up by email.\nPlease use this form for consulting inquiries involving genomics, proteomics, RNA-seq, single-cell analysis, antibody data, scientific data platforms, or applied AI. You do not need to have every detail finalized; reasonable estimates are fine.\n\n\n  \n\n  \n\n  \n  \n\n  \n  \n\n  \n    Your name\n    \n  \n\n  \n    Email address\n    \n  \n\n  \n    Primary data type\n\n    \n\n      \n        Select the closest match\n      \n\n      Genome / genomics\n      Proteome / proteomics\n      Bulk RNA-seq\n      Single-cell data\n      \n        Antibody sequencing / repertoire\n      \n      \n        Multiple or mixed data types\n      \n      \n        Other life-sciences data\n      \n    \n\n    \n      If your project involves several data types, mention the others below.\n    \n  \n\n  \n    \n      Datasets and approximate data size\n    \n\n    \n  \n\n  \n    \n      What kind of analysis or support do you need?\n    \n\n    \n\n    \n      Maximum 100 characters. This description will be included in the email subject.\n    \n  \n\n  \n    \n      Detailed description\n    \n\n    \n\n    \n      Required: 100–1,000 characters.\n    \n  \n\n  \n    Please share project metadata only. Do not include patient-identifiable\n    information, credentials, confidential data, or proprietary sequences.\n  \n\n  \n    Send Service Request"
   }
 ]

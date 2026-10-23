@@ -16,7 +16,7 @@ website:
         text: Blog
       - href: cv.qmd
         text: CV
-      - href: index.qmd#lets-connect
+      - href: contact.qmd
         text: Contact
     right:
       - icon: github

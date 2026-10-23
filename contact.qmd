@@ -1,0 +1,162 @@
+---
+title: "Contact & Service Request"
+page-layout: full
+---
+
+Tell me about your life-sciences data challenge. I'll review the details and follow up by email.
+
+Please use this form for consulting inquiries involving genomics, proteomics, RNA-seq, single-cell analysis, antibody data, scientific data platforms, or applied AI. You do not need to have every detail finalized; reasonable estimates are fine.
+
+```{=html}
+<form id="service-request-form"
+      action="https://formsubmit.co/sridhara.omics@gmail.com"
+      method="POST">
+
+  <input type="hidden"
+         name="_subject"
+         id="email_subject"
+         value="New life-sciences consulting inquiry">
+
+  <input type="hidden"
+         name="_template"
+         value="table">
+
+  <!-- Optional: disable captcha -->
+  <!-- <input type="hidden" name="_captcha" value="false"> -->
+
+  <!-- Spam-prevention honeypot -->
+  <input type="text"
+         name="_honey"
+         tabindex="-1"
+         autocomplete="off"
+         style="display:none">
+
+  <div class="mb-3">
+    <label for="name" class="form-label">Your name</label>
+    <input id="name"
+           name="name"
+           type="text"
+           class="form-control"
+           autocomplete="name"
+           required>
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input id="email"
+           name="email"
+           type="email"
+           class="form-control"
+           autocomplete="email"
+           required>
+  </div>
+
+  <div class="mb-3">
+    <label for="data_type" class="form-label">Primary data type</label>
+
+    <select id="data_type"
+            name="data_type"
+            class="form-select"
+            required>
+
+      <option value="" selected disabled>
+        Select the closest match
+      </option>
+
+      <option value="Genome / genomics">Genome / genomics</option>
+      <option value="Proteome / proteomics">Proteome / proteomics</option>
+      <option value="Bulk RNA-seq">Bulk RNA-seq</option>
+      <option value="Single-cell data">Single-cell data</option>
+      <option value="Antibody sequencing / repertoire">
+        Antibody sequencing / repertoire
+      </option>
+      <option value="Multiple or mixed data types">
+        Multiple or mixed data types
+      </option>
+      <option value="Other life-sciences data">
+        Other life-sciences data
+      </option>
+    </select>
+
+    <div class="form-text">
+      If your project involves several data types, mention the others below.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="datasets_size" class="form-label">
+      Datasets and approximate data size
+    </label>
+
+    <textarea id="datasets_size"
+              name="datasets_size"
+              class="form-control"
+              rows="3"
+              maxlength="1000"
+              placeholder="Dataset accession or link, number of samples, file types, and estimated size (e.g. 20 GB or 3 TB)."
+              required></textarea>
+  </div>
+
+  <div class="mb-3">
+    <label for="analysis" class="form-label">
+      What kind of analysis or support do you need?
+    </label>
+
+    <input id="analysis"
+           name="analysis"
+           type="text"
+           class="form-control"
+           maxlength="100"
+           placeholder="Build a reproducible single-cell RNA-seq pipeline"
+           required>
+
+    <div class="form-text">
+      Maximum 100 characters. This description will be included in the email subject.
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">
+      Detailed description
+    </label>
+
+    <textarea id="description"
+              name="description"
+              class="form-control"
+              rows="6"
+              minlength="100"
+              maxlength="1000"
+              placeholder="Describe the goals, expected outputs, tools or cloud environment, timeline, and any constraints."
+              required></textarea>
+
+    <div class="form-text">
+      Required: 100–1,000 characters.
+    </div>
+  </div>
+
+  <p class="small text-muted">
+    Please share project metadata only. Do not include patient-identifiable
+    information, credentials, confidential data, or proprietary sequences.
+  </p>
+
+  <button type="submit" class="btn btn-primary">
+    Send Service Request
+  </button>
+
+</form>
+
+<script>
+document.getElementById("service-request-form")
+  .addEventListener("submit", function () {
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const analysis =
+      document.getElementById("analysis").value.trim();
+
+    document.getElementById("email_subject").value =
+      "Service request - " + name + " - " + analysis;
+});
+</script>
+```

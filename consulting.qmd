@@ -115,8 +115,26 @@ page-layout: full
 .consulting-cta { margin-bottom: 2rem; }
 .consulting-cta p { max-width: 700px; line-height: 1.7; }
 
+/* short engagements */
+.consulting-short {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 2.5rem;
+}
+.consulting-short > div {
+  border: 1px solid var(--bs-border-color, #d8dee4);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.2rem;
+  line-height: 1.55;
+  min-width: 0;
+}
+.consulting-short strong { display: block; font-size: 1.05rem; margin-bottom: 0.35rem; }
+.consulting-short span { display: block; font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; }
+.consulting-note { max-width: 800px; line-height: 1.65; margin-bottom: 0.5rem; }
+
 @media (max-width: 760px) {
-  .consulting-grid, .consulting-steps { grid-template-columns: 1fr; }
+  .consulting-grid, .consulting-steps, .consulting-short { grid-template-columns: 1fr; }
   .consulting-card { padding: 1.2rem; }
   .consulting-lead { font-size: 1.05rem; }
 }
@@ -197,12 +215,28 @@ Test whether protein language models can support a research decision.
 
 <div class="consulting-deliver"><strong>Deliverable:</strong> a proof of concept, evaluation, and go/no-go recommendation. Outputs support research decisions; they do not replace experimental validation.</div>
 
-<div class="consulting-bg"><strong>Background:</strong> zero-shot antibody fitness and developability pipeline, with evaluation and validation design.</div>
+<div class="consulting-bg"><strong>Background:</strong> antibody fitness and developability modeling, with evaluation and validation design.</div>
 
 <div class="consulting-tags"><span>Python</span><span>PyTorch</span><span>MLflow</span><span>Protein language models</span></div>
 :::
 
 :::
+
+## Short engagements
+
+Need something smaller than a project? These are fixed-scope and short, with scope and price agreed up front, so you know the outcome before we start.
+
+<div class="consulting-short">
+<div><strong>Pipeline review</strong>I review your Nextflow or Snakemake workflow, or your RNA-seq analysis scripts, and return a written assessment: reproducibility gaps, risks, and a prioritized fix list.<span>Output: short report and a walkthrough call.</span></div>
+<div><strong>Antibody data readiness sprint</strong>Raw antibody repertoire data, public or your own, turned into cleaned, annotated inputs ready for protein language models and downstream analysis.<span>Output: curated dataset, quality notes, and reusable code.</span></div>
+<div><strong>Model evaluation review</strong>A review of how an antibody ML model is tested: metrics, held-out splits, data leakage, and stated limitations.<span>Output: findings and a go/no-go recommendation.</span></div>
+</div>
+
+<div class="consulting-note">
+
+Short engagements work well as a first step: if they show value, they can lead into a pilot from the offerings above. Scope, timeline, and price are agreed in writing before work begins.
+
+</div>
 
 ## How we start
 

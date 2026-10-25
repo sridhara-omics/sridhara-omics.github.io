@@ -144,21 +144,21 @@
     "href": "index.html",
     "title": "Vish Sridhara, PhD",
     "section": "",
-    "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
+    "text": "I connect the pieces: raw data, cloud platforms, analysis pipelines, and AI models become one working system that teams can trust. My cloud platform work applies to any kind of data. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery. One of my specializations is advanced custom analyses of single-cell and antibody data.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
   },
   {
-    "objectID": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
-    "href": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
+    "objectID": "index.html#cloud-data-platforms-multi-step-pipelines-applied-ai",
+    "href": "index.html#cloud-data-platforms-multi-step-pipelines-applied-ai",
     "title": "Vish Sridhara, PhD",
     "section": "",
-    "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
+    "text": "I connect the pieces: raw data, cloud platforms, analysis pipelines, and AI models become one working system that teams can trust. My cloud platform work applies to any kind of data. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery. One of my specializations is advanced custom analyses of single-cell and antibody data.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
   },
   {
-    "objectID": "index.html#what-i-do",
-    "href": "index.html#what-i-do",
+    "objectID": "index.html#what-i-focus-on",
+    "href": "index.html#what-i-focus-on",
     "title": "Vish Sridhara, PhD",
-    "section": "What I do",
-    "text": "What I do\n\n\n\nSolution architecture\n\n\nEnd-to-end genomics data platforms and pipelines\nFrom ingestion and QC to analytics and delivery\nETL/ELT and workflow orchestration\n\n\nNextflowSnakemakeDatabricks\n\n\n\n\nCloud\n\n\nStorage, compute and pipelines on AWS and Azure\nReproducible deployment with containers and CI/CD\n\n\nAWS S3AWS EC2Azure Data FactoryAzure DatabricksDocker\n\n\n\n\nApplied AI/ML\n\n\nModel training, evaluation and tracking\nProtein language models such as ESM-2 on antibody data\n\n\nPyTorchTensorFlowMLflow\n\n\n\n\nLife sciences\n\n\nBulk and single-cell RNA-seq\nAntibody repertoires and multi-omics\nRegulated NIH/FDA data environments\n\n\nDESeq2SeuratCellRangernf-core/airrflow"
+    "section": "What I focus on",
+    "text": "What I focus on\n\n\n\n1 · Cloud data platforms\n\n\nRaw, curated and analytics-ready data in one place, on Azure or AWS\nOrchestration, notebooks, dashboards and HPC compute\nWorks for scientific data and any other kind of data\n\n\nAzure Data FactoryDatabricksAWS S3AWS EC2SQL\n\n\n\n\n2 · Multi-step pipelines\n\n\nLong, reproducible workflows: QC, processing, alignment, differential expression, pathway analysis\nContainers, documentation and handover\n\n\nNextflowSnakemakeDockerDESeq2\n\n\n\n\n3 · Applied AI\n\n\nRunning and interpreting existing models, such as protein language models (ESM-2)\nAdapting models to custom datasets, with held-out evaluation and tracking\n\n\nPyTorchTensorFlowMLflow\n\n\n\n\n4 · Advanced custom analyses\n\n\nSingle-cell analyses that go beyond standard workflows\nAntibody repertoire pipelines and analysis\nPython and R\n\n\nSeuratCellRangernf-core/airrflowtidyversepandas\n\n\n\n\nI focus on single-cell and antibody data and on cloud data platforms. I do not take on custom software development or training large models from scratch. See Consulting for details."
   },
   {
     "objectID": "index.html#selected-experience",
@@ -179,7 +179,7 @@
     "href": "index.html#writing-and-recognition",
     "title": "Vish Sridhara, PhD",
     "section": "Writing and recognition",
-    "text": "Writing and recognition\n\n\n20+peer-reviewed publications\n\n\n1,000+citations\n\n\n15h-index\n\n\nMy blog has practical notes on bioinformatics, single-cell analysis, proteomics and machine learning for biology; a good start is Single-cell genomics. Publication details are on Google Scholar."
+    "text": "Writing and recognition\n\n\n20+peer-reviewed publications\n\n\n1,000+citations\n\n\n15h-index\n\n\nMy blog has practical notes on bioinformatics, single-cell analysis, cloud data platforms and machine learning for biology; a good start is Single-cell genomics. Publication details are on Google Scholar."
   },
   {
     "objectID": "index.html#education-and-credentials",
@@ -189,11 +189,11 @@
     "text": "Education and credentials\n\nPhD and MS in Electrical and Computer Engineering, Old Dominion University\nNIH postdoctoral fellow in Bioinformatics\nPyTorch for Deep Learning Professional Certificate (DeepLearning.AI, 2026)"
   },
   {
-    "objectID": "index.html#lets-connect",
-    "href": "index.html#lets-connect",
+    "objectID": "index.html#get-in-touch",
+    "href": "index.html#get-in-touch",
     "title": "Vish Sridhara, PhD",
-    "section": "Let’s connect",
-    "text": "Let’s connect\n\nWork with me LinkedIn GitHub CV"
+    "section": "Get in touch",
+    "text": "Get in touch\n\nContact Consulting LinkedIn GitHub CV"
   },
   {
     "objectID": "posts/2023-05-26-Genomics-with-Snakemake/index.html",

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Tell me about your project. A short note is enough to start.">
 
-<title>Contact &amp; Service Request – Vish Sridhara, PhD</title>
+<title>Contact – Vish Sridhara, PhD</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -310,9 +311,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Contact &amp; Service Request</h1>
+<h1 class="title">Contact</h1>
 </div>
 
+<div>
+  <div class="description">
+    Tell me about your project. A short note is enough to start.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta column-page">
@@ -327,114 +333,127 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>Tell me about your life-sciences data challenge. I’ll review the details and follow up by email.</p>
-<p>Please use this form for consulting inquiries involving genomics, proteomics, RNA-seq, single-cell analysis, antibody data, scientific data platforms, or applied AI. You do not need to have every detail finalized; reasonable estimates are fine.</p>
+<p>Working with <strong>single-cell or antibody data</strong>, or looking to bring your data, cloud, and analysis together on <strong>Azure, AWS, or Databricks</strong>? Tell me about it below. You do not need every detail; reasonable estimates are fine. I read every request and reply by email, usually within a few business days.</p>
+<style>
+.contact-wrap { max-width: 760px; }
+.contact-wrap .form-label { font-weight: 600; }
+.contact-wrap .optional { font-weight: 400; opacity: 0.65; font-size: 0.85rem; }
+.contact-wrap .form-text { opacity: 0.8; }
+.contact-wrap .row-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.contact-wrap .contact-privacy {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  opacity: 0.85;
+  border-left: 3px solid var(--bs-primary, #356b8c);
+  padding-left: 0.9rem;
+  margin: 1.25rem 0;
+}
+@media (max-width: 600px) {
+  .contact-wrap .row-2 { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="contact-wrap">
 <form id="service-request-form" action="https://formsubmit.co/sridhara.omics@gmail.com" method="POST">
 
-  <input type="hidden" name="_subject" id="email_subject" value="New life-sciences consulting inquiry">
+<input type="hidden" name="_subject" id="email_subject" value="New consulting inquiry">
+<input type="hidden" name="_template" value="table">
 
-  <input type="hidden" name="_template" value="table">
+<!-- Spam-prevention honeypot -->
+<input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 
-  <!-- Optional: disable captcha -->
-  <!-- <input type="hidden" name="_captcha" value="false"> -->
-
-  <!-- Spam-prevention honeypot -->
-  <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
-
-  <div class="mb-3">
+<div class="row-2 mb-3">
+  <div>
     <label for="name" class="form-label">Your name</label>
     <input id="name" name="name" type="text" class="form-control" autocomplete="name" required="">
   </div>
-
-  <div class="mb-3">
+  <div>
     <label for="email" class="form-label">Email address</label>
     <input id="email" name="email" type="email" class="form-control" autocomplete="email" required="">
   </div>
+</div>
 
-  <div class="mb-3">
-    <label for="data_type" class="form-label">Primary data type</label>
+<div class="mb-3">
+  <label for="organization" class="form-label">Organization <span class="optional">(optional)</span></label>
+  <input id="organization" name="organization" type="text" class="form-control" autocomplete="organization">
+</div>
 
-    <select id="data_type" name="data_type" class="form-select" required="">
-
-      <option value="" selected="" disabled="">
-        Select the closest match
-      </option>
-
-      <option value="Genome / genomics">Genome / genomics</option>
-      <option value="Proteome / proteomics">Proteome / proteomics</option>
-      <option value="Bulk RNA-seq">Bulk RNA-seq</option>
-      <option value="Single-cell data">Single-cell data</option>
-      <option value="Antibody sequencing / repertoire">
-        Antibody sequencing / repertoire
-      </option>
-      <option value="Multiple or mixed data types">
-        Multiple or mixed data types
-      </option>
-      <option value="Other life-sciences data">
-        Other life-sciences data
-      </option>
+<div class="row-2 mb-3">
+  <div>
+    <label for="need" class="form-label">What do you need help with?</label>
+    <select id="need" name="need" class="form-select" required="">
+      <option value="" selected="" disabled="">Select the closest match</option>
+      <option value="Cloud data platform (Azure / AWS / Databricks)">Cloud data platform (Azure / AWS / Databricks)</option>
+      <option value="Analysis pipeline (single-cell or antibody)">Analysis pipeline (single-cell or antibody)</option>
+      <option value="Custom single-cell or antibody analysis">Custom single-cell or antibody analysis</option>
+      <option value="Applied AI / adapting an existing model">Applied AI / adapting an existing model</option>
+      <option value="Short engagement (review or sprint)">Short engagement (review or sprint)</option>
+      <option value="Not sure yet">Not sure yet</option>
     </select>
-
-    <div class="form-text">
-      If your project involves several data types, mention the others below.
-    </div>
   </div>
-
-  <div class="mb-3">
-    <label for="datasets_size" class="form-label">
-      Datasets and approximate data size
-    </label>
-
-    <textarea id="datasets_size" name="datasets_size" class="form-control" rows="3" maxlength="1000" placeholder="Dataset accession or link, number of samples, file types, and estimated size (e.g. 20 GB or 3 TB)." required=""></textarea>
+  <div>
+    <label for="data_type" class="form-label">Primary data type</label>
+    <select id="data_type" name="data_type" class="form-select" required="">
+      <option value="" selected="" disabled="">Select the closest match</option>
+      <option value="Single-cell data">Single-cell data</option>
+      <option value="Antibody sequencing / repertoire">Antibody sequencing / repertoire</option>
+      <option value="Single-cell and antibody data">Single-cell and antibody data</option>
+      <option value="Other data (platform work)">Other data (platform work)</option>
+    </select>
   </div>
+</div>
+<div class="form-text mb-3">
+  Analysis and pipeline work focuses on single-cell and antibody data. Cloud platform work can involve other kinds of data, so choose "Other data" in that case.
+</div>
 
-  <div class="mb-3">
-    <label for="analysis" class="form-label">
-      What kind of analysis or support do you need?
-    </label>
+<div class="mb-3">
+  <label for="analysis" class="form-label">In one line, what do you need?</label>
+  <input id="analysis" name="analysis" type="text" class="form-control" maxlength="100" placeholder="Bring our single-cell data and notebooks together on Azure" required="">
+  <div class="form-text">Maximum 100 characters. This goes in the email subject.</div>
+</div>
 
-    <input id="analysis" name="analysis" type="text" class="form-control" maxlength="100" placeholder="Build a reproducible single-cell RNA-seq pipeline" required="">
+<div class="mb-3">
+  <label for="description" class="form-label">Tell me more</label>
+  <textarea id="description" name="description" class="form-control" rows="6" minlength="50" maxlength="1500" placeholder="Your goals, what you have today, the tools or cloud you use, expected outputs, timeline, and any constraints." required=""></textarea>
+  <div class="form-text">At least 50 characters.</div>
+</div>
 
-    <div class="form-text">
-      Maximum 100 characters. This description will be included in the email subject.
-    </div>
-  </div>
+<div class="mb-3">
+  <label for="datasets_size" class="form-label">Datasets and approximate size <span class="optional">(optional)</span></label>
+  <textarea id="datasets_size" name="datasets_size" class="form-control" rows="2" maxlength="1000" placeholder="Public accession or link, number of samples, file types, and rough size (e.g. 20 GB or 3 TB)."></textarea>
+</div>
 
-  <div class="mb-3">
-    <label for="description" class="form-label">
-      Detailed description
-    </label>
+<div class="mb-3">
+  <label for="timeline" class="form-label">Timeline <span class="optional">(optional)</span></label>
+  <select id="timeline" name="timeline" class="form-select">
+    <option value="" selected="">Select one</option>
+    <option value="Just exploring">Just exploring</option>
+    <option value="Within 1 month">Within 1 month</option>
+    <option value="1 to 3 months">1 to 3 months</option>
+    <option value="Flexible">Flexible</option>
+  </select>
+</div>
 
-    <textarea id="description" name="description" class="form-control" rows="6" minlength="100" maxlength="1000" placeholder="Describe the goals, expected outputs, tools or cloud environment, timeline, and any constraints." required=""></textarea>
+<p class="contact-privacy">
+  Please share project metadata only. Do not include patient-identifiable information, credentials, confidential data, or proprietary sequences. Your details are used only to reply to your request.
+</p>
 
-    <div class="form-text">
-      Required: 100–1,000 characters.
-    </div>
-  </div>
-
-  <p class="small text-muted">
-    Please share project metadata only. Do not include patient-identifiable
-    information, credentials, confidential data, or proprietary sequences.
-  </p>
-
-  <button type="submit" class="btn btn-primary">
-    Send Service Request
-  </button>
+<button type="submit" class="btn btn-primary">Send request</button>
 
 </form>
+</div>
 
 <script>
 document.getElementById("service-request-form")
   .addEventListener("submit", function () {
-
-    const name =
-      document.getElementById("name").value.trim();
-
-    const analysis =
-      document.getElementById("analysis").value.trim();
-
+    var name = document.getElementById("name").value.trim();
+    var analysis = document.getElementById("analysis").value.trim();
     document.getElementById("email_subject").value =
-      "Service request - " + name + " - " + analysis;
+      "Consulting inquiry - " + name + " - " + analysis;
 });
 </script>
 

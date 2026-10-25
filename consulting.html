@@ -6,7 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="description" content="Bioinformatics pipelines, cloud data platforms, and scientific AI for life sciences.">
+<meta name="description" content="Cloud data platforms, long multi-step pipelines, and applied AI, with a specialty in single-cell and antibody data.">
 
 <title>Consulting – Vish Sridhara, PhD</title>
 <style>
@@ -314,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Bioinformatics pipelines, cloud data platforms, and scientific AI for life sciences.
+    Cloud data platforms, long multi-step pipelines, and applied AI, with a specialty in single-cell and antibody data.
   </div>
 </div>
 
@@ -419,6 +419,40 @@ ul.task-list li input[type="checkbox"] {
   opacity: 0.9;
 }
 
+/* short engagements */
+.consulting-short {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 1.5rem;
+}
+.consulting-short > div {
+  border: 1px solid var(--bs-border-color, #d8dee4);
+  border-radius: 0.6rem;
+  padding: 1.1rem 1.2rem;
+  line-height: 1.55;
+  min-width: 0;
+}
+.consulting-short strong { display: block; font-size: 1.05rem; margin-bottom: 0.35rem; }
+.consulting-short span { display: block; font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; }
+.consulting-note { max-width: 800px; line-height: 1.65; margin-bottom: 0.5rem; }
+
+/* fit / not a fit */
+.consulting-fit {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1rem 0 2.5rem;
+}
+.consulting-fit > div {
+  border-left: 3px solid var(--bs-primary, #356b8c);
+  padding: 0.1rem 0 0.1rem 1rem;
+  line-height: 1.55;
+}
+.consulting-fit strong { display: block; margin-bottom: 0.35rem; }
+.consulting-fit ul { padding-left: 1.1rem; margin-bottom: 0; }
+.consulting-fit li { margin-bottom: 0.3rem; }
+
 /* how we start */
 .consulting-steps {
   display: grid;
@@ -441,32 +475,14 @@ ul.task-list li input[type="checkbox"] {
 .consulting-cta { margin-bottom: 2rem; }
 .consulting-cta p { max-width: 700px; line-height: 1.7; }
 
-/* short engagements */
-.consulting-short {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1.25rem;
-  margin: 1rem 0 2.5rem;
-}
-.consulting-short > div {
-  border: 1px solid var(--bs-border-color, #d8dee4);
-  border-radius: 0.6rem;
-  padding: 1.1rem 1.2rem;
-  line-height: 1.55;
-  min-width: 0;
-}
-.consulting-short strong { display: block; font-size: 1.05rem; margin-bottom: 0.35rem; }
-.consulting-short span { display: block; font-size: 0.85rem; opacity: 0.8; margin-top: 0.5rem; }
-.consulting-note { max-width: 800px; line-height: 1.65; margin-bottom: 0.5rem; }
-
 @media (max-width: 760px) {
-  .consulting-grid, .consulting-steps, .consulting-short { grid-template-columns: 1fr; }
+  .consulting-grid, .consulting-steps, .consulting-short, .consulting-fit { grid-template-columns: 1fr; }
   .consulting-card { padding: 1.2rem; }
   .consulting-lead { font-size: 1.05rem; }
 }
 </style>
 <div class="consulting-lead">
-<p>I help biotech and research teams turn sequencing and scientific data into <strong>reproducible pipelines, dependable cloud workflows, and usable data products</strong>. 10+ years across biotech, consulting, NIH, and FDA.</p>
+<p>I connect the pieces: <strong>raw data, cloud platforms, analysis pipelines, and AI models</strong> become one working system your team can trust and reuse. I work between the scientists asking the questions and the engineers running the platforms. Specialty in <strong>single-cell and antibody data</strong>; the platform work applies to <strong>any kind of data</strong>. 10+ years across biotech, consulting, NIH, and FDA.</p>
 </div>
 <div class="consulting-kicker">
 Four focused offerings
@@ -474,21 +490,45 @@ Four focused offerings
 <div class="consulting-grid">
 <div class="consulting-card">
 <div class="consulting-number">
-01 / WORKFLOWS
+01 / DATA PLATFORMS
 </div>
-<section id="reproducible-bioinformatics-pipelines" class="level3">
-<h3 class="anchored" data-anchor-id="reproducible-bioinformatics-pipelines">Reproducible bioinformatics pipelines</h3>
-<p>From a folder of scripts to a workflow your team can rerun, inspect, and hand over.</p>
+<section id="cloud-data-platforms-end-to-end" class="level3">
+<h3 class="anchored" data-anchor-id="cloud-data-platforms-end-to-end">Cloud data platforms, end to end</h3>
+<p>Everything in one place, from raw files to dashboards, on Azure or AWS in your own account. Built for scientific data, and equally for business and operational data.</p>
 <ul>
-<li><strong>Bulk and single-cell RNA-seq</strong> processing and analysis</li>
-<li><strong>Antibody repertoire NGS</strong>, including customized nf-core/airrflow</li>
-<li><strong>Nextflow</strong> with containers and Python/R notebooks</li>
+<li><strong>Raw, curated, and analytics-ready</strong> layers, with quality checks between them</li>
+<li><strong>Azure Data Factory</strong> or AWS services for orchestration, <strong>Databricks</strong>, SQL, and Python/R for transformation</li>
+<li><strong>Notebooks, BI dashboards, and internal tools</strong> on top, plus HPC or cluster compute when a workload needs it</li>
+<li>Permissions, logging, and cost visibility</li>
 </ul>
 <div class="consulting-deliver">
-<strong>Deliverable:</strong> a documented, runnable pipeline with handover.
+<strong>Deliverable:</strong> an architecture blueprint or working pilot, with cost and performance trade-offs, and a handover your team can run.
 </div>
 <div class="consulting-bg">
-<strong>Background:</strong> bulk and single-cell RNA-seq pipelines at FDA; an antibody pipeline for 2B+ sequences.
+<strong>Background:</strong> cloud data platforms covering ingestion, security, and monitoring for NIH, FDA, and HHS missions; an AWS genomics workflow with analytics across 12,500+ datasets.
+</div>
+<div class="consulting-tags">
+<span>Azure</span><span>AWS</span><span>Databricks</span><span>Data Factory</span><span>SQL</span><span>HPC</span>
+</div>
+</section>
+</div>
+<div class="consulting-card">
+<div class="consulting-number">
+02 / PIPELINES
+</div>
+<section id="long-reproducible-analysis-pipelines" class="level3">
+<h3 class="anchored" data-anchor-id="long-reproducible-analysis-pipelines">Long, reproducible analysis pipelines</h3>
+<p>From raw data to results in a dozen or more steps: QC, processing, alignment, differential expression, pathway analysis. Documented, rerunnable, and handed over.</p>
+<ul>
+<li><strong>Single-cell</strong> pipelines from raw reads to annotated, analysis-ready results</li>
+<li><strong>Antibody repertoire NGS</strong>, including customized nf-core/airrflow</li>
+<li><strong>Nextflow or Snakemake</strong> with containers and Python/R notebooks</li>
+</ul>
+<div class="consulting-deliver">
+<strong>Deliverable:</strong> a documented, runnable pipeline with handover and a short walkthrough for your team.
+</div>
+<div class="consulting-bg">
+<strong>Background:</strong> bulk and single-cell RNA-seq pipelines at FDA; an antibody pipeline for 2B+ sequences (about 3 TB).
 </div>
 <div class="consulting-tags">
 <span>Nextflow</span><span>Snakemake</span><span>Python</span><span>R</span><span>Containers</span>
@@ -497,70 +537,47 @@ Four focused offerings
 </div>
 <div class="consulting-card">
 <div class="consulting-number">
-02 / CLOUD COMPUTE
+03 / APPLIED AI
 </div>
-<section id="cloud-foundations-for-scientific-workloads" class="level3">
-<h3 class="anchored" data-anchor-id="cloud-foundations-for-scientific-workloads">Cloud foundations for scientific workloads</h3>
-<p>Storage and compute sized to your data and budget, on AWS or Azure in your own account.</p>
+<section id="applied-ai-understand-run-adapt" class="level3">
+<h3 class="anchored" data-anchor-id="applied-ai-understand-run-adapt">Applied AI: understand, run, adapt</h3>
+<p>Put existing models to work on your data, and adapt them to your datasets when it pays off. Not training new models from scratch.</p>
 <ul>
-<li><strong>Raw, processed, and results</strong> data organized in cloud object storage</li>
-<li>Pipeline stages matched to <strong>measured</strong> compute needs, with scaling options</li>
-<li>Permissions, logging, and cost visibility</li>
-</ul>
-<div class="consulting-deliver">
-<strong>Deliverable:</strong> a pilot deployment or blueprint, with cost/performance trade-offs.
-</div>
-<div class="consulting-bg">
-<strong>Background:</strong> AWS S3, EC2, and Snakemake genomics pipeline with analytics across 12,500+ datasets.
-</div>
-<div class="consulting-tags">
-<span>AWS S3</span><span>EC2</span><span>Azure Data Lake Storage</span><span>Nextflow</span>
-</div>
-</section>
-</div>
-<div class="consulting-card">
-<div class="consulting-number">
-03 / DATA PLATFORMS
-</div>
-<section id="life-sciences-data-engineering" class="level3">
-<h3 class="anchored" data-anchor-id="life-sciences-data-engineering">Life-sciences data engineering</h3>
-<p>Scattered files and extracts turned into data your teams can trust.</p>
-<ul>
-<li>Ingestion and transformation into <strong>raw, curated, and analytics-ready</strong> layers, with schema checks</li>
-<li><strong>Databricks</strong>, SQL, and Python/R notebooks where they add value</li>
-<li><strong>Azure Data Factory</strong> or AWS services for orchestration</li>
-</ul>
-<div class="consulting-deliver">
-<strong>Deliverable:</strong> data-flow design, reusable code, and quality checks.
-</div>
-<div class="consulting-bg">
-<strong>Background:</strong> model-ready antibody repertoires at scale; cloud data platforms covering ingestion, security, and monitoring.
-</div>
-<div class="consulting-tags">
-<span>Azure</span><span>AWS</span><span>Databricks</span><span>SQL</span><span>Python</span><span>R</span>
-</div>
-</section>
-</div>
-<div class="consulting-card">
-<div class="consulting-number">
-04 / SCIENTIFIC AI
-</div>
-<section id="antibody-and-protein-ai-prototypes" class="level3">
-<h3 class="anchored" data-anchor-id="antibody-and-protein-ai-prototypes">Antibody and protein AI prototypes</h3>
-<p>Test whether protein language models can support a research decision.</p>
-<ul>
-<li><strong>Embeddings</strong> (such as ESM-2) compared with transparent baselines</li>
-<li><strong>Fitness and developability</strong> scoring with held-out data and stated limitations</li>
-<li>Reproducible notebooks or batch workflow</li>
+<li><strong>Run inference at scale</strong> with models such as protein language models (ESM-2), and interpret the results</li>
+<li><strong>Adapt an existing model</strong> to a custom dataset, compared against transparent baselines</li>
+<li><strong>Held-out evaluation</strong> with stated limitations, tracked in MLflow</li>
 </ul>
 <div class="consulting-deliver">
 <strong>Deliverable:</strong> a proof of concept, evaluation, and go/no-go recommendation. Outputs support research decisions; they do not replace experimental validation.
 </div>
 <div class="consulting-bg">
-<strong>Background:</strong> antibody fitness and developability modeling, with evaluation and validation design.
+<strong>Background:</strong> zero-shot antibody fitness and developability inference with repeatable evaluation; model-ready antibody data for protein language models.
 </div>
 <div class="consulting-tags">
-<span>Python</span><span>PyTorch</span><span>MLflow</span><span>Protein language models</span>
+<span>PyTorch</span><span>TensorFlow</span><span>MLflow</span><span>Protein language models</span>
+</div>
+</section>
+</div>
+<div class="consulting-card">
+<div class="consulting-number">
+04 / CUSTOM ANALYSIS
+</div>
+<section id="custom-single-cell-and-antibody-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="custom-single-cell-and-antibody-analysis">Custom single-cell and antibody analysis</h3>
+<p>For the questions that standard workflows do not answer: tailored analyses built on established Python and R tools.</p>
+<ul>
+<li><strong>Single-cell</strong> annotation, markers, and pathway analysis, adapted to your design</li>
+<li><strong>Antibody repertoire</strong> parsing, annotation, and alignment</li>
+<li>Clear figures, tables, and a written summary of methods and findings</li>
+</ul>
+<div class="consulting-deliver">
+<strong>Deliverable:</strong> reproducible analysis code or notebooks, results, and a written methods summary.
+</div>
+<div class="consulting-bg">
+<strong>Background:</strong> author of the open-source scPipeline (R, CRAN) and OAS-wrapper (Python, PyPI); 20+ peer-reviewed publications.
+</div>
+<div class="consulting-tags">
+<span>Python</span><span>R</span><span>tidyverse</span><span>pandas</span><span>PyTorch</span>
 </div>
 </section>
 </div>
@@ -570,24 +587,66 @@ Four focused offerings
 <p>Need something smaller than a project? These are fixed-scope and short, with scope and price agreed up front, so you know the outcome before we start.</p>
 <div class="consulting-short">
 <div>
-<strong>Pipeline review</strong>I review your Nextflow or Snakemake workflow, or your RNA-seq analysis scripts, and return a written assessment: reproducibility gaps, risks, and a prioritized fix list.<span>Output: short report and a walkthrough call.</span>
+<strong>Data platform blueprint</strong>I review where your data lives today and design the target setup on Azure or AWS: storage layers, orchestration, access, and cost.<span>Output: architecture diagram, short report, and a walkthrough call.</span>
+</div>
+<div>
+<strong>Pipeline review</strong>I review your Nextflow or Snakemake workflow, or your analysis scripts, and return a written assessment: reproducibility gaps, risks, and a prioritized fix list.<span>Output: short report and a walkthrough call.</span>
 </div>
 <div>
 <strong>Antibody data readiness sprint</strong>Raw antibody repertoire data, public or your own, turned into cleaned, annotated inputs ready for protein language models and downstream analysis.<span>Output: curated dataset, quality notes, and reusable code.</span>
 </div>
 <div>
-<strong>Model evaluation review</strong>A review of how an antibody ML model is tested: metrics, held-out splits, data leakage, and stated limitations.<span>Output: findings and a go/no-go recommendation.</span>
+<strong>Model evaluation review</strong>A review of how an ML model is tested on your data: metrics, held-out splits, data leakage, and stated limitations.<span>Output: findings and a go/no-go recommendation.</span>
 </div>
 </div>
 <div class="consulting-note">
 <p>Short engagements work well as a first step: if they show value, they can lead into a pilot from the offerings above. Scope, timeline, and price are agreed in writing before work begins.</p>
 </div>
 </section>
+<section id="where-i-fit" class="level2">
+<h2 class="anchored" data-anchor-id="where-i-fit">Where I fit</h2>
+<div class="consulting-fit">
+<div>
+<strong>A good fit</strong>
+<ul>
+<li>
+Data scattered across files, drives, or tools, and you want one trusted place
+</li>
+<li>
+A multi-step pipeline that needs to be reproducible and handed over
+</li>
+<li>
+Single-cell or antibody data that needs custom analysis
+</li>
+<li>
+A question about whether an AI model can help with your data
+</li>
+</ul>
+</div>
+<div>
+<strong>Not a fit</strong>
+<ul>
+<li>
+Building custom software applications or websites
+</li>
+<li>
+Training large models from scratch
+</li>
+<li>
+Projects outside cloud data platform, single-cell or antibody work
+</li>
+<li>
+Work involving patient-identifiable data shared outside your own secured environment
+</li>
+</ul>
+</div>
+</div>
+</section>
 <section id="how-we-start" class="level2">
 <h2 class="anchored" data-anchor-id="how-we-start">How we start</h2>
 <div class="consulting-steps">
 <div>
-<span>STEP 1</span><strong>Discovery call</strong><br>Your question and current workflow
+<span>STEP 1</span><strong>Discovery call</strong><br>Your question and current setup
 </div>
 <div>
 <span>STEP 2</span><strong>Focused pilot</strong><br>Proven on your own data

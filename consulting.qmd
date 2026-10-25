@@ -270,7 +270,7 @@ Short engagements work well as a first step: if they show value, they can lead i
 <ul>
 <li>Building custom software applications or websites</li>
 <li>Training large models from scratch</li>
-<li>Genomics-only or proteomics-only projects</li>
+<li>Projects outside cloud data platform, single-cell or antibody work</li>
 <li>Work involving patient-identifiable data shared outside your own secured environment</li>
 </ul></div>
 </div>

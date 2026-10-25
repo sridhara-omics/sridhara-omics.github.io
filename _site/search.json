@@ -112,6 +112,13 @@
     "text": "I help biotech and research teams turn sequencing and scientific data into reproducible pipelines, dependable cloud workflows, and usable data products. 10+ years across biotech, consulting, NIH, and FDA."
   },
   {
+    "objectID": "consulting.html#short-engagements",
+    "href": "consulting.html#short-engagements",
+    "title": "Consulting",
+    "section": "Short engagements",
+    "text": "Short engagements\nNeed something smaller than a project? These are fixed-scope and short, with scope and price agreed up front, so you know the outcome before we start.\n\n\nPipeline reviewI review your Nextflow or Snakemake workflow, or your RNA-seq analysis scripts, and return a written assessment: reproducibility gaps, risks, and a prioritized fix list.Output: short report and a walkthrough call.\n\n\nAntibody data readiness sprintRaw antibody repertoire data, public or your own, turned into cleaned, annotated inputs ready for protein language models and downstream analysis.Output: curated dataset, quality notes, and reusable code.\n\n\nModel evaluation reviewA review of how an antibody ML model is tested: metrics, held-out splits, data leakage, and stated limitations.Output: findings and a go/no-go recommendation.\n\n\n\nShort engagements work well as a first step: if they show value, they can lead into a pilot from the offerings above. Scope, timeline, and price are agreed in writing before work begins."
+  },
+  {
     "objectID": "consulting.html#how-we-start",
     "href": "consulting.html#how-we-start",
     "title": "Consulting",
@@ -250,12 +257,5 @@
     "title": "Azure Data Factory for antibody data - from raw OAS csv.gz to SQL tables",
     "section": "What comes next",
     "text": "What comes next\nThe next posts move from building to operating the platform on Azure:\n\nObservability: routing Data Factory diagnostics to Log Analytics, querying pipeline and activity runs with KQL, and wiring an Azure Monitor alert.\nReliability: an intentional failure to verify that the alert fires and that a corrected rerun recovers cleanly.\nInfrastructure as code: exporting and cleaning the environment as Bicep.\nLifecycle and cost: publishing a static output and the supporting evidence so the work remains available after the temporary Azure environment is retired.\n\nData: Observed Antibody Space (Oxford Protein Informatics Group), Mor et al., 2021, CC-BY 4.0. See the OAS website for the full citation. This is a personal project and is unrelated to any employer or agency system.\n\n\n\n\n\n\nFound this useful? If this tutorial helped, you can buy me a coffee ↗ to support future technical articles. For project work, see Consulting."
-  },
-  {
-    "objectID": "consulting.html#short-engagements",
-    "href": "consulting.html#short-engagements",
-    "title": "Consulting",
-    "section": "Short engagements",
-    "text": "Short engagements\nNeed something smaller than a project? These are fixed-scope and short, with scope and price agreed up front, so you know the outcome before we start.\n\n\nPipeline reviewI review your Nextflow or Snakemake workflow, or your RNA-seq analysis scripts, and return a written assessment: reproducibility gaps, risks, and a prioritized fix list.Output: short report and a walkthrough call.\n\n\nAntibody data readiness sprintRaw antibody repertoire data, public or your own, turned into cleaned, annotated inputs ready for protein language models and downstream analysis.Output: curated dataset, quality notes, and reusable code.\n\n\nModel evaluation reviewA review of how an antibody ML model is tested: metrics, held-out splits, data leakage, and stated limitations.Output: findings and a go/no-go recommendation.\n\n\n\nShort engagements work well as a first step: if they show value, they can lead into a pilot from the offerings above. Scope, timeline, and price are agreed in writing before work begins."
   }
 ]

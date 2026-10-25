@@ -119,6 +119,13 @@
     "text": "Short engagements\nNeed something smaller than a project? These are fixed-scope and short, with scope and price agreed up front, so you know the outcome before we start.\n\n\nData platform blueprintI review where your data lives today and design the target setup on Azure or AWS: storage layers, orchestration, access, and cost.Output: architecture diagram, short report, and a walkthrough call.\n\n\nPipeline reviewI review your Nextflow or Snakemake workflow, or your analysis scripts, and return a written assessment: reproducibility gaps, risks, and a prioritized fix list.Output: short report and a walkthrough call.\n\n\nAntibody data readiness sprintRaw antibody repertoire data, public or your own, turned into cleaned, annotated inputs ready for protein language models and downstream analysis.Output: curated dataset, quality notes, and reusable code.\n\n\nModel evaluation reviewA review of how an ML model is tested on your data: metrics, held-out splits, data leakage, and stated limitations.Output: findings and a go/no-go recommendation.\n\n\n\nShort engagements work well as a first step: if they show value, they can lead into a pilot from the offerings above. Scope, timeline, and price are agreed in writing before work begins."
   },
   {
+    "objectID": "consulting.html#where-i-fit",
+    "href": "consulting.html#where-i-fit",
+    "title": "Consulting",
+    "section": "Where I fit",
+    "text": "Where I fit\n\n\nA good fit\n\n\nData scattered across files, drives, or tools, and you want one trusted place\n\n\nA multi-step pipeline that needs to be reproducible and handed over\n\n\nSingle-cell or antibody data that needs custom analysis\n\n\nA question about whether an AI model can help with your data\n\n\n\n\nNot a fit\n\n\nBuilding custom software applications or websites\n\n\nTraining large models from scratch\n\n\nProjects outside cloud data platform, single-cell or antibody work\n\n\nWork involving patient-identifiable data shared outside your own secured environment"
+  },
+  {
     "objectID": "consulting.html#how-we-start",
     "href": "consulting.html#how-we-start",
     "title": "Consulting",
@@ -137,7 +144,7 @@
     "href": "index.html",
     "title": "Vish Sridhara, PhD",
     "section": "",
-    "text": "I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
+    "text": "I connect the pieces: raw data, cloud platforms, analysis pipelines, and AI models become one working system that teams can trust. My cloud platform work applies to any kind of data. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery. One of my specializations is advanced custom analyses of single-cell and antibody data.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
   },
   {
     "objectID": "index.html#genomics-pipelines-cloud-data-platforms-antibody-ai",
@@ -172,7 +179,7 @@
     "href": "index.html#writing-and-recognition",
     "title": "Vish Sridhara, PhD",
     "section": "Writing and recognition",
-    "text": "Writing and recognition\n\n\n20+peer-reviewed publications\n\n\n1,000+citations\n\n\n15h-index\n\n\nMy blog has practical notes on bioinformatics, single-cell analysis, proteomics and machine learning for biology; a good start is Single-cell genomics. Publication details are on Google Scholar."
+    "text": "Writing and recognition\n\n\n20+peer-reviewed publications\n\n\n1,000+citations\n\n\n15h-index\n\n\nMy blog has practical notes on bioinformatics, single-cell analysis, cloud data platforms and machine learning for biology; a good start is Single-cell genomics. Publication details are on Google Scholar."
   },
   {
     "objectID": "index.html#education-and-credentials",
@@ -259,10 +266,31 @@
     "text": "What comes next\nThe next posts move from building to operating the platform on Azure:\n\nObservability: routing Data Factory diagnostics to Log Analytics, querying pipeline and activity runs with KQL, and wiring an Azure Monitor alert.\nReliability: an intentional failure to verify that the alert fires and that a corrected rerun recovers cleanly.\nInfrastructure as code: exporting and cleaning the environment as Bicep.\nLifecycle and cost: publishing a static output and the supporting evidence so the work remains available after the temporary Azure environment is retired.\n\nData: Observed Antibody Space (Oxford Protein Informatics Group), Mor et al., 2021, CC-BY 4.0. See the OAS website for the full citation. This is a personal project and is unrelated to any employer or agency system.\n\n\n\n\n\n\nFound this useful? If this tutorial helped, you can buy me a coffee ↗ to support future technical articles. For project work, see Consulting."
   },
   {
-    "objectID": "consulting.html#where-i-fit",
-    "href": "consulting.html#where-i-fit",
-    "title": "Consulting",
-    "section": "Where I fit",
-    "text": "Where I fit\n\n\nA good fit\n\n\nData scattered across files, drives, or tools, and you want one trusted place\n\n\nA multi-step pipeline that needs to be reproducible and handed over\n\n\nSingle-cell or antibody data that needs custom analysis\n\n\nA question about whether an AI model can help with your data\n\n\n\n\nNot a fit\n\n\nBuilding custom software applications or websites\n\n\nTraining large models from scratch\n\n\nProjects outside cloud data platform, single-cell or antibody work\n\n\nWork involving patient-identifiable data shared outside your own secured environment"
+    "objectID": "index.html#cloud-data-platforms-multi-step-pipelines-applied-ai-single-cell-antibody-data",
+    "href": "index.html#cloud-data-platforms-multi-step-pipelines-applied-ai-single-cell-antibody-data",
+    "title": "Vish Sridhara, PhD",
+    "section": "",
+    "text": "I connect the pieces: raw data, cloud platforms, analysis pipelines, and AI models become one working system that teams can trust. My specialty is advanced custom analyses of single-cell and antibody data, and my cloud platform work applies to any kind of data. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
+  },
+  {
+    "objectID": "index.html#what-i-focus-on",
+    "href": "index.html#what-i-focus-on",
+    "title": "Vish Sridhara, PhD",
+    "section": "What I focus on",
+    "text": "What I focus on\n\n\n\n1 · Cloud data platforms\n\n\nRaw, curated and analytics-ready data in one place, on Azure or AWS\nOrchestration, notebooks, dashboards and HPC compute\nWorks for scientific data and any other kind of data\n\n\nAzure Data FactoryDatabricksAWS S3AWS EC2SQL\n\n\n\n\n2 · Multi-step pipelines\n\n\nLong, reproducible workflows: QC, processing, alignment, differential expression, pathway analysis\nContainers, documentation and handover\n\n\nNextflowSnakemakeDockerDESeq2\n\n\n\n\n3 · Applied AI\n\n\nRunning and interpreting existing models, such as protein language models (ESM-2)\nAdapting models to custom datasets, with held-out evaluation and tracking\n\n\nPyTorchTensorFlowMLflow\n\n\n\n\n4 · Advanced custom analyses\n\n\nSingle-cell analyses that go beyond standard workflows\nAntibody repertoire pipelines and analysis\nPython and R\n\n\nSeuratCellRangernf-core/airrflowtidyversepandas\n\n\n\n\nI focus on single-cell and antibody data and on cloud data platforms. I do not take on custom software development or training large models from scratch. See Consulting for details."
+  },
+  {
+    "objectID": "index.html#get-in-touch",
+    "href": "index.html#get-in-touch",
+    "title": "Vish Sridhara, PhD",
+    "section": "Get in touch",
+    "text": "Get in touch\n\nContact Consulting LinkedIn GitHub CV"
+  },
+  {
+    "objectID": "index.html#cloud-data-platforms-multi-step-pipelines-applied-ai",
+    "href": "index.html#cloud-data-platforms-multi-step-pipelines-applied-ai",
+    "title": "Vish Sridhara, PhD",
+    "section": "",
+    "text": "I connect the pieces: raw data, cloud platforms, analysis pipelines, and AI models become one working system that teams can trust. My cloud platform work applies to any kind of data. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery. One of my specializations is advanced custom analyses of single-cell and antibody data.\nWith a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them."
   }
 ]

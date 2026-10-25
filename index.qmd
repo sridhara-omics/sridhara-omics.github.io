@@ -1,7 +1,7 @@
 ---
 title: "Vish Sridhara, PhD"
-subtitle: "Bioinformatics Solutions Architect"
-pagetitle: "Viswanadham Sridhara, PhD | Bioinformatics Solutions Architect"
+subtitle: "Solutions Architect | Data and AI Platforms | Life Sciences"
+pagetitle: "Viswanadham Sridhara, PhD | Solutions Architect, Data and AI Platforms"
 toc: false
 page-layout: full
 about:
@@ -132,56 +132,60 @@ about:
 }
 </style>
 
-## Genomics Pipelines   ·   Cloud Data Platforms   ·   Antibody AI
+## Cloud Data Platforms   ·   Multi-Step Pipelines   ·   Applied AI
 
 ::: {.about-lead}
-I help biotech and regulated-health teams turn complex sequencing and scientific data into pipelines and cloud platforms they can trust. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery.
+I connect the pieces: raw data, cloud platforms, analysis pipelines, and AI models become one working system that teams can trust. My cloud platform work applies to **any kind of data**. Over 10+ years across biotech, consulting, NIH and FDA, I have worked across the full data lifecycle, from ingestion and quality control to analytics and delivery. One of my specializations is **advanced custom analyses of single-cell and antibody data**.
 
 With a background in engineering and computational science, I work comfortably with both the scientists asking the questions and the engineers building the platforms that answer them.
 :::
 
-## What I do
+## What I focus on
 
 ::: {.about-grid}
 
 ::: {.about-card}
-<div class="about-label">Solution architecture</div>
+<div class="about-label">1 · Cloud data platforms</div>
 
-- End-to-end genomics data platforms and pipelines
-- From ingestion and QC to analytics and delivery
-- ETL/ELT and workflow orchestration
+- Raw, curated and analytics-ready data in one place, on Azure or AWS
+- Orchestration, notebooks, dashboards and HPC compute
+- Works for scientific data and any other kind of data
 
-<div class="about-pills"><span>Nextflow</span><span>Snakemake</span><span>Databricks</span></div>
+<div class="about-pills"><span>Azure Data Factory</span><span>Databricks</span><span>AWS S3</span><span>AWS EC2</span><span>SQL</span></div>
 :::
 
 ::: {.about-card}
-<div class="about-label">Cloud</div>
+<div class="about-label">2 · Multi-step pipelines</div>
 
-- Storage, compute and pipelines on AWS and Azure
-- Reproducible deployment with containers and CI/CD
+- Long, reproducible workflows: QC, processing, alignment, differential expression, pathway analysis
+- Containers, documentation and handover
 
-<div class="about-pills"><span>AWS S3</span><span>AWS EC2</span><span>Azure Data Factory</span><span>Azure Databricks</span><span>Docker</span></div>
+<div class="about-pills"><span>Nextflow</span><span>Snakemake</span><span>Docker</span><span>DESeq2</span></div>
 :::
 
 ::: {.about-card}
-<div class="about-label">Applied AI/ML</div>
+<div class="about-label">3 · Applied AI</div>
 
-- Model training, evaluation and tracking
-- Protein language models such as ESM-2 on antibody data
+- Running and interpreting existing models, such as protein language models (ESM-2)
+- Adapting models to custom datasets, with held-out evaluation and tracking
 
 <div class="about-pills"><span>PyTorch</span><span>TensorFlow</span><span>MLflow</span></div>
 :::
 
 ::: {.about-card}
-<div class="about-label">Life sciences</div>
+<div class="about-label">4 · Advanced custom analyses</div>
 
-- Bulk and single-cell RNA-seq
-- Antibody repertoires and multi-omics
-- Regulated NIH/FDA data environments
+- Single-cell analyses that go beyond standard workflows
+- Antibody repertoire pipelines and analysis
+- Python and R
 
-<div class="about-pills"><span>DESeq2</span><span>Seurat</span><span>CellRanger</span><span>nf-core/airrflow</span></div>
+<div class="about-pills"><span>Seurat</span><span>CellRanger</span><span>nf-core/airrflow</span><span>tidyverse</span><span>pandas</span></div>
 :::
 
+:::
+
+::: {.about-note}
+I focus on single-cell and antibody data and on cloud data platforms. I do not take on custom software development or training large models from scratch. See [Consulting](consulting.qmd) for details.
 :::
 
 ## Selected experience
@@ -250,7 +254,7 @@ Notebooks and a Nextflow workflow for understanding protein language models.
 <div><strong>15</strong><span>h-index</span></div>
 </div>
 
-My [blog](posts.qmd) has practical notes on bioinformatics, single-cell analysis, proteomics and machine learning for biology; a good start is [Single-cell genomics](posts/2025-03-05-Single-cell-genomics/index.html). Publication details are on [Google Scholar](https://scholar.google.com/citations?user=6rYid2YAAAAJ&hl=en).
+My [blog](posts.qmd) has practical notes on bioinformatics, single-cell analysis, cloud data platforms and machine learning for biology; a good start is [Single-cell genomics](posts/2025-03-05-Single-cell-genomics/index.html). Publication details are on [Google Scholar](https://scholar.google.com/citations?user=6rYid2YAAAAJ&hl=en).
 
 ## Education and credentials
 
@@ -258,10 +262,11 @@ My [blog](posts.qmd) has practical notes on bioinformatics, single-cell analysis
 - NIH postdoctoral fellow in Bioinformatics
 - PyTorch for Deep Learning Professional Certificate (DeepLearning.AI, 2026)
 
-## Let's connect
+## Get in touch
 
 <div class="about-cta">
-[Work with me](consulting.qmd){.btn .btn-primary}
+[Contact](contact.qmd){.btn .btn-primary}
+[Consulting](consulting.qmd){.btn .btn-outline-primary}
 [LinkedIn](https://www.linkedin.com/in/viswanadham-sridhara-308263174/){.btn .btn-outline-primary}
 [GitHub](https://github.com/sridhara-omics){.btn .btn-outline-primary}
 [CV](cv.qmd){.btn .btn-outline-primary}
